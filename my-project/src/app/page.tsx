@@ -5,6 +5,7 @@ import InfoSection from "@/app/components/Text+Circles";
 import MultiTextCircleSection from "@/app/components/MultiText+Circles";
 import TextSection from "@/app/components/TextSection";
 import ExpandableBulletListSection from "@/app/components/ExpandableBulletPointsSection";
+import Navbar from "@/app/components/navbar";
 
 export default function Home() {
   const whoweare = {
@@ -88,6 +89,8 @@ export default function Home() {
 
   return (
     <main>
+      <Navbar />
+
       <TitlePage
         title="sustain;ed"
         creators={["The Sea Monkey Project", "Earth Heir"]}
