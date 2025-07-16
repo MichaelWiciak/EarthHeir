@@ -31,12 +31,14 @@ const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
   return (
     <div className="p-6 md:p-12 space-y-8">
       {/* Overall title */}
-      <h2 className="text-3xl font-bold text-center md:text-left">
-        {sectionTitle}
-      </h2>
+      {sectionTitle && (
+        <h2 className="text-3xl font-bold text-center md:text-left">
+          {sectionTitle}
+        </h2>
+      )}
 
       {/* Layout: Text sections + Circles */}
-      <div className="flex flex-col md:flex-row justify-between gap-8">
+      <div className="flex flex-col xl:flex-row justify-between gap-8">
         {/* Left: Multiple text sections */}
         <div className="flex flex-col md:flex-row gap-6 flex-1">
           {sections.map((section, index) => (
@@ -51,7 +53,7 @@ const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
 
         {/* Right: Circles on desktop */}
         {hasCircles && (
-          <div className="hidden md:flex items-center justify-center md:ml-6">
+          <div className="hidden xl:flex items-center justify-center md:ml-6">
             <CircleGroup items={circles} direction="col" />
           </div>
         )}
@@ -59,7 +61,7 @@ const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
 
       {/* Mobile: Circles go below all text sections */}
       {hasCircles && (
-        <div className="flex md:hidden justify-center">
+        <div className="flex xl:hidden justify-center">
           <CircleGroup items={circles} direction="row" />
         </div>
       )}
