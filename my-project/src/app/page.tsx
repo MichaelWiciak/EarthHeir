@@ -4,6 +4,7 @@ import TitlePage from "@/app/components/TitlePage";
 import InfoSection from "@/app/components/Text+Circles";
 import MultiTextCircleSection from "@/app/components/MultiText+Circles";
 import TextSection from "@/app/components/TextSection";
+import ExpandableBulletListSection from "@/app/components/ExpandableBulletPointsSection";
 
 export default function Home() {
   const whoweare = {
@@ -57,6 +58,34 @@ export default function Home() {
       "SUSTAIN.ED GOAL: 30,000 employment and training hours & impact the livelihoods of 3000 individuals by 2026",
   };
 
+  const whatWeDoText = [
+    {
+      title: "A. EDUCATION HUB",
+      paragraphs: [
+        "Environmental & Sustainability Training",
+        "Sustainable Entrepreneurship / Micro-Business Training",
+        "Sustainability & ESG Education + Workshop tasters",
+        "Upcycling, Cultural Heritage & Artist Workshops",
+      ],
+    },
+    {
+      title: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
+      paragraphs: [
+        "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
+      ],
+    },
+    {
+      title: "C. MENTORING NEXT GENERATION LEADERS",
+      paragraphs: [
+        "Socio-entrepreneurship and sustainability mentorship programme for students",
+      ],
+    },
+    {
+      title: "D. KNOWLEDGE  TALK SERIES",
+      paragraphs: ["Impact Leaders from Malaysia and around the world"],
+    },
+  ];
+
   return (
     <main>
       <TitlePage
@@ -86,6 +115,104 @@ export default function Home() {
           tagline={impactGoalsText.tagline}
         />
       </div>
+      <MultiTextCircleSection
+        sectionTitle="SUSTAIN.ED : WHAT WE DO"
+        sections={whatWeDoText}
+      ></MultiTextCircleSection>
+      <ExpandableBulletListSection
+        title=""
+        description="Click on a principle to learn more."
+        items={[
+          {
+            bulletTitle:
+              "A. SUSTAIN.ED SUSTAINABILITY & SOCIAL IMPACT EDUCATION HUB",
+            content: {
+              sectionTitle: "",
+              sections: [
+                {
+                  title: "",
+                  paragraphs: [
+                    "Addressing an Urgent Global Challenge: climate change, resource depletion, and social inequality are among the most critical challenges of our time. ",
+                    "Growing Demand for Sustainability Education: The global shift towards sustainability has created a significant demand for education and awareness.",
+                  ],
+                  tagline: "Growing the sustainability ECOSYSTEM in Malaysia",
+                },
+              ],
+              circles: [
+                {
+                  text: "Sustainable Living & Plastic Waste Management Training",
+                },
+                {
+                  text: "Sustainability & Business Training Programmes for Micro-business Entrepreneurs",
+                },
+                {
+                  text: "Sustainability & ESG Education - Corporates & Educational Institutions",
+                },
+              ],
+            },
+          },
+          {
+            bulletTitle:
+              "B. EARTHHEIR.COM -  SOCIAL IMPACT MARKETPLACE & PROCUREMENT",
+            content: {
+              sectionTitle: "'Developing a sustainability ecosystem'",
+              sections: [
+                {
+                  title: "",
+                  paragraphs: [
+                    "EARTHHEIR.COM is a Social Impact Marketplace showcasing Social Entrepreneurship (SE), NGOs & Social IMPACT products MADE IN MALAYSIA.",
+                    "EarthHeir.com will bring curated, high quality social impact products from across Malaysia under one roof - creating a powerful fusion of impact enterprises coming together and growing our collective impact in Malaysia. ",
+                    "A central hub for SOCIAL PROCUREMENT to grow the ESG goals and SDG achievements for companies and organisations. ",
+                  ],
+                },
+              ],
+              circles: [
+                {
+                  text: "SOCIAL IMPACT PRODUCTS",
+                },
+                {
+                  text: "MADE IN MALAYSIA",
+                },
+                {
+                  text: "SOCIAL PROCUREMENT",
+                },
+              ],
+            },
+          },
+          {
+            bulletTitle: "C. SUSTAIN.ED MENTORING PROGRAMME",
+            content: {
+              sectionTitle: "Mentoring Programme Intensive",
+              sections: [
+                {
+                  title: "",
+                  paragraphs: [
+                    "Each mentee will gain deep dive exposure into the world of social enterprises and sustainability. They will be mentored by the Earth Heir & Sea Monkey Project teams and experience the inner workings of social-entrepreneurship at Sustain.ed.",
+                  ],
+                },
+              ],
+              // No circles
+            },
+          },
+          {
+            bulletTitle: "D. SUSTAIN.ED KNOWLEDGE TALK SERIES",
+            content: {
+              sectionTitle: "",
+              sections: [
+                {
+                  title: "",
+                  paragraphs: [
+                    "Impact leaders from Malaysia and around the world share their experience and knowledge on various topics surrounding Sustainability, ESG, Social Impact, Entrepreneurship, etc., in an intimate, open and approachable setting. ",
+                  ],
+                  tagline:
+                    "Individual / Panel sessions with open conversations and networking opportunities for participants",
+                },
+              ],
+              // No circles
+            },
+          },
+        ]}
+      />
     </main>
   );
 }
