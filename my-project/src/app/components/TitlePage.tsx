@@ -1,7 +1,7 @@
 // components/TitlePage.tsx
 import React from "react";
 import TitleSection from "./TitleSection";
-import LogoCircles from "./LogoCircles";
+import CircleGroup from "./CircleGroup";
 
 interface TitlePageProps {
   title: string;
@@ -18,22 +18,22 @@ const TitlePage: React.FC<TitlePageProps> = ({
 }) => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 gap-6">
-      {/* Left logo (hidden on mobile) */}
+      {/* Left logo (desktop only) */}
       <div className="hidden md:flex">
-        <LogoCircles logos={[logos[0]]} />
+        <CircleGroup items={[logos[0]]} />
       </div>
 
-      {/* Center text */}
+      {/* Center title section */}
       <TitleSection title={title} creators={creators} motto={motto} />
 
-      {/* Right logo (hidden on mobile) */}
+      {/* Right logo (desktop only) */}
       <div className="hidden md:flex">
-        <LogoCircles logos={[logos[1]]} />
+        <CircleGroup items={[logos[1]]} />
       </div>
 
-      {/* Mobile view: both logos at bottom */}
+      {/* Mobile view: show both logos below */}
       <div className="flex md:hidden mt-8 gap-4">
-        <LogoCircles logos={logos} />
+        <CircleGroup items={logos} direction="row" />
       </div>
     </div>
   );
