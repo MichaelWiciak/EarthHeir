@@ -6,6 +6,7 @@ interface CircleData {
   imageSrc?: string;
   alt?: string;
   text?: string;
+  url?: string;
 }
 
 interface CircleGroupProps {
@@ -27,6 +28,7 @@ const CircleGroup: React.FC<CircleGroupProps> = ({
           imageSrc={item.imageSrc}
           alt={item.alt}
           text={item.text}
+          url={item.url}
         />
       ))}
     </div>

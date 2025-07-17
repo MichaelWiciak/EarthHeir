@@ -3,11 +3,16 @@ import React from "react";
 import TitleSection from "./TitleSection";
 import CircleGroup from "./CircleGroup";
 
+interface Creator {
+  name: string;
+  url?: string;
+}
+
 interface TitlePageProps {
   title: string;
-  creators: string[];
+  creators: Creator[];
   motto: string;
-  logos: { imageSrc: string; alt: string }[];
+  logos: { imageSrc: string; alt: string; url: string }[];
 }
 
 const TitlePage: React.FC<TitlePageProps> = ({

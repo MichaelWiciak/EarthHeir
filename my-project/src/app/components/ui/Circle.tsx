@@ -7,24 +7,25 @@ interface CircleProps {
   imageSrc?: string;
   alt?: string;
   text?: string;
+  url?: string;
 }
 
-const Circle: React.FC<CircleProps> = ({ imageSrc, alt = "", text }) => {
+const Circle: React.FC<CircleProps> = ({ imageSrc, alt = "", text, url }) => {
   const textRef = useRef<HTMLSpanElement>(null);
-  const [diameter, setDiameter] = useState(96); // default: 6rem = 96px
+  const [diameter, setDiameter] = useState(96);
 
   useEffect(() => {
     if (text && textRef.current) {
       const { offsetWidth, offsetHeight } = textRef.current;
-      const padding = 20; // Add some breathing room
+      const padding = 20;
       const maxDim = Math.max(offsetWidth, offsetHeight) + padding;
       setDiameter(maxDim);
     }
   }, [text]);
 
-  return (
+  const content = (
     <div
-      className="rounded-full border-4 border-gray-300 flex items-center justify-center overflow-hidden shadow-md relative text-center box-border bg-white"
+      className="rounded-full border-4 border-gray-300 flex items-center justify-center overflow-hidden shadow-md relative text-center box-border bg-white transition-transform hover:scale-105"
       style={{
         width: diameter,
         height: diameter,
@@ -49,6 +50,19 @@ const Circle: React.FC<CircleProps> = ({ imageSrc, alt = "", text }) => {
         </span>
       )}
     </div>
+  );
+
+  return url ? (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block"
+    >
+      {content}
+    </a>
+  ) : (
+    content
   );
 };
 

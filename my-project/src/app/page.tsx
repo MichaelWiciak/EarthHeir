@@ -136,11 +136,25 @@ export default function Home() {
 
       <TitlePage
         title="sustain;ed"
-        creators={["The Sea Monkey Project", "Earth Heir"]}
+        creators={[
+          {
+            name: "The Sea Monkey Project",
+            url: "https://seamonkeyprojects.com/",
+          },
+          { name: "Earth Heir", url: "https://earthheir.com/" },
+        ]}
         motto="Champtioning Sustainability & Social Impact for Systematic Change"
         logos={[
-          { imageSrc: "/seamonkeylogo.png", alt: "Logo 1" },
-          { imageSrc: "/earthheirlogo.png", alt: "Logo 2" },
+          {
+            imageSrc: "/seamonkeylogo.png",
+            alt: "Logo 1",
+            url: "https://seamonkeyprojects.com/",
+          },
+          {
+            imageSrc: "/earthheirlogo.png",
+            alt: "Logo 2",
+            url: "https://earthheir.com/",
+          },
         ]}
       />
       <InfoSection
