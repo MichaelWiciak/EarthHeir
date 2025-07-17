@@ -10,8 +10,45 @@ import { Toaster } from "react-hot-toast";
 import ContactForm from "@/app/components/ContactForm";
 import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
+import "swiper/css";
+import "swiper/css/navigation";
+import ImageGallery from "./components/ImageGallery";
 
 export default function Home() {
+  const slides = [
+    {
+      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      heading: "A. EDUCATION HUB",
+      paragraph: "Environmental & Sustainability Training",
+    },
+    {
+      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      heading: "A. EDUCATION HUB",
+      paragraph: "Sustainable Entrepreneurship / Micro-Business Training",
+    },
+    {
+      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      heading: "A. EDUCATION HUB",
+      paragraph: "Sustainability & ESG Education + Workshop tasters",
+    },
+    {
+      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      heading: "A. EDUCATION HUB",
+      paragraph: "Upcycling, Cultural Heritage & Artist Workshops",
+    },
+    {
+      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
+      paragraph:
+        "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
+    },
+    {
+      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      heading: "C. KNOWLEDGE  TALK SERIES",
+      paragraph: "Impact Leaders from Malaysia and around the world.",
+    },
+  ];
+
   const MapWithDetailsSection = dynamic(
     () => import("./components/MapWithData"),
     {
@@ -88,12 +125,6 @@ export default function Home() {
       ],
     },
     {
-      title: "C. MENTORING NEXT GENERATION LEADERS",
-      paragraphs: [
-        "Socio-entrepreneurship and sustainability mentorship programme for students",
-      ],
-    },
-    {
       title: "D. KNOWLEDGE  TALK SERIES",
       paragraphs: ["Impact Leaders from Malaysia and around the world"],
     },
@@ -130,10 +161,12 @@ export default function Home() {
           tagline={impactGoalsText.tagline}
         />
       </div>
-      <MultiTextCircleSection
+      {/* <MultiTextCircleSection
         sectionTitle="SUSTAIN.ED : WHAT WE DO"
         sections={whatWeDoText}
-      ></MultiTextCircleSection>
+      ></MultiTextCircleSection> */}
+      <ImageGallery title="Our Journey" slides={slides} />
+
       <ExpandableBulletListSection
         title=""
         description="Click on a principle to learn more."
@@ -242,7 +275,7 @@ export default function Home() {
 
       <ContactForm
         title="Get in Touch"
-        tagline="Alternatively, you can reach us at sustained@gmail.com"
+        tagline="Alternatively, you can reach us at sustainedkl@gmail.com"
         enquiryOptions={[
           "Partnership",
           "Renting the Venue",

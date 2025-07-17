@@ -1,0 +1,57 @@
+// components/ImageGallery.tsx
+"use client";
+
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import Image from "next/image";
+import ImageCaptionOverlay from "./ImageCaption";
+
+interface SlideData {
+  imageUrl: string;
+  heading: string;
+  paragraph: string;
+  alt?: string;
+}
+
+interface ImageGalleryProps {
+  title: string;
+  slides: SlideData[];
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({ title, slides }) => {
+  return (
+    <div className="w-full px-4 py-10 space-y-6">
+      <h2 className="text-3xl font-bold text-center">{title}</h2>
+
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        navigation
+        autoplay={{ delay: 4000 }}
+        loop
+        className="relative w-full max-w-4xl mx-auto"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg">
+              <Image
+                src={slide.imageUrl}
+                alt={slide.alt || `Slide ${index + 1}`}
+                fill
+                className="object-cover"
+              />
+              <ImageCaptionOverlay
+                heading={slide.heading}
+                paragraph={slide.paragraph}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
+
+export default ImageGallery;
