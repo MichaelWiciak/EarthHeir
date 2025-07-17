@@ -6,6 +6,8 @@ import MultiTextCircleSection from "@/app/components/MultiText+Circles";
 import TextSection from "@/app/components/TextSection";
 import ExpandableBulletListSection from "@/app/components/ExpandableBulletPointsSection";
 import Navbar from "@/app/components/navbar";
+import { Toaster } from "react-hot-toast";
+import ContactForm from "@/app/components/ContactForm";
 
 export default function Home() {
   const whoweare = {
@@ -216,6 +218,18 @@ export default function Home() {
           },
         ]}
       />
+
+      <ContactForm
+        title="Get in Touch"
+        tagline="Alternatively, you can reach us at sustained@gmail.com"
+        enquiryOptions={[
+          "Partnership",
+          "Renting the Venue",
+          "Individual Enquiry",
+          "Other",
+        ]}
+      />
+      <Toaster position="top-center" />
     </main>
   );
 }
