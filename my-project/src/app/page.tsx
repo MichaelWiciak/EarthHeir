@@ -29,28 +29,28 @@ export default function Home() {
       paragraph: "Environmental & Sustainability Training",
     },
     {
-      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      imageUrl: "/sustainedPhotos/leaders.jpg",
       heading: "A. EDUCATION HUB",
       paragraph: "Sustainable Entrepreneurship / Micro-Business Training",
     },
     {
-      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      imageUrl: "/sustainedPhotos/trainingProject.jpg",
       heading: "A. EDUCATION HUB",
       paragraph: "Sustainability & ESG Education + Workshop tasters",
     },
     {
-      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      imageUrl: "/sustainedPhotos/ArtisticTraining.jpg",
       heading: "A. EDUCATION HUB",
       paragraph: "Upcycling, Cultural Heritage & Artist Workshops",
     },
     {
-      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      imageUrl: "/sustainedPhotos/earthheirshop.jpg",
       heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
       paragraph:
         "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
     },
     {
-      imageUrl: "/sustainedPhotos/KTRN.jpg",
+      imageUrl: "/sustainedPhotos/csection.jpg",
       heading: "C. KNOWLEDGE  TALK SERIES",
       paragraph: "Impact Leaders from Malaysia and around the world.",
     },
@@ -164,29 +164,36 @@ export default function Home() {
           },
         ]}
       />
-      <InfoSection
-        title={whoweare.title}
-        paragraphs={whoweare.paragraphs}
-        circles={whoweare.circles}
-      />
+
+      <section id="whoweare" className="scroll-mt-10">
+        <InfoSection
+          title={whoweare.title}
+          paragraphs={whoweare.paragraphs}
+          circles={whoweare.circles}
+        />
+      </section>
 
       <MultiTextCircleSection
         sectionTitle="About Us"
         sections={aboutUsText}
         circles={aboutUscircles}
       />
-      <div className="p-6 md:p-12 space-y-8">
-        <TextSection
-          title={impactGoalsText.title}
-          paragraphs={impactGoalsText.paragraphs}
-          tagline={impactGoalsText.tagline}
-        />
-      </div>
+      <section id="impact" className="scroll-mt-10">
+        <div className="p-6 md:p-12 space-y-8">
+          <TextSection
+            title={impactGoalsText.title}
+            paragraphs={impactGoalsText.paragraphs}
+            tagline={impactGoalsText.tagline}
+          />
+        </div>
+      </section>
       {/* <MultiTextCircleSection
         sectionTitle="SUSTAIN.ED : WHAT WE DO"
         sections={whatWeDoText}
       ></MultiTextCircleSection> */}
-      <ImageGallery title="Our Journey" slides={slides} />
+      <section id="whatwedo" className="scroll-mt-10">
+        <ImageGallery title="What We Do" slides={slides} />
+      </section>
 
       <ExpandableBulletListSection
         title=""
@@ -249,22 +256,7 @@ export default function Home() {
             },
           },
           {
-            bulletTitle: "C. SUSTAIN.ED MENTORING PROGRAMME",
-            content: {
-              sectionTitle: "Mentoring Programme Intensive",
-              sections: [
-                {
-                  title: "",
-                  paragraphs: [
-                    "Each mentee will gain deep dive exposure into the world of social enterprises and sustainability. They will be mentored by the Earth Heir & Sea Monkey Project teams and experience the inner workings of social-entrepreneurship at Sustain.ed.",
-                  ],
-                },
-              ],
-              // No circles
-            },
-          },
-          {
-            bulletTitle: "D. SUSTAIN.ED KNOWLEDGE TALK SERIES",
+            bulletTitle: "C. SUSTAIN.ED KNOWLEDGE TALK SERIES",
             content: {
               sectionTitle: "",
               sections: [
@@ -282,29 +274,37 @@ export default function Home() {
           },
         ]}
       />
-      <MapWithDetailsSection
-        coordinates={[3.145523, 101.695973]}
-        title="Our Location"
-        bulletpoints={[
-          "Open 10AM - 6PM, Monday to Friday",
-          "If driving, parking is available at Central Market...",
-          "Accessible via public transport",
-          "Kitchen Facilities available for events",
-          "Toilet facilities available",
-        ]}
-      />
+      <section id="location" className="scroll-mt-10">
+        <MapWithDetailsSection
+          coordinates={[3.145523, 101.695973]}
+          title="Our Location"
+          bulletpoints={[
+            "We're located in a prime spot at Central Market (Pasar Seni), Kuala Lumpur.",
+            "Find us at 30, First Floor, Jalan Hang Kasturi, Kuala Lumpur City Centre, 50050 Kuala Lumpur, Malaysia.",
+            "You’ll find us one floor above Nala Kasturi (clothing store), along the row of shops on Kasturi Walk. Take the lift or stairs to reach us.",
+            "Open Monday to Saturday, 10am to 6pm.",
+            "Easily accessible via public transport.",
+            "If driving, parking is available at Central Market.",
+            "Kitchen facilities available for events.",
+            "Toilet facilities available.",
+            "Call us: +603 2022 3502 / +6013 211 7994",
+          ]}
+        />
+      </section>
 
-      <ContactForm
-        title="Get in Touch"
-        tagline="Alternatively, you can reach us at sustainedkl@gmail.com"
-        enquiryOptions={[
-          "Partnership",
-          "Renting the Venue",
-          "Individual Enquiry",
-          "Other",
-        ]}
-      />
-      <Toaster position="top-center" />
+      <section id="contact" className="scroll-mt-10">
+        <ContactForm
+          title="Get in Touch"
+          tagline="Alternatively, you can reach us at sustainedkl@gmail.com"
+          enquiryOptions={[
+            "Partnership",
+            "Renting the Venue",
+            "Individual Enquiry",
+            "Other",
+          ]}
+        />
+        <Toaster position="top-center" />
+      </section>
       <Footer logoSrc="/sustainedLogo.png" bullets={bullets} />
     </main>
   );

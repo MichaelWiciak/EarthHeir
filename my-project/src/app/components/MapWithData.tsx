@@ -39,7 +39,10 @@ const MapWithDetailsSection: React.FC<MapWithDetailsSectionProps> = ({
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <Marker position={coordinates}>
-            <Popup>We are here!</Popup>
+            <Popup>
+              30, First Floor, Jalan Hang Kasturi, Kuala Lumpur City Centre,
+              50050 Kuala Lumpur, Malaysia.
+            </Popup>
           </Marker>
         </MapContainer>
       </div>

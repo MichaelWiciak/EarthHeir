@@ -7,16 +7,17 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
+    { name: "Identity", href: "#whoweare" },
+    { name: "Our Impact", href: "#impact" },
+    { name: "Actions", href: "#whatwedo" },
+    { name: "Location", href: "#location" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="text-xl font-bold">MySite</div>
+        <div className="text-xl font-bold">Sustain;ed</div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
