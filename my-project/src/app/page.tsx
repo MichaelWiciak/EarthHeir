@@ -8,8 +8,18 @@ import ExpandableBulletListSection from "@/app/components/ExpandableBulletPoints
 import Navbar from "@/app/components/navbar";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "@/app/components/ContactForm";
+import "leaflet/dist/leaflet.css";
+import dynamic from "next/dynamic";
 
 export default function Home() {
+  const MapWithDetailsSection = dynamic(
+    () => import("./components/MapWithData"),
+    {
+      ssr: false,
+      loading: () => <p>Loading map...</p>,
+    }
+  );
+
   const whoweare = {
     title: "WHO ARE WE?",
     paragraphs: [
@@ -216,6 +226,17 @@ export default function Home() {
               // No circles
             },
           },
+        ]}
+      />
+      <MapWithDetailsSection
+        coordinates={[3.145523, 101.695973]}
+        title="Our Location"
+        bulletpoints={[
+          "Open 10AM - 6PM, Monday to Friday",
+          "If driving, parking is available at Central Market...",
+          "Accessible via public transport",
+          "Kitchen Facilities available for events",
+          "Toilet facilities available",
         ]}
       />
 

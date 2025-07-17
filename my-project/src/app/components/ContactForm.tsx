@@ -28,6 +28,8 @@ const ContactForm: React.FC<ContactFormProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // email validation
+
     if (!name || !email || !message || selectedOptions.length === 0) {
       toast.error(
         "Please fill in all fields and select at least one enquiry type."
@@ -57,7 +59,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
           className="w-full border rounded-lg p-3"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          required
         />
 
         {/* Email */}
@@ -67,7 +68,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
           className="w-full border rounded-lg p-3"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
         />
 
         {/* Enquiry Options */}
@@ -94,7 +94,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
           className="w-full border rounded-lg p-3 h-32 resize-none"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          required
         />
 
         {/* Submit */}
