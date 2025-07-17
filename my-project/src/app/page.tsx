@@ -13,8 +13,15 @@ import dynamic from "next/dynamic";
 import "swiper/css";
 import "swiper/css/navigation";
 import ImageGallery from "./components/ImageGallery";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
+  const bullets = [
+    "Copyright © 2025 Sustain.ed",
+    "Deployed on Vercel",
+    "© 2025 Michael Wiciak & TimetableX in partnership with Sustain.ed",
+  ];
+
   const slides = [
     {
       imageUrl: "/sustainedPhotos/KTRN.jpg",
@@ -298,6 +305,7 @@ export default function Home() {
         ]}
       />
       <Toaster position="top-center" />
+      <Footer logoSrc="/sustainedLogo.png" bullets={bullets} />
     </main>
   );
 }
