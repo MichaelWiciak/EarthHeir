@@ -19,7 +19,13 @@ const Footer: React.FC<FooterProps> = ({
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <Image src={logoSrc} alt={logoAlt} width={250} height={250} />
+          <Image
+            src={logoSrc}
+            alt={logoAlt}
+            width={250}
+            height={250}
+            style={{ height: "auto", width: "auto" }}
+          />
         </div>
 
         {/* Bullet points */}

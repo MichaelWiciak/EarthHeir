@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";
+import phoneCodes from "../data/phoneCodes.json";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface ContactFormProps {
   title: string;
@@ -64,6 +66,40 @@ const ContactForm: React.FC<ContactFormProps> = ({
       return;
     }
 
+    // Venue-specific validations
+    if (selectedOptions.includes("Renting the Venue")) {
+      if (!venuePeople || !venuePurpose || !venueDate || !venueTime) {
+        toast.error("Please complete all venue rental details.");
+        return;
+      }
+
+      // Check that venuePeople is a valid number > 0
+      const peopleNum = parseInt(venuePeople);
+      if (isNaN(peopleNum) || peopleNum <= 0) {
+        toast.error("Please enter a valid number of people.");
+        return;
+      }
+
+      // Validate time format — should match HH:MM in 24hr format
+      const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
+      if (!timeRegex.test(venueTime)) {
+        toast.error(
+          "Please enter a valid time in 24-hour format (e.g., 13:30)."
+        );
+        return;
+      }
+
+      // Validate date is not in the past
+      const selectedDate = new Date(venueDate);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Reset time to start of today
+
+      if (selectedDate < today) {
+        toast.error("Please select a date that is today or in the future.");
+        return;
+      }
+    }
+
     setLoading(true);
 
     const templateParams = {
@@ -71,7 +107,24 @@ const ContactForm: React.FC<ContactFormProps> = ({
       from_email: email,
       message,
       enquiry_type: selectedOptions.join(", "),
+      company,
+      phone: `${phoneCode} ${phoneNumber}`,
+      venue_people: selectedOptions.includes("Renting the Venue")
+        ? venuePeople
+        : "N/A",
+      venue_purpose: selectedOptions.includes("Renting the Venue")
+        ? venuePurpose
+        : "N/A",
+      venue_date: selectedOptions.includes("Renting the Venue")
+        ? venueDate
+        : "N/A",
+      venue_time: selectedOptions.includes("Renting the Venue")
+        ? venueTime
+        : "N/A",
     };
+
+    // before sending, log all templateParams to console
+    console.log("Sending email with params:", templateParams);
 
     try {
       await emailjs.send(
@@ -129,11 +182,11 @@ const ContactForm: React.FC<ContactFormProps> = ({
             value={phoneCode}
             onChange={(e) => setPhoneCode(e.target.value)}
           >
-            <option value="+60">+60 (MY)</option>
-            <option value="+65">+65 (SG)</option>
-            <option value="+44">+44 (UK)</option>
-            <option value="+1">+1 (US)</option>
-            {/* Add more if needed */}
+            {Object.entries(phoneCodes).map(([country, code]) => (
+              <option key={country} value={code}>
+                {`${code} (${country})`}
+              </option>
+            ))}
           </select>
 
           <input
@@ -169,45 +222,79 @@ const ContactForm: React.FC<ContactFormProps> = ({
           onChange={(e) => setMessage(e.target.value)}
         />
 
-        {selectedOptions.includes("Renting the Venue") && (
-          <div className="space-y-4 border rounded-lg p-4 bg-gray-50">
-            <h3 className="font-semibold text-lg">Venue Rental Details</h3>
-
-            <input
-              type="number"
-              placeholder="How many people will attend?"
-              className="w-full border rounded-lg p-3"
-              value={venuePeople}
-              onChange={(e) => setVenuePeople(e.target.value)}
-            />
-
-            <textarea
-              placeholder="What do you want to do in the venue?"
-              className="w-full border rounded-lg p-3 h-24 resize-none"
-              value={venuePurpose}
-              onChange={(e) => setVenuePurpose(e.target.value)}
-            />
-
-            <input
-              type="date"
-              className="w-full border rounded-lg p-3"
-              value={venueDate}
-              onChange={(e) => setVenueDate(e.target.value)}
-            />
-
-            <select
-              className="w-full border rounded-lg p-3"
-              value={venueTime}
-              onChange={(e) => setVenueTime(e.target.value)}
+        <AnimatePresence>
+          {selectedOptions.includes("Renting the Venue") && (
+            <motion.div
+              key="venue-details"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-4 border rounded-lg p-4 bg-gray-50"
             >
-              <option value="">Select a time</option>
-              <option value="Morning">Morning (9am–12pm)</option>
-              <option value="Afternoon">Afternoon (12pm–4pm)</option>
-              <option value="Evening">Evening (4pm–8pm)</option>
-              <option value="Full Day">Full Day</option>
-            </select>
-          </div>
-        )}
+              <h3 className="font-semibold text-lg">Venue Rental Details</h3>
+
+              <input
+                type="number"
+                placeholder="How many people will attend?"
+                className="w-full border rounded-lg p-3"
+                value={venuePeople}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/-/g, "");
+                  // Only allow positive numbers (including empty string) and max 5 digits
+                  if (
+                    value === "" ||
+                    (/^\d+$/.test(value) &&
+                      Number(value) > 0 &&
+                      value.length <= 5)
+                  ) {
+                    setVenuePeople(value);
+                  }
+                }}
+                min={1}
+                max={99999}
+                inputMode="numeric"
+                pattern="[1-9][0-9]{0,4}"
+                onKeyDown={(e) => {
+                  if (
+                    e.key === "-" ||
+                    (venuePeople.length >= 5 &&
+                      ![
+                        "Backspace",
+                        "Delete",
+                        "ArrowLeft",
+                        "ArrowRight",
+                        "Tab",
+                      ].includes(e.key))
+                  ) {
+                    e.preventDefault();
+                  }
+                }}
+              />
+
+              <textarea
+                placeholder="What do you want to do in the venue?"
+                className="w-full border rounded-lg p-3 h-24 resize-none"
+                value={venuePurpose}
+                onChange={(e) => setVenuePurpose(e.target.value)}
+              />
+
+              <input
+                type="date"
+                className="w-full border rounded-lg p-3"
+                value={venueDate}
+                onChange={(e) => setVenueDate(e.target.value)}
+              />
+
+              <input
+                type="time"
+                value={venueTime}
+                onChange={(e) => setVenueTime(e.target.value)}
+                className="w-full border rounded-lg p-3"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <button
           type="submit"
