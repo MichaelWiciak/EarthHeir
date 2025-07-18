@@ -74,31 +74,33 @@ export default function Home() {
         <ImageGallery title="What We Do" slides={slides} />
       </section>
       <InstagramFeed />
-      <StampRally
-        textSection={{
-          title: "Downtown KL Stamp Rally",
-          paragraphs: [
-            "Explore downtown Kuala Lumpur through a fun, interactive stamp rally! Collect stamps as you visit vibrant local spots and discover hidden gems along the way.",
-            "Join the rally, complete the journey, and receive a beautifully designed free postcard as a token of your adventure.",
-          ],
-          tagline: "Discover, stamp, and collect your way through KL!",
-        }}
-        imageWithTitle={{
-          title: "Your Stamp Card",
-          imageSrc: "/StampRally.jpeg",
-          imageAlt: "Stamp Card",
-          imageWidth: 300,
-          imageHeight: 500,
-          rotate: -5,
-        }}
-        logos={[
-          { src: "/kreatifkl.jpg", alt: "" },
-          { src: "/ThinkCity.png", alt: "" },
-          { src: "/govMaybe.png", alt: "" },
-          { src: "/puckscoffee.jpg", alt: "" },
-          { src: "/urmu-logo.png", alt: "" },
-        ]}
-      />
+      <section id="stampRally" className="scroll-mt-10">
+        <StampRally
+          textSection={{
+            title: "Downtown KL Stamp Rally",
+            paragraphs: [
+              "Explore downtown Kuala Lumpur through a fun, interactive stamp rally! Collect stamps as you visit vibrant local spots and discover hidden gems along the way.",
+              "Join the rally, complete the journey, and receive a beautifully designed free postcard as a token of your adventure.",
+            ],
+            tagline: "Discover, stamp, and collect your way through KL!",
+          }}
+          imageWithTitle={{
+            title: "Your Stamp Card",
+            imageSrc: "/StampRally.jpeg",
+            imageAlt: "Stamp Card",
+            imageWidth: 300,
+            imageHeight: 500,
+            rotate: -5,
+          }}
+          logos={[
+            { src: "/kreatifkl.jpg", alt: "" },
+            { src: "/ThinkCity.png", alt: "" },
+            { src: "/govMaybe.png", alt: "" },
+            { src: "/puckscoffee.jpg", alt: "" },
+            { src: "/urmu-logo.png", alt: "" },
+          ]}
+        />
+      </section>
       <section id="location" className="scroll-mt-10">
         <MapWithDetailsSection
           coordinates={locationSection.coordinates}
