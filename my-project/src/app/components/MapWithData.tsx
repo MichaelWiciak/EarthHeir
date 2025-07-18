@@ -51,9 +51,23 @@ const MapWithDetailsSection: React.FC<MapWithDetailsSectionProps> = ({
       <div className="md:w-1/2 space-y-4">
         <h2 className="text-2xl font-bold">{title}</h2>
         <ul className="list-disc list-inside space-y-1">
-          {bulletpoints.map((point, idx) => (
-            <li key={idx}>{point}</li>
-          ))}
+          {bulletpoints.map((point, idx) => {
+            if (point === "Watch our directions video") {
+              return (
+                <li key={idx}>
+                  <a
+                    href="https://www.instagram.com/reel/CwRhxBKJ55z/?igsh=MWsxbXhwMGg2cXprbg=="
+                    className="text-blue-600 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Watch our directions video
+                  </a>
+                </li>
+              );
+            }
+            return <li key={idx}>{point}</li>;
+          })}
         </ul>
       </div>
     </div>
