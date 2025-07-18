@@ -15,6 +15,8 @@ import "swiper/css/navigation";
 import ImageGallery from "./components/ImageGallery";
 import Footer from "@/app/components/Footer";
 import MapWithDetailsSection from "@/app/components/MapWithData";
+import InstagramFeed from "@/app/components/Instagram";
+import StampRally from "@/app/components/StampRally";
 
 import {
   whoweare,
@@ -40,14 +42,12 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-
       <TitlePage
         title={titlePageData.title}
         creators={titlePageData.creators}
         motto={titlePageData.motto}
         logos={titlePageData.logos}
       />
-
       <section id="whoweare" className="scroll-mt-10">
         <InfoSection
           title={whoweare.title}
@@ -55,13 +55,11 @@ export default function Home() {
           circles={whoweare.circles}
         />
       </section>
-
       <MultiTextCircleSection
         sectionTitle={aboutUsSection.sectionTitle}
         sections={aboutUsSection.sections}
         circles={aboutUsSection.circles}
       />
-
       <section id="impact" className="scroll-mt-10">
         <div className="p-6 md:p-12 space-y-8">
           <TextSection
@@ -71,13 +69,36 @@ export default function Home() {
           />
         </div>
       </section>
-
       <ExpandableBulletListSection {...sustainabilityPrinciples} />
-
       <section id="whatwedo" className="scroll-mt-10">
         <ImageGallery title="What We Do" slides={slides} />
       </section>
-
+      <InstagramFeed />
+      <StampRally
+        textSection={{
+          title: "Downtown KL Stamp Rally",
+          paragraphs: [
+            "Explore downtown Kuala Lumpur through a fun, interactive stamp rally! Collect stamps as you visit vibrant local spots and discover hidden gems along the way.",
+            "Join the rally, complete the journey, and receive a beautifully designed free postcard as a token of your adventure.",
+          ],
+          tagline: "Discover, stamp, and collect your way through KL!",
+        }}
+        imageWithTitle={{
+          title: "Your Stamp Card",
+          imageSrc: "/StampRally.jpeg",
+          imageAlt: "Stamp Card",
+          imageWidth: 300,
+          imageHeight: 500,
+          rotate: -5,
+        }}
+        logos={[
+          { src: "/kreatifkl.jpg", alt: "" },
+          { src: "/ThinkCity.png", alt: "" },
+          { src: "/govMaybe.png", alt: "" },
+          { src: "/puckscoffee.jpg", alt: "" },
+          { src: "/urmu-logo.png", alt: "" },
+        ]}
+      />
       <section id="location" className="scroll-mt-10">
         <MapWithDetailsSection
           coordinates={locationSection.coordinates}
@@ -85,7 +106,6 @@ export default function Home() {
           bulletpoints={locationSection.bulletpoints}
         />
       </section>
-
       <section id="contact" className="scroll-mt-10">
         <ContactForm
           title={contactSection.title}

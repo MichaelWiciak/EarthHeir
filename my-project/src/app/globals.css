@@ -4,6 +4,19 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes logoScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logo-scroll {
+  animation: logoScroll 20s linear infinite;
+}
+
 /* make background yellow */
 
 /* :root {
