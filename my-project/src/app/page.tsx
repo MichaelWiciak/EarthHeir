@@ -4,7 +4,6 @@ import TitlePage from "@/app/components/TitlePage";
 import InfoSection from "@/app/components/Text+Circles";
 import MultiTextCircleSection from "@/app/components/MultiText+Circles";
 import TextSection from "@/app/components/TextSection";
-import ExpandableBulletListSection from "@/app/components/ExpandableBulletPointsSection";
 import Navbar from "@/app/components/navbar";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "@/app/components/ContactForm";
@@ -12,24 +11,23 @@ import "leaflet/dist/leaflet.css";
 import dynamic from "next/dynamic";
 import "swiper/css";
 import "swiper/css/navigation";
-import ImageGallery from "./components/ImageGallery";
 import Footer from "@/app/components/Footer";
 import InstagramFeed from "@/app/components/Instagram";
 import StampRally from "@/app/components/StampRally";
 import CompositeShowcase from "./components/Clients";
 import ImageParagraphGroup from "./components/ImageParagraphGroup";
+import ContentBlockGroupSection from "./components/WhatWeDo";
 
 import {
   whoweare,
   impactGoalsText,
-  slides,
   titlePageData,
   aboutUsSection,
-  sustainabilityPrinciples,
   locationSection,
   contactSection,
   footer,
   venueData,
+  whatWeDoSection,
 } from "@/app/data/homePageData";
 
 export default function Home() {
@@ -71,22 +69,28 @@ export default function Home() {
           />
         </div>
       </section>
-      <ExpandableBulletListSection {...sustainabilityPrinciples} />
+      {/* <ExpandableBulletListSection {...sustainabilityPrinciples} /> */}
       <section id="whatwedo" className="scroll-mt-10">
-        <ImageGallery title="What We Do" slides={slides} />
+        <div className="p-6 md:p-12 space-y-8">
+          <ContentBlockGroupSection
+            textSection={whatWeDoSection.textSection}
+            items={whatWeDoSection.items}
+          />
+        </div>
       </section>
-
-      <ImageParagraphGroup
-        title="Our Venue & Facilities"
-        sections={venueData}
-        taglineItems={[
-          "Office Cleaning: RM100 per event",
-          "After Office Hours, Weekends & Public Holidays: RM50 per hour per staff",
-          "Full day covers 8 hours usage, Half day covers 4 hours usage",
-          "Space Rental Rate Card is available upon request",
-          "Term & Conditions apply",
-        ]}
-      />
+      <div className="p-6 md:p-12 space-y-8">
+        <ImageParagraphGroup
+          title="Our Venue & Facilities"
+          sections={venueData}
+          taglineItems={[
+            "Office Cleaning: RM100 per event",
+            "After Office Hours, Weekends & Public Holidays: RM50 per hour per staff",
+            "Full day covers 8 hours usage, Half day covers 4 hours usage",
+            "Space Rental Rate Card is available upon request",
+            "Term & Conditions apply",
+          ]}
+        />
+      </div>
 
       <CompositeShowcase
         textSection={{
@@ -94,8 +98,7 @@ export default function Home() {
           paragraphs: [
             "We're proud to collaborate with many amazing partners. Some of our recent clients include:",
           ],
-          tagline:
-            "Office Cleaning: RM100 per event. After Office Hours, Weekends & Public Holidays: RM50 per hour per staff",
+          tagline: "Building a sustainable future together!",
         }}
         logos={[
           { src: "/cilisos_logo_retina.png", alt: "Logo 1" },
@@ -133,32 +136,35 @@ export default function Home() {
       />
 
       <InstagramFeed />
+
       <section id="stampRally" className="scroll-mt-10">
-        <StampRally
-          textSection={{
-            title: "Downtown KL Stamp Rally",
-            paragraphs: [
-              "Explore downtown Kuala Lumpur through a fun, interactive stamp rally! Collect stamps as you visit vibrant local spots and discover hidden gems along the way.",
-              "Join the rally, complete the journey, and receive a beautifully designed free postcard as a token of your adventure.",
-            ],
-            tagline: "Discover, stamp, and collect your way through KL!",
-          }}
-          imageWithTitle={{
-            title: "Your Stamp Card",
-            imageSrc: "/StampRally.jpeg",
-            imageAlt: "Stamp Card",
-            imageWidth: 300,
-            imageHeight: 500,
-            rotate: -5,
-          }}
-          logos={[
-            { src: "/kreatifkl.jpg", alt: "" },
-            { src: "/ThinkCity.png", alt: "" },
-            { src: "/govMaybe.png", alt: "" },
-            { src: "/puckscoffee.jpg", alt: "" },
-            { src: "/urmu-logo.png", alt: "" },
-          ]}
-        />
+        <div className="p-6 md:p-12 space-y-8">
+          <StampRally
+            textSection={{
+              title: "Downtown KL Stamp Rally",
+              paragraphs: [
+                "Explore downtown Kuala Lumpur through a fun, interactive stamp rally! Collect stamps as you visit vibrant local spots and discover hidden gems along the way.",
+                "Join the rally, complete the journey, and receive a beautifully designed free postcard as a token of your adventure.",
+              ],
+              tagline: "Discover, stamp, and collect your way through KL!",
+            }}
+            imageWithTitle={{
+              title: "Your Stamp Card",
+              imageSrc: "/StampRally.jpeg",
+              imageAlt: "Stamp Card",
+              imageWidth: 300,
+              imageHeight: 500,
+              rotate: -5,
+            }}
+            logos={[
+              { src: "/kreatifkl.jpg", alt: "" },
+              { src: "/ThinkCity.png", alt: "" },
+              { src: "/govMaybe.png", alt: "" },
+              { src: "/puckscoffee.jpg", alt: "" },
+              { src: "/urmu-logo.png", alt: "" },
+            ]}
+          />
+        </div>
       </section>
       <section id="location" className="scroll-mt-10">
         <MapWithDetailsSection

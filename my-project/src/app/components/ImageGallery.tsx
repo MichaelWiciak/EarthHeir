@@ -24,7 +24,8 @@ interface ImageGalleryProps {
 const ImageGallery: React.FC<ImageGalleryProps> = ({ title, slides }) => {
   return (
     <div className="w-full px-4 py-10 space-y-6">
-      <h2 className="text-3xl font-bold text-center">{title}</h2>
+      {/* if title is "", then dont print it */}
+      {title && <h2 className="text-3xl font-bold text-center">{title}</h2>}
 
       <Swiper
         modules={[Navigation, Autoplay]}

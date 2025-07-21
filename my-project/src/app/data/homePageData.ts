@@ -7,40 +7,6 @@ export const footer = {
   ],
 };
 
-export const slides = [
-  {
-    imageUrl: "/GalleriesPhotos/KTRN.jpg",
-    heading: "A. EDUCATION HUB",
-    paragraph: "Environmental & Sustainability Training",
-  },
-  {
-    imageUrl: "/GalleriesPhotos/leaders.jpg",
-    heading: "A. EDUCATION HUB",
-    paragraph: "Sustainable Entrepreneurship / Micro-Business Training",
-  },
-  {
-    imageUrl: "/GalleriesPhotos/trainingProject.jpg",
-    heading: "A. EDUCATION HUB",
-    paragraph: "Sustainability & ESG Education + Workshop tasters",
-  },
-  {
-    imageUrl: "/GalleriesPhotos/ArtisticTraining.jpg",
-    heading: "A. EDUCATION HUB",
-    paragraph: "Upcycling, Cultural Heritage & Artist Workshops",
-  },
-  {
-    imageUrl: "/GalleriesPhotos/earthheirshop.jpg",
-    heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
-    paragraph:
-      "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
-  },
-  {
-    imageUrl: "/GalleriesPhotos/csection.jpg",
-    heading: "C. KNOWLEDGE  TALK SERIES",
-    paragraph: "Impact Leaders from Malaysia and around the world.",
-  },
-];
-
 export const whoweare = {
   title: "WHO ARE WE?",
   paragraphs: [
@@ -125,84 +91,6 @@ export const titlePageData = {
   ],
 };
 
-export const sustainabilityPrinciples = {
-  title: "",
-  description: "Click on a principle to learn more.",
-  items: [
-    {
-      bulletTitle: "A. SUSTAIN.ED SUSTAINABILITY & SOCIAL IMPACT EDUCATION HUB",
-      content: {
-        sectionTitle: "",
-        sections: [
-          {
-            title: "",
-            paragraphs: [
-              "Addressing an Urgent Global Challenge: climate change, resource depletion, and social inequality are among the most critical challenges of our time.",
-              "Growing Demand for Sustainability Education: The global shift towards sustainability has created a significant demand for education and awareness.",
-            ],
-            tagline: "Growing the sustainability ECOSYSTEM in Malaysia",
-          },
-        ],
-        circles: [
-          {
-            text: "Sustainable Living & Plastic Waste Management Training",
-          },
-          {
-            text: "Sustainability & Business Training Programmes for Micro-business Entrepreneurs",
-          },
-          {
-            text: "Sustainability & ESG Education - Corporates & Educational Institutions",
-          },
-        ],
-      },
-    },
-    {
-      bulletTitle:
-        "B. EARTHHEIR.COM -  SOCIAL IMPACT MARKETPLACE & PROCUREMENT",
-      content: {
-        sectionTitle: "‘Developing a sustainability ecosystem’",
-        sections: [
-          {
-            title: "",
-            paragraphs: [
-              "EARTHHEIR.COM is a Social Impact Marketplace showcasing Social Entrepreneurship (SE), NGOs & Social IMPACT products MADE IN MALAYSIA.",
-              "EarthHeir.com will bring curated, high quality social impact products from across Malaysia under one roof - creating a powerful fusion of impact enterprises coming together and growing our collective impact in Malaysia.",
-              "A central hub for SOCIAL PROCUREMENT to grow the ESG goals and SDG achievements for companies and organisations.",
-            ],
-          },
-        ],
-        circles: [
-          {
-            text: "SOCIAL IMPACT PRODUCTS",
-          },
-          {
-            text: "MADE IN MALAYSIA",
-          },
-          {
-            text: "SOCIAL PROCUREMENT",
-          },
-        ],
-      },
-    },
-    {
-      bulletTitle: "C. SUSTAIN.ED KNOWLEDGE TALK SERIES",
-      content: {
-        sectionTitle: "",
-        sections: [
-          {
-            title: "",
-            paragraphs: [
-              "Impact leaders from Malaysia and around the world share their experience and knowledge on various topics surrounding Sustainability, ESG, Social Impact, Entrepreneurship, etc., in an intimate, open and approachable setting.",
-            ],
-            tagline:
-              "Individual / Panel sessions with open conversations and networking opportunities for participants",
-          },
-        ],
-      },
-    },
-  ],
-};
-
 export const locationSection = {
   coordinates: [3.145523, 101.695973] as [number, number],
   title: "Our Location",
@@ -271,3 +159,148 @@ export const venueData = [
     imageOn: "left",
   },
 ] as const;
+
+export const whatWeDoSection = {
+  textSection: {
+    title: "What We Do",
+    paragraphs: [
+      "Our mission is to grow a thriving sustainability ecosystem in Malaysia. We work at the intersection of education, enterprise, and impact to build a better future.",
+      "Explore our work through the hubs below — each designed to deliver long-term value through education, economic empowerment, and knowledge sharing.",
+    ],
+    tagline: "Click on a principle to learn more.",
+  },
+  items: [
+    {
+      gallery: {
+        slides: [
+          {
+            imageUrl: "/GalleriesPhotos/KTRN.jpg",
+            heading: "A. EDUCATION HUB",
+            paragraph: "Environmental & Sustainability Training",
+          },
+          {
+            imageUrl: "/GalleriesPhotos/leaders.jpg",
+            heading: "A. EDUCATION HUB",
+            paragraph: "Sustainable Entrepreneurship / Micro-Business Training",
+          },
+          {
+            imageUrl: "/GalleriesPhotos/trainingProject.jpg",
+            heading: "A. EDUCATION HUB",
+            paragraph: "Sustainability & ESG Education + Workshop tasters",
+          },
+          {
+            imageUrl: "/GalleriesPhotos/ArtisticTraining.jpg",
+            heading: "A. EDUCATION HUB",
+            paragraph: "Upcycling, Cultural Heritage & Artist Workshops",
+          },
+        ],
+      },
+      expandableItem: {
+        bulletTitle:
+          "A. SUSTAIN.ED SUSTAINABILITY & SOCIAL IMPACT EDUCATION HUB",
+        content: {
+          sectionTitle: "",
+          sections: [
+            {
+              title: "",
+              paragraphs: [
+                "Addressing an Urgent Global Challenge: climate change, resource depletion, and social inequality are among the most critical challenges of our time.",
+                "Growing Demand for Sustainability Education: The global shift towards sustainability has created a significant demand for education and awareness.",
+              ],
+              tagline: "Growing the sustainability ECOSYSTEM in Malaysia",
+            },
+          ],
+          circles: [
+            {
+              text: "Sustainable Living & Plastic Waste Management Training",
+            },
+            {
+              text: "Sustainability & Business Training Programmes for Micro-business Entrepreneurs",
+            },
+            {
+              text: "Sustainability & ESG Education - Corporates & Educational Institutions",
+            },
+          ],
+        },
+      },
+    },
+    {
+      gallery: {
+        slides: [
+          {
+            imageUrl: "/GalleriesPhotos/earthheirshop.jpg",
+            heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
+            paragraph:
+              "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
+          },
+          {
+            imageUrl: "/GalleriesPhotos/earthheirshop.jpg",
+            heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
+            paragraph:
+              "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
+          },
+        ],
+      },
+      expandableItem: {
+        bulletTitle:
+          "B. EARTHHEIR.COM - SOCIAL IMPACT MARKETPLACE & PROCUREMENT",
+        content: {
+          sectionTitle: "‘Developing a sustainability ecosystem’",
+          sections: [
+            {
+              title: "",
+              paragraphs: [
+                "EARTHHEIR.COM is a Social Impact Marketplace showcasing Social Entrepreneurship (SE), NGOs & Social IMPACT products MADE IN MALAYSIA.",
+                "EarthHeir.com will bring curated, high quality social impact products from across Malaysia under one roof - creating a powerful fusion of impact enterprises coming together and growing our collective impact in Malaysia.",
+                "A central hub for SOCIAL PROCUREMENT to grow the ESG goals and SDG achievements for companies and organisations.",
+              ],
+            },
+          ],
+          circles: [
+            {
+              text: "SOCIAL IMPACT PRODUCTS",
+            },
+            {
+              text: "MADE IN MALAYSIA",
+            },
+            {
+              text: "SOCIAL PROCUREMENT",
+            },
+          ],
+        },
+      },
+    },
+    {
+      gallery: {
+        slides: [
+          {
+            imageUrl: "/GalleriesPhotos/csection.jpg",
+            heading: "C. KNOWLEDGE TALK SERIES",
+            paragraph: "Impact Leaders from Malaysia and around the world.",
+          },
+          {
+            imageUrl: "/GalleriesPhotos/csection.jpg",
+            heading: "C. KNOWLEDGE TALK SERIES",
+            paragraph: "Impact Leaders from Malaysia and around the world.",
+          },
+        ],
+      },
+      expandableItem: {
+        bulletTitle: "C. SUSTAIN.ED KNOWLEDGE TALK SERIES",
+        content: {
+          sectionTitle: "",
+          sections: [
+            {
+              title: "",
+              paragraphs: [
+                "Impact leaders from Malaysia and around the world share their experience and knowledge on various topics surrounding Sustainability, ESG, Social Impact, Entrepreneurship, etc., in an intimate, open and approachable setting.",
+              ],
+              tagline:
+                "Individual / Panel sessions with open conversations and networking opportunities for participants",
+            },
+          ],
+        },
+      },
+    },
+  ],
+};

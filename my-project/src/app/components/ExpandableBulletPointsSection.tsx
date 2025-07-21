@@ -43,10 +43,15 @@ const ExpandableTextListSection: React.FC<ExpandableTextListSectionProps> = ({
 
   return (
     <div className="p-6 md:p-12 space-y-8">
-      <h2 className="text-4xl font-bold text-center md:text-left">{title}</h2>
-      <p className="text-gray-700 max-w-3xl text-center md:text-left mx-auto md:mx-0">
-        {description}
-      </p>
+      {/* if title "", then dont do it */}
+      {title && (
+        <div className="text-center md:text-left">
+          <h2 className="text-4xl font-bold">{title}</h2>
+          <p className="text-gray-700 max-w-3xl mx-auto md:mx-0">
+            {description}
+          </p>
+        </div>
+      )}
 
       <ul className="space-y-4">
         {items.map((item, index) => (
