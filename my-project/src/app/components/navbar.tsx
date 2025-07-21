@@ -4,12 +4,20 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      history.replaceState(null, "", " "); // clear the hash
+    }
+  };
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
     { name: "Identity", href: "#whoweare" },
     { name: "Our Impact", href: "#impact" },
     { name: "Actions", href: "#whatwedo" },
+    { name: "Venues", href: "#venues" },
     { name: "Stamp Rally", href: "#stampRally" },
     { name: "Location", href: "#location" },
     { name: "Contact", href: "#contact" },
@@ -25,13 +33,16 @@ const Navbar: React.FC = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
           {links.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
+              onClick={() => {
+                scrollToSection(link.href.slice(1));
+                setMenuOpen(false);
+              }}
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
               {link.name}
-            </a>
+            </button>
           ))}
         </div>
 

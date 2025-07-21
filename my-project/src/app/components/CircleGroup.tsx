@@ -1,17 +1,11 @@
 // components/CircleGroup.tsx
 import React from "react";
 import Circle from "./ui/Circle";
-
-interface CircleData {
-  imageSrc?: string;
-  alt?: string;
-  text?: string;
-  url?: string;
-}
+import { CircleItem } from "../types/ui";
 
 interface CircleGroupProps {
-  items: CircleData[];
-  direction?: "row" | "col"; // Optional layout control
+  items: CircleItem[];
+  direction?: "row" | "col";
 }
 
 const CircleGroup: React.FC<CircleGroupProps> = ({

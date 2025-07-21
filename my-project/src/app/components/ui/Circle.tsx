@@ -2,15 +2,9 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { CircleItem } from "../../types/ui";
 
-interface CircleProps {
-  imageSrc?: string;
-  alt?: string;
-  text?: string;
-  url?: string;
-}
-
-const Circle: React.FC<CircleProps> = ({ imageSrc, alt = "", text, url }) => {
+const Circle: React.FC<CircleItem> = ({ imageSrc, alt = "", text, url }) => {
   const textRef = useRef<HTMLSpanElement>(null);
   const [diameter, setDiameter] = useState(96);
 

@@ -92,7 +92,7 @@ export const titlePageData = {
 };
 
 export const locationSection = {
-  coordinates: [3.145523, 101.695973] as [number, number],
+  coordinates: [3.1454487, 101.6958594] as [number, number],
   title: "Our Location",
   bulletpoints: [
     "We're located in a prime spot along Kasturi Walk (look out for the big WAU), on the First Floor of Central Market (Pasar Seni), Kuala Lumpur.",

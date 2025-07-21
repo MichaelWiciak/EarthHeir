@@ -82,13 +82,15 @@ export default function Home() {
           />
         </div>
       </section>
-      <div className="p-6 md:p-12 space-y-8">
-        <ImageParagraphGroup
-          title={venueSectionData.title}
-          sections={venueData}
-          taglineItems={venueSectionData.taglineItems}
-        />
-      </div>
+      <section id="venues" className="scroll-mt-10">
+        <div className="p-6 md:p-12 space-y-8">
+          <ImageParagraphGroup
+            title={venueSectionData.title}
+            sections={venueData}
+            taglineItems={venueSectionData.taglineItems}
+          />
+        </div>
+      </section>
 
       <CompositeShowcase {...clientsAndPartnersShowcase} />
 

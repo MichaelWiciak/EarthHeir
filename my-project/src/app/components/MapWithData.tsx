@@ -1,6 +1,7 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import OpenFreeMap from "./OpenFreeMap";
 
 // Leaflet marker fix for default icon
 delete (L.Icon.Default.prototype as { _getIconUrl?: unknown })._getIconUrl;
@@ -27,24 +28,11 @@ const MapWithDetailsSection: React.FC<MapWithDetailsSectionProps> = ({
   return (
     <div className="flex flex-col md:flex-row gap-6 p-6 md:p-12 items-stretch">
       {/* Map */}
-      <div className="h-64 md:h-auto md:w-1/2 rounded-xl overflow-hidden shadow-md">
-        <MapContainer
-          center={coordinates}
+      <div className="h-64 md:h-auto md:w-1/2 rounded-xl overflow-hidden">
+        <OpenFreeMap
+          coordinates={[coordinates[1], coordinates[0]]}
           zoom={zoom}
-          scrollWheelZoom={false}
-          style={{ width: "100%", height: "100%" }}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={coordinates}>
-            <Popup>
-              30, First Floor, Jalan Hang Kasturi, Kuala Lumpur City Centre,
-              50050 Kuala Lumpur, Malaysia.
-            </Popup>
-          </Marker>
-        </MapContainer>
+        />
       </div>
 
       {/* Text content */}
