@@ -18,7 +18,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="text-xl font-bold">Sustain;ed</div>
+        <a href="#home" className="text-xl font-bold cursor-pointer">
+          Sustain;ed
+        </a>
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">

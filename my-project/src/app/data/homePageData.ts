@@ -304,3 +304,83 @@ export const whatWeDoSection = {
     },
   ],
 };
+
+export const clientsAndPartnersShowcase = {
+  textSection: {
+    title: "Clients & Partners",
+    paragraphs: [
+      "We're proud to collaborate with many amazing partners. Some of our recent clients include:",
+    ],
+    tagline: "Building a sustainable future together!",
+  },
+  logos: [
+    { src: "/cilisos_logo_retina.png", alt: "Logo 1" },
+    { src: "/daridapur.jpg", alt: "Logo 2" },
+    { src: "/fashionFidelity.jpg", alt: "Logo 3" },
+    { src: "/kembara-logo-final.png", alt: "Logo 4" },
+    { src: "/petronas.png", alt: "Logo 5" },
+    { src: "/ThinkCity.png", alt: "Logo 6" },
+  ],
+  gallery: {
+    title: "", // Optional or blank title
+    slides: [
+      {
+        imageUrl: "/Clients/dariDapur1.jpg",
+        heading: "Dari Dapur X IOM",
+        paragraph: "Context",
+      },
+      {
+        imageUrl: "/Clients/cilisos.jpg",
+        heading: "Cilisos X Think City",
+        paragraph: "Context.",
+      },
+      {
+        imageUrl: "/Clients/fashionFidelity.jpeg",
+        heading: "Fashion Fidelity",
+        paragraph: "Context.",
+      },
+      {
+        imageUrl: "/Clients/kabyra.jpg",
+        heading: "Kembara Stories X Food Trail",
+        paragraph: "Context.",
+      },
+    ],
+  },
+};
+
+export const stampRallyData = {
+  textSection: {
+    title: "Downtown KL Stamp Rally",
+    paragraphs: [
+      "Explore downtown Kuala Lumpur through a fun, interactive stamp rally! Collect stamps as you visit vibrant local spots and discover hidden gems along the way.",
+      "Join the rally, complete the journey, and receive a beautifully designed free postcard as a token of your adventure.",
+    ],
+    tagline: "Discover, stamp, and collect your way through KL!",
+  },
+  imageWithTitle: {
+    title: "Your Stamp Card",
+    imageSrc: "/StampRally.jpeg",
+    imageAlt: "Stamp Card",
+    imageWidth: 300,
+    imageHeight: 500,
+    rotate: -5,
+  },
+  logos: [
+    { src: "/kreatifkl.jpg", alt: "" },
+    { src: "/ThinkCity.png", alt: "" },
+    { src: "/govMaybe.png", alt: "" },
+    { src: "/puckscoffee.jpg", alt: "" },
+    { src: "/urmu-logo.png", alt: "" },
+  ],
+};
+
+export const venueSectionData = {
+  title: "Our Venue & Facilities",
+  taglineItems: [
+    "Office Cleaning: RM100 per event",
+    "After Office Hours, Weekends & Public Holidays: RM50 per hour per staff",
+    "Full day covers 8 hours usage, Half day covers 4 hours usage",
+    "Space Rental Rate Card is available upon request",
+    "Term & Conditions apply",
+  ],
+};
