@@ -3,7 +3,7 @@ export const footer = {
   bullets: [
     "Copyright © 2025 Sustain.ed",
     "Deployed on Vercel",
-    "© 2025 Michael Wiciak & TimetableX in partnership with Sustain.ed",
+    "© 2025 Michael Wiciak & TimetableX in partnership with Sustain;ed",
   ],
 };
 
@@ -232,3 +232,42 @@ export const contactSection = {
     "Other",
   ],
 };
+
+export const venueData = [
+  {
+    sectionTitle: "Education Hub",
+    imageSrc: "/Venues/bigroom.jpg",
+    imageAlt: "First image",
+    paragraphs: [
+      "A bright and open space, ideal for workshops, exhibitions and mixers.",
+      "3 x Tables",
+      "40 x Chairs",
+      "*80-100 pax with chair set up only (theatre seating)",
+      "Visual Projection & Audio equipment available (clip mic & speakers)",
+    ],
+    imageOn: "left",
+  },
+  {
+    sectionTitle: "Screening Room",
+    imageSrc: "/Venues/cinemaroom.jpg",
+    imageAlt: "Second image",
+    paragraphs: [
+      "Perfect for those who need a private area for training sessions, movie screenings, etc.",
+      "2 x Tables + 30 x Chairs",
+      "*Up to 50 pax with chair set up only (theatre seating)",
+      "Visual Projection & Audio equipment available (clip mic & speakers)",
+    ],
+    imageOn: "right",
+  },
+  {
+    sectionTitle: "Meeting Room",
+    imageSrc: "/Venues/conference.jpg",
+    imageAlt: "Third image",
+    paragraphs: [
+      "An out-of-the-box discussion room where the creative and big ideas get formed",
+      "1 x Table + 10-15 x Chairs",
+      'Visual Projection available (SHARP40" TV)',
+    ],
+    imageOn: "left",
+  },
+] as const;

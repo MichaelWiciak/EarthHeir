@@ -17,6 +17,7 @@ import Footer from "@/app/components/Footer";
 import InstagramFeed from "@/app/components/Instagram";
 import StampRally from "@/app/components/StampRally";
 import CompositeShowcase from "./components/Clients";
+import ImageParagraphGroup from "./components/ImageParagraphGroup";
 
 import {
   whoweare,
@@ -28,6 +29,7 @@ import {
   locationSection,
   contactSection,
   footer,
+  venueData,
 } from "@/app/data/homePageData";
 
 export default function Home() {
@@ -74,13 +76,26 @@ export default function Home() {
         <ImageGallery title="What We Do" slides={slides} />
       </section>
 
+      <ImageParagraphGroup
+        title="Our Venue & Facilities"
+        sections={venueData}
+        taglineItems={[
+          "Office Cleaning: RM100 per event",
+          "After Office Hours, Weekends & Public Holidays: RM50 per hour per staff",
+          "Full day covers 8 hours usage, Half day covers 4 hours usage",
+          "Space Rental Rate Card is available upon request",
+          "Term & Conditions apply",
+        ]}
+      />
+
       <CompositeShowcase
         textSection={{
           title: "Clients & Partners",
           paragraphs: [
             "We're proud to collaborate with many amazing partners. Some of our recent clients include:",
           ],
-          tagline: "",
+          tagline:
+            "Office Cleaning: RM100 per event. After Office Hours, Weekends & Public Holidays: RM50 per hour per staff",
         }}
         logos={[
           { src: "/cilisos_logo_retina.png", alt: "Logo 1" },
