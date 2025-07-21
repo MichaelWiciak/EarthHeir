@@ -1,11 +1,13 @@
+"use client";
+
 import { useEffect } from "react";
 
 export default function InstagramFeed() {
   useEffect(() => {
-    const scriptId = "lightwidget-script";
+    const scriptId = "snapwidget-script";
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
-      script.src = "https://cdn.lightwidget.com/widgets/lightwidget.js";
+      script.src = "https://snapwidget.com/js/snapwidget.js";
       script.id = scriptId;
       document.body.appendChild(script);
     }
@@ -17,10 +19,15 @@ export default function InstagramFeed() {
         Sustain;ed Instagram Feed
       </h2>
       <iframe
-        src="//lightwidget.com/widgets/e9cf9ddfc3555734a0f88a24cb8387b1.html"
-        className="w-full border-0 overflow-hidden lightwidget-widget"
-        style={{ height: "100%", minHeight: "500px" }}
-        title="Instagram Feed"
+        src="https://snapwidget.com/embed/1103273"
+        className="snapwidget-widget"
+        style={{
+          border: "none",
+          overflow: "hidden",
+          width: "100%",
+          minHeight: "500px",
+        }}
+        title="Posts from Instagram"
       ></iframe>
     </section>
   );
