@@ -14,9 +14,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import ImageGallery from "./components/ImageGallery";
 import Footer from "@/app/components/Footer";
-import MapWithDetailsSection from "@/app/components/MapWithData";
 import InstagramFeed from "@/app/components/Instagram";
 import StampRally from "@/app/components/StampRally";
+import CompositeShowcase from "./components/Clients";
 
 import {
   whoweare,
@@ -73,6 +73,50 @@ export default function Home() {
       <section id="whatwedo" className="scroll-mt-10">
         <ImageGallery title="What We Do" slides={slides} />
       </section>
+
+      <CompositeShowcase
+        textSection={{
+          title: "Clients & Partners",
+          paragraphs: [
+            "We're proud to collaborate with many amazing partners. Some of our recent clients include:",
+          ],
+          tagline: "",
+        }}
+        logos={[
+          { src: "/cilisos_logo_retina.png", alt: "Logo 1" },
+          { src: "/daridapur.jpg", alt: "Logo 2" },
+          { src: "/fashionFidelity.jpg", alt: "Logo 3" },
+          { src: "/kembara-logo-final.png", alt: "Logo 4" },
+          { src: "/petronas.png", alt: "Logo 5" },
+          { src: "/ThinkCity.png", alt: "Logo 6" },
+        ]}
+        gallery={{
+          title: "",
+          slides: [
+            {
+              imageUrl: "/Clients/dariDapur1.jpg",
+              heading: "Dari Dapur X IOM",
+              paragraph: "Context",
+            },
+            {
+              imageUrl: "/Clients/cilisos.jpg",
+              heading: "Cilisos X Think City",
+              paragraph: "Context.",
+            },
+            {
+              imageUrl: "/Clients/fashionFidelity.jpeg",
+              heading: "Fashion Fidelity",
+              paragraph: "Context.",
+            },
+            {
+              imageUrl: "/Clients/kabyra.jpg",
+              heading: "Kembara Stories X Food Trail",
+              paragraph: "Context.",
+            },
+          ],
+        }}
+      />
+
       <InstagramFeed />
       <section id="stampRally" className="scroll-mt-10">
         <StampRally

@@ -1,41 +1,41 @@
 export const footer = {
   logoSrc: "/sustainedLogo.png",
   bullets: [
-    "Empowering communities with sustainability education",
-    "Plastic upcycling and fair trade practices",
-    "Rooted in Malaysia, reaching globally",
+    "Copyright © 2025 Sustain.ed",
+    "Deployed on Vercel",
+    "© 2025 Michael Wiciak & TimetableX in partnership with Sustain.ed",
   ],
 };
 
 export const slides = [
   {
-    imageUrl: "/sustainedPhotos/KTRN.jpg",
+    imageUrl: "/GalleriesPhotos/KTRN.jpg",
     heading: "A. EDUCATION HUB",
     paragraph: "Environmental & Sustainability Training",
   },
   {
-    imageUrl: "/sustainedPhotos/leaders.jpg",
+    imageUrl: "/GalleriesPhotos/leaders.jpg",
     heading: "A. EDUCATION HUB",
     paragraph: "Sustainable Entrepreneurship / Micro-Business Training",
   },
   {
-    imageUrl: "/sustainedPhotos/trainingProject.jpg",
+    imageUrl: "/GalleriesPhotos/trainingProject.jpg",
     heading: "A. EDUCATION HUB",
     paragraph: "Sustainability & ESG Education + Workshop tasters",
   },
   {
-    imageUrl: "/sustainedPhotos/ArtisticTraining.jpg",
+    imageUrl: "/GalleriesPhotos/ArtisticTraining.jpg",
     heading: "A. EDUCATION HUB",
     paragraph: "Upcycling, Cultural Heritage & Artist Workshops",
   },
   {
-    imageUrl: "/sustainedPhotos/earthheirshop.jpg",
+    imageUrl: "/GalleriesPhotos/earthheirshop.jpg",
     heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
     paragraph:
       "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
   },
   {
-    imageUrl: "/sustainedPhotos/csection.jpg",
+    imageUrl: "/GalleriesPhotos/csection.jpg",
     heading: "C. KNOWLEDGE  TALK SERIES",
     paragraph: "Impact Leaders from Malaysia and around the world.",
   },
