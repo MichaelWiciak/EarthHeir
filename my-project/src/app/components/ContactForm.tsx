@@ -150,56 +150,95 @@ const ContactForm: React.FC<ContactFormProps> = ({
   return (
     <div className="p-6 md:p-12 space-y-6 max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold text-center">{title}</h2>
+      {/* i want to add here a small tagline like text about that things with * are mandatory */}
+      <p className="text-sm text-gray-500 text-center">
+        All fields on the form are mandatory.
+      </p>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        <input
-          type="text"
-          placeholder="Your name"
-          className="w-full border rounded-lg p-3"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <input
-          type="email"
-          placeholder="Your email"
-          className="w-full border rounded-lg p-3"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <input
-          type="text"
-          placeholder="Company Name"
-          className="w-full border rounded-lg p-3"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
-        />
-
-        <div className="flex space-x-2">
-          <select
-            className="border rounded-lg p-3 w-1/3"
-            value={phoneCode}
-            onChange={(e) => setPhoneCode(e.target.value)}
+        <div className="space-y-2">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700"
           >
-            {Object.entries(phoneCodes).map(([country, code]) => (
-              <option key={country} value={code}>
-                {`${code} (${country})`}
-              </option>
-            ))}
-          </select>
-
+            Your Name
+          </label>
           <input
-            type="tel"
-            placeholder="Phone Number"
-            className="w-full border rounded-lg p-3"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            id="name"
+            type="text"
+            placeholder="Your name"
+            className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
 
+        <div className="space-y-2">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Your Email
+          </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Your email"
+            className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="company"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Company name
+          </label>
+          <input
+            id="company"
+            type="text"
+            placeholder="Company Name"
+            className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Phone Number
+          </label>
+          <div className="flex space-x-2">
+            <select
+              className="border rounded-lg p-3 w-1/3 hover:cursor-pointer"
+              value={phoneCode}
+              onChange={(e) => setPhoneCode(e.target.value)}
+            >
+              {Object.entries(phoneCodes).map(([country, code]) => (
+                <option key={country} value={code}>
+                  {`${code} (${country})`}
+                </option>
+              ))}
+            </select>
+
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full border rounded-lg p-3"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
+        </div>
+
         <div>
-          <p className="font-semibold mb-2">What is your enquiry about? *</p>
+          <p className="font-semibold mb-2">What is your enquiry about?</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {enquiryOptions.map((option) => (
               <label key={option} className="flex items-center space-x-2">
@@ -207,7 +246,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
                   type="checkbox"
                   checked={selectedOptions.includes(option)}
                   onChange={() => handleCheckboxChange(option)}
-                  className="accent-blue-600"
+                  className="accent-blue-600 hover:cursor-pointer"
                 />
                 <span>{option}</span>
               </label>
@@ -215,91 +254,118 @@ const ContactForm: React.FC<ContactFormProps> = ({
           </div>
         </div>
 
-        <textarea
-          placeholder="Your message"
-          className="w-full border rounded-lg p-3 h-32 resize-none"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
+        <div className="space-y-2">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Your Message
+          </label>
+          <textarea
+            placeholder="Your message"
+            className="w-full border rounded-lg p-3 h-32 resize-none"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
 
-        <AnimatePresence>
-          {selectedOptions.includes("Renting the Venue") && (
-            <motion.div
-              key="venue-details"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="space-y-4 border rounded-lg p-4 bg-gray-50"
-            >
-              <h3 className="font-semibold text-lg">Venue Rental Details</h3>
+          <AnimatePresence>
+            {selectedOptions.includes("Renting the Venue") && (
+              <motion.div
+                key="venue-details"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-4 border rounded-lg p-4 bg-gray-50"
+              >
+                <h3 className="font-semibold text-lg">Venue Rental Details</h3>
 
-              <input
-                type="number"
-                placeholder="How many people will attend?"
-                className="w-full border rounded-lg p-3"
-                value={venuePeople}
-                onChange={(e) => {
-                  const value = e.target.value.replace(/-/g, "");
-                  // Only allow positive numbers (including empty string) and max 5 digits
-                  if (
-                    value === "" ||
-                    (/^\d+$/.test(value) &&
-                      Number(value) > 0 &&
-                      value.length <= 5)
-                  ) {
-                    setVenuePeople(value);
-                  }
-                }}
-                min={1}
-                max={99999}
-                inputMode="numeric"
-                pattern="[1-9][0-9]{0,4}"
-                onKeyDown={(e) => {
-                  if (
-                    e.key === "-" ||
-                    (venuePeople.length >= 5 &&
-                      ![
-                        "Backspace",
-                        "Delete",
-                        "ArrowLeft",
-                        "ArrowRight",
-                        "Tab",
-                      ].includes(e.key))
-                  ) {
-                    e.preventDefault();
-                  }
-                }}
-              />
+                <div className="flex flex-col space-y-2">
+                  <label className="text-sm font-medium text-gray-700">
+                    Number of People
+                  </label>
+                  <input
+                    type="number"
+                    placeholder="How many people will attend?"
+                    className="w-full border rounded-lg p-3"
+                    value={venuePeople}
+                    onChange={(e) => {
+                      const value = e.target.value.replace(/-/g, "");
+                      // Only allow positive numbers (including empty string) and max 5 digits
+                      if (
+                        value === "" ||
+                        (/^\d+$/.test(value) &&
+                          Number(value) > 0 &&
+                          value.length <= 5)
+                      ) {
+                        setVenuePeople(value);
+                      }
+                    }}
+                    min={1}
+                    max={99999}
+                    inputMode="numeric"
+                    pattern="[1-9][0-9]{0,4}"
+                    onKeyDown={(e) => {
+                      if (
+                        e.key === "-" ||
+                        (venuePeople.length >= 5 &&
+                          ![
+                            "Backspace",
+                            "Delete",
+                            "ArrowLeft",
+                            "ArrowRight",
+                            "Tab",
+                          ].includes(e.key))
+                      ) {
+                        e.preventDefault();
+                      }
+                    }}
+                  />
+                </div>
 
-              <textarea
-                placeholder="What do you want to do in the venue?"
-                className="w-full border rounded-lg p-3 h-24 resize-none"
-                value={venuePurpose}
-                onChange={(e) => setVenuePurpose(e.target.value)}
-              />
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">
+                    Purpose of Venue Rental
+                  </label>
+                  <textarea
+                    placeholder="What do you want to do in the venue?"
+                    className="w-full border rounded-lg p-3 h-24 resize-none"
+                    value={venuePurpose}
+                    onChange={(e) => setVenuePurpose(e.target.value)}
+                  />
+                </div>
 
-              <input
-                type="date"
-                className="w-full border rounded-lg p-3"
-                value={venueDate}
-                onChange={(e) => setVenueDate(e.target.value)}
-              />
-
-              <input
-                type="time"
-                value={venueTime}
-                onChange={(e) => setVenueTime(e.target.value)}
-                className="w-full border rounded-lg p-3"
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">
+                    Date of Venue Rental
+                  </label>
+                </div>
+                <input
+                  type="date"
+                  className="w-full border rounded-lg p-3"
+                  value={venueDate}
+                  onChange={(e) => setVenueDate(e.target.value)}
+                />
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-gray-700">
+                    Time of Venue Rental
+                  </label>
+                </div>
+                <input
+                  type="time"
+                  value={venueTime}
+                  onChange={(e) => setVenueTime(e.target.value)}
+                  className="w-full border rounded-lg p-3"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         <button
           type="submit"
           disabled={loading}
-          className={`bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition ${
+          className={`bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition hover:cursor-pointer ${
             loading ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
