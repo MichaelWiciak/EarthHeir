@@ -26,7 +26,7 @@ const MapWithDetailsSection: React.FC<MapWithDetailsSectionProps> = ({
 
       {/* Text content */}
       <div className="md:w-1/2 space-y-4">
-        <h2 className="text-2xl font-bold">{title}</h2>
+        <h2 className="">{title}</h2>
         <ul className="list-disc list-inside space-y-1">
           {bulletpoints.map((point, idx) => {
             if (point === "Watch our directions video") {

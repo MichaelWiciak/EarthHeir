@@ -21,7 +21,7 @@ const ImageWithTitle: React.FC<ImageWithTitleProps> = ({
 }) => {
   return (
     <div className="text-center space-y-4">
-      <h2 className="text-2xl font-semibold">{title}</h2>
+      <h2 className="">{title}</h2>
       <div
         className="inline-block transition-transform"
         style={{

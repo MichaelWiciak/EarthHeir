@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="text-sm sm:text-base lg:text-lg xl:text-xl">
+      <div className="">
         <Navbar />
         <section id="home" className="scroll-mt-10">
           <TitlePage

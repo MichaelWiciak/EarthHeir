@@ -29,7 +29,7 @@ const CompositeShowcase: React.FC<CompositeShowcaseProps> = ({
   gallery,
 }) => {
   return (
-    <div className="space-y-12 px-4 py-8">
+    <div className="px-12 py-12">
       {/* TextSection */}
       <div className="flex justify-center">
         <TextSection

@@ -22,11 +22,7 @@ const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
   return (
     <div className="p-6 md:p-12 space-y-8">
       {/* Overall title */}
-      {sectionTitle && (
-        <h2 className="text-3xl font-bold text-center md:text-left">
-          {sectionTitle}
-        </h2>
-      )}
+      {sectionTitle && <h2 className="text-center">{sectionTitle}</h2>}
 
       {/* Layout: Text sections + Circles */}
       <div className="flex flex-col xl:flex-row justify-between gap-8">

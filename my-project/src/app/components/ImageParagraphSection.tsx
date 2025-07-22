@@ -20,7 +20,7 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
   const isImageLeft = imageOn === "left";
 
   return (
-    <div className="flex flex-col md:flex-row items-center gap-6 py-8 px-4">
+    <div className="flex flex-col md:flex-row items-center">
       <div
         className={`w-full md:w-1/2 ${
           isImageLeft ? "md:order-1" : "md:order-2"
@@ -29,8 +29,8 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={800}
-          height={600}
+          width={1920}
+          height={1080}
           className="w-full h-auto rounded-lg object-cover"
         />
       </div>
@@ -40,9 +40,9 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
           isImageLeft ? "md:order-2" : "md:order-1"
         } text-center md:text-left`}
       >
-        <h3 className="text-2xl font-semibold mb-2">{sectionTitle}</h3>
+        <h3 className="mb-2 text-center">{sectionTitle}</h3>
         {paragraphs.map((para, idx) => (
-          <p key={idx} className="text-lg text-gray-700 mb-3">
+          <p key={idx} className="text-center">
             {para}
           </p>
         ))}

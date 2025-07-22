@@ -22,15 +22,15 @@ const ImageParagraphGroup: React.FC<ImageParagraphGroupProps> = ({
   taglineItems,
 }) => {
   return (
-    <div className="w-full px-4 py-12">
-      <h2 className="text-3xl font-bold text-center">{title}</h2>
+    <div className="w-full py-12 px-12">
+      <h2 className="text-center py-4">{title}</h2>
 
       {sections.map((section, idx) => (
         <ImageParagraphSection key={idx} {...section} />
       ))}
 
       {taglineItems && (
-        <ul className="mt-6 list-disc list-inside text-gray-600 text-base">
+        <ul className="mt-3 list-disc list-inside text-gray-600 text-base text-center">
           {taglineItems.map((item, index) => (
             <li key={index}>{item}</li>
           ))}

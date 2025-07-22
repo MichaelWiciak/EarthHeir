@@ -14,7 +14,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
 }) => {
   return (
     <div className="text-center md:text-left pt-20">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+      <h1 className="mb-4">{title}</h1>
 
       <p className="text-lg mb-2">
         By{" "}
