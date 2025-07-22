@@ -79,12 +79,12 @@ export const titlePageData = {
   motto: "Championing Sustainability & Social Impact for Systematic Change",
   logos: [
     {
-      imageSrc: "/seamonkeylogo.png",
+      src: "/seamonkeylogo.png",
       alt: "Logo 1",
       url: "https://seamonkeyprojects.com/",
     },
     {
-      imageSrc: "/earthheirlogo.png",
+      src: "/earthheirlogo.png",
       alt: "Logo 2",
       url: "https://earthheir.com/",
     },
