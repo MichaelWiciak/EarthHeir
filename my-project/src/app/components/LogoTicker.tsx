@@ -20,7 +20,7 @@ const LogoTicker: React.FC<LogoTickerProps> = ({ logos }) => {
         {logos.map((logo, idx) => (
           <Image
             key={idx}
-            src={logo.src}
+            src={logo.imageSrc}
             alt={logo.alt || `Logo ${idx + 1}`}
             width={200}
             height={100}
@@ -35,7 +35,7 @@ const LogoTicker: React.FC<LogoTickerProps> = ({ logos }) => {
           {repeatedLogos.map((logo, idx) => (
             <Image
               key={idx}
-              src={logo.src}
+              src={logo.imageSrc}
               alt={logo.alt || `Logo ${idx + 1}`}
               width={60}
               height={30}

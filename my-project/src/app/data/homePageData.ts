@@ -79,12 +79,12 @@ export const titlePageData = {
   motto: "Championing Sustainability & Social Impact for Systematic Change",
   logos: [
     {
-      src: "/seamonkeylogo.png",
+      imageSrc: "/seamonkeylogo.png",
       alt: "Logo 1",
       url: "https://seamonkeyprojects.com/",
     },
     {
-      src: "/earthheirlogo.png",
+      imageSrc: "/earthheirlogo.png",
       alt: "Logo 2",
       url: "https://earthheir.com/",
     },
@@ -314,12 +314,12 @@ export const clientsAndPartnersShowcase = {
     tagline: "Building a sustainable future together!",
   },
   logos: [
-    { src: "/cilisos_logo_retina.png", alt: "Logo 1" },
-    { src: "/daridapur.jpg", alt: "Logo 2" },
-    { src: "/fashionFidelity.jpg", alt: "Logo 3" },
-    { src: "/kembara-logo-final.png", alt: "Logo 4" },
-    { src: "/petronas.png", alt: "Logo 5" },
-    { src: "/ThinkCity.png", alt: "Logo 6" },
+    { imageSrc: "/cilisos_logo_retina.png", alt: "Logo 1" },
+    { imageSrc: "/daridapur.jpg", alt: "Logo 2" },
+    { imageSrc: "/fashionFidelity.jpg", alt: "Logo 3" },
+    { imageSrc: "/kembara-logo-final.png", alt: "Logo 4" },
+    { imageSrc: "/petronas.png", alt: "Logo 5" },
+    { imageSrc: "/ThinkCity.png", alt: "Logo 6" },
   ],
   gallery: {
     title: "", // Optional or blank title
@@ -366,11 +366,11 @@ export const stampRallyData = {
     rotate: -5,
   },
   logos: [
-    { src: "/kreatifkl.jpg", alt: "" },
-    { src: "/ThinkCity.png", alt: "" },
-    { src: "/govMaybe.png", alt: "" },
-    { src: "/puckscoffee.jpg", alt: "" },
-    { src: "/urmu-logo.png", alt: "" },
+    { imageSrc: "/kreatifkl.jpg", alt: "" },
+    { imageSrc: "/ThinkCity.png", alt: "" },
+    { imageSrc: "/govMaybe.png", alt: "" },
+    { imageSrc: "/puckscoffee.jpg", alt: "" },
+    { imageSrc: "/urmu-logo.png", alt: "" },
   ],
 };
 

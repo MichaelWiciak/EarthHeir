@@ -34,7 +34,7 @@ export interface Creator {
 }
 
 export interface Logo {
-  src: string;
+  imageSrc: string;
   alt?: string;
   url?: string;
 }
