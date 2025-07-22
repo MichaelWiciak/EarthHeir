@@ -179,7 +179,7 @@ export const whatWeDoSection = {
             paragraph: "Environmental & Sustainability Training",
           },
           {
-            imageUrl: "/GalleriesPhotos/leaders.jpg",
+            imageUrl: "/GalleriesPhotos/Leaders.jpg",
             heading: "A. EDUCATION HUB",
             paragraph: "Sustainable Entrepreneurship / Micro-Business Training",
           },
