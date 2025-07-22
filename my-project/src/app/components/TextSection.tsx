@@ -1,11 +1,6 @@
 // components/TextSection.tsx
 import React from "react";
-
-interface TextSectionProps {
-  title: string;
-  paragraphs: string[];
-  tagline?: string; // Optional tagline
-}
+import { TextSection as TextSectionProps } from "../types/ui";
 
 const TextSection: React.FC<TextSectionProps> = ({
   title,

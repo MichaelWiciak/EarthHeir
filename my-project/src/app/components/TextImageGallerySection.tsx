@@ -1,13 +1,7 @@
 // components/TextImageGallerySection.tsx
 import React from "react";
 import Image from "next/image";
-
-interface ImageData {
-  imageUrl: string;
-  heading: string;
-  paragraph: string;
-  alt?: string;
-}
+import { Slide } from "../types/ui";
 
 interface TextImageGallerySectionProps {
   overallTitle: string;
@@ -16,7 +10,7 @@ interface TextImageGallerySectionProps {
   imageSrc: string;
   imageAlt?: string;
   galleryTitle: string;
-  images: ImageData[];
+  images: Slide[];
 }
 
 const TextImageGallerySection: React.FC<TextImageGallerySectionProps> = ({

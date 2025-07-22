@@ -1,9 +1,5 @@
 import React from "react";
-
-interface Creator {
-  name: string;
-  url?: string;
-}
+import { Creator } from "../types/ui";
 
 interface TitleSectionProps {
   title: string;

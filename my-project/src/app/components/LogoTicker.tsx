@@ -3,9 +3,10 @@
 
 import React from "react";
 import Image from "next/image";
+import { Logo } from "../types/ui";
 
 interface LogoTickerProps {
-  logos: { src: string; alt?: string }[];
+  logos: Logo[];
 }
 
 const LogoTicker: React.FC<LogoTickerProps> = ({ logos }) => {

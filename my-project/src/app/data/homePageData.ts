@@ -76,7 +76,7 @@ export const titlePageData = {
       url: "https://earthheir.com/",
     },
   ],
-  motto: "Champtioning Sustainability & Social Impact for Systematic Change",
+  motto: "Championing Sustainability & Social Impact for Systematic Change",
   logos: [
     {
       imageSrc: "/seamonkeylogo.png",

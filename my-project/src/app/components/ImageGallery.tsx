@@ -8,17 +8,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import ImageCaptionOverlay from "./ImageCaption";
-
-interface SlideData {
-  imageUrl: string;
-  heading: string;
-  paragraph: string;
-  alt?: string;
-}
+import { Slide } from "../types/ui";
 
 interface ImageGalleryProps {
   title: string;
-  slides: SlideData[];
+  slides: Slide[];
 }
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({ title, slides }) => {

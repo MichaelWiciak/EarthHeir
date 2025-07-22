@@ -3,6 +3,7 @@ import React from "react";
 import TextSection from "./TextSection";
 import LogoTicker from "./LogoTicker";
 import ImageGallery from "./ImageGallery";
+import { Logo } from "../types/ui";
 
 interface CompositeShowcaseProps {
   textSection: {
@@ -10,7 +11,7 @@ interface CompositeShowcaseProps {
     paragraphs: string[];
     tagline?: string;
   };
-  logos: { src: string; alt?: string }[];
+  logos: Logo[];
   gallery: {
     title: string;
     slides: {

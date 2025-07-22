@@ -5,13 +5,10 @@ import React from "react";
 import TextSection from "./TextSection";
 import ImageWithTitle from "./ImageWithTitle";
 import LogoTicker from "./LogoTicker";
+import { Logo, TextSection as TextSectionData } from "../types/ui";
 
 interface StampRallyProps {
-  textSection: {
-    title: string;
-    paragraphs: string[];
-    tagline?: string;
-  };
+  textSection: TextSectionData;
   imageWithTitle: {
     title: string;
     imageSrc: string;
@@ -20,7 +17,7 @@ interface StampRallyProps {
     imageHeight?: number;
     rotate?: number;
   };
-  logos: { src: string; alt?: string }[];
+  logos: Logo[];
 }
 
 const StampRally: React.FC<StampRallyProps> = ({

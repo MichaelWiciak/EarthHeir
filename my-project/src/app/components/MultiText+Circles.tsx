@@ -1,24 +1,13 @@
 // components/MultiTextCircleSection.tsx
 import React from "react";
-import TextSection from "./TextSection";
 import CircleGroup from "./CircleGroup";
-
-interface TextSectionData {
-  title: string;
-  paragraphs: string[];
-  tagline?: string;
-}
-
-interface CircleData {
-  imageSrc?: string;
-  alt?: string;
-  text?: string;
-}
+import { TextSection as TextSectionData, CircleItem } from "../types/ui";
+import TextSection from "./TextSection";
 
 interface MultiTextCircleSectionProps {
   sectionTitle?: string;
   sections: TextSectionData[];
-  circles?: CircleData[]; // Optional now
+  circles?: CircleItem[];
 }
 
 const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({

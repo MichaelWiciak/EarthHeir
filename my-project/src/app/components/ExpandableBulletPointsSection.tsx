@@ -2,27 +2,7 @@
 import React, { useState } from "react";
 import MultiTextCircleSection from "./MultiText+Circles";
 import { motion, AnimatePresence } from "framer-motion";
-
-interface TextSectionData {
-  title: string;
-  paragraphs: string[];
-  tagline?: string;
-}
-
-interface CircleData {
-  imageSrc?: string;
-  alt?: string;
-  text?: string;
-}
-
-interface ExpandableItem {
-  bulletTitle: string;
-  content: {
-    sectionTitle: string;
-    sections: TextSectionData[];
-    circles?: CircleData[];
-  };
-}
+import { ExpandableItem } from "../types/ui";
 
 interface ExpandableTextListSectionProps {
   title: string;
