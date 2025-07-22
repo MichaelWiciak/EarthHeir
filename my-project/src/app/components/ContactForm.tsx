@@ -361,16 +361,17 @@ const ContactForm: React.FC<ContactFormProps> = ({
             )}
           </AnimatePresence>
         </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className={`bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition hover:cursor-pointer ${
-            loading ? "opacity-50 cursor-not-allowed" : ""
-          }`}
-        >
-          {loading ? "Sending..." : "Submit"}
-        </button>
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={loading}
+            className={`bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition hover:cursor-pointer ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+          >
+            {loading ? "Sending..." : "Submit"}
+          </button>
+        </div>
       </form>
 
       {tagline && (

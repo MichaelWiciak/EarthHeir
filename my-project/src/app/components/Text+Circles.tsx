@@ -19,17 +19,20 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   circles,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 gap-6">
+    <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 gap-6 md:gap-12">
       {/* Left: Text */}
-      <TextSection title={title} paragraphs={paragraphs} />
+      <div className="w-full md:flex-1 text-center">
+        <TextSection title={title} paragraphs={paragraphs} />
+      </div>
 
+      {/* Right: Circles */}
       {/* Desktop view: Circles in column */}
-      <div className="hidden md:flex">
+      <div className="hidden md:flex md:flex-shrink-0">
         <CircleGroup items={circles} direction="col" />
       </div>
 
       {/* Mobile view: Circles in row */}
-      <div className="flex md:hidden w-full justify-center mt-8 gap-4">
+      <div className="flex md:hidden w-full justify-center mt-8">
         <CircleGroup items={circles} direction="row" />
       </div>
     </div>

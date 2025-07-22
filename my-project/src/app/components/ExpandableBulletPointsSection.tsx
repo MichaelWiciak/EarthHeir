@@ -37,7 +37,7 @@ const ExpandableTextListSection: React.FC<ExpandableTextListSectionProps> = ({
           <li key={index}>
             <button
               onClick={() => handleToggle(index)}
-              className="text-left w-full text-lg font-medium text-blue-700 hover:underline"
+              className="text-centre w-full text-lg font-medium text-blue-700 hover:underline"
             >
               • {item.bulletTitle}
             </button>
@@ -51,7 +51,10 @@ const ExpandableTextListSection: React.FC<ExpandableTextListSectionProps> = ({
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
                   <div className="mt-4 border-l-2 border-blue-300 pl-4">
-                    <MultiTextCircleSection {...item.content} />
+                    <MultiTextCircleSection
+                      {...item.content}
+                      circleDirection="row"
+                    />
                   </div>
                 </motion.div>
               )}

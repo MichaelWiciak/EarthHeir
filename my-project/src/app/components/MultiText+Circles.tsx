@@ -8,12 +8,14 @@ interface MultiTextCircleSectionProps {
   sectionTitle?: string;
   sections: TextSectionData[];
   circles?: CircleItem[];
+  circleDirection?: "row" | "col";
 }
 
 const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
   sectionTitle,
   sections,
   circles,
+  circleDirection,
 }) => {
   const hasCircles = circles && circles.length > 0;
 
@@ -43,15 +45,17 @@ const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
         {/* Right: Circles on desktop */}
         {hasCircles && (
           <div className="hidden xl:flex items-center justify-center md:ml-6">
-            <CircleGroup items={circles} direction="col" />
+            <CircleGroup items={circles} direction={circleDirection || "col"} />
           </div>
         )}
       </div>
 
       {/* Mobile: Circles go below all text sections */}
       {hasCircles && (
-        <div className="flex xl:hidden justify-center">
-          <CircleGroup items={circles} direction="row" />
+        <div className="xl:hidden flex justify-center">
+          <div className="flex flex-wrap justify-center gap-4 max-w-full px-4">
+            <CircleGroup items={circles} direction={circleDirection || "row"} />
+          </div>
         </div>
       )}
     </div>

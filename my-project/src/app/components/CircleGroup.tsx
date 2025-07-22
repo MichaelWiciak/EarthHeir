@@ -12,18 +12,15 @@ const CircleGroup: React.FC<CircleGroupProps> = ({
   items,
   direction = "col",
 }) => {
-  const layoutClass = direction === "row" ? "flex-row" : "flex-col";
+  const layoutClass =
+    direction === "row"
+      ? "flex flex-wrap justify-center gap-4"
+      : "flex flex-col items-center space-y-4";
 
   return (
-    <div className={`flex ${layoutClass} gap-4 items-center justify-center`}>
+    <div className={`${layoutClass} gap-4 items-center justify-center`}>
       {items.map((item, index) => (
-        <Circle
-          key={index}
-          imageSrc={item.imageSrc}
-          alt={item.alt}
-          text={item.text}
-          url={item.url}
-        />
+        <Circle key={index} {...item} />
       ))}
     </div>
   );

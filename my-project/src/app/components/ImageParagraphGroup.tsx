@@ -22,7 +22,7 @@ const ImageParagraphGroup: React.FC<ImageParagraphGroupProps> = ({
   taglineItems,
 }) => {
   return (
-    <div className="w-full px-4 py-12 space-y-10">
+    <div className="w-full px-4 py-12">
       <h2 className="text-3xl font-bold text-center">{title}</h2>
 
       {sections.map((section, idx) => (

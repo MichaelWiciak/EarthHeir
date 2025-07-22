@@ -25,7 +25,6 @@ export default function InstagramFeed() {
           border: "none",
           overflow: "hidden",
           width: "100%",
-          minHeight: "500px",
         }}
         title="Posts from Instagram"
       ></iframe>

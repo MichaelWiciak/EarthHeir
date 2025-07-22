@@ -23,8 +23,6 @@ const Circle: React.FC<CircleItem> = ({ imageSrc, alt = "", text, url }) => {
       style={{
         width: diameter,
         height: diameter,
-        minWidth: 120,
-        minHeight: 120,
       }}
     >
       {imageSrc ? (

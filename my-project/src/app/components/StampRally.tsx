@@ -26,10 +26,10 @@ const StampRally: React.FC<StampRallyProps> = ({
   logos,
 }) => {
   return (
-    <div className="w-full px-4 py-8 flex flex-col gap-8">
+    <div className="w-full   flex flex-col gap-8">
       {/* Text + Image */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-        <div className="flex-1">
+      <div className="flex flex-col md:flex-row items-center  ">
+        <div className="flex-1 py-6">
           <TextSection
             title={textSection.title}
             paragraphs={textSection.paragraphs}

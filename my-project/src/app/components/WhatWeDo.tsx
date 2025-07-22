@@ -26,7 +26,7 @@ const ContentBlockGroupSection: React.FC<ContentBlockGroupSectionProps> = ({
   items,
 }) => {
   return (
-    <div className="">
+    <div className="p-12 text-center">
       {/* Render the header text section ONCE */}
       <TextSection
         title={textSection.title}
@@ -36,7 +36,7 @@ const ContentBlockGroupSection: React.FC<ContentBlockGroupSectionProps> = ({
 
       {/* Loop through gallery + expandable item */}
       {items.map((item, index) => (
-        <div key={index} className="space-y-12">
+        <div key={index} className="">
           <ImageGallery title="" slides={item.gallery.slides} />
           <ExpandableTextListSection
             title={""}
