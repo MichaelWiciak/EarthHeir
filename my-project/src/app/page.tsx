@@ -46,7 +46,7 @@ export default function Home() {
     <main>
       <div className="container-custom mx-auto">
         <Navbar />
-        <section id="home" className="scroll-mt-10">
+        <section id="home" className="scroll-mt-14">
           <TitlePage
             title={titlePageData.title}
             creators={titlePageData.creators}
@@ -55,7 +55,7 @@ export default function Home() {
           />
         </section>
 
-        <section id="whoweare" className="scroll-mt-10">
+        <section id="whoweare" className="scroll-mt-14">
           <InfoSection
             title={whoweare.title}
             paragraphs={whoweare.paragraphs}
@@ -67,7 +67,7 @@ export default function Home() {
           sections={aboutUsSection.sections}
           circles={aboutUsSection.circles}
         />
-        <section id="impact" className="scroll-mt-10">
+        <section id="impact" className="scroll-mt-14">
           <div className="space-y-8 text-center">
             <TextSection
               title={impactGoalsText.title}
@@ -76,7 +76,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <section id="whatwedo" className="scroll-mt-10">
+        <section id="whatwedo" className="scroll-mt-14">
           <div className="">
             <ContentBlockGroupSection
               textSection={whatWeDoSection.textSection}
@@ -84,7 +84,7 @@ export default function Home() {
             />
           </div>
         </section>
-        <section id="venues" className="scroll-mt-10">
+        <section id="venues" className="scroll-mt-14">
           <div className="">
             <ImageParagraphGroup
               title={venueSectionData.title}
@@ -98,13 +98,13 @@ export default function Home() {
 
         <InstagramFeed />
 
-        <section id="stampRally" className="scroll-mt-10">
+        <section id="stampRally" className="scroll-mt-14">
           <div className="space-y-8">
             <StampRally {...stampRallyData} />
           </div>
         </section>
 
-        <section id="location" className="scroll-mt-10">
+        <section id="location" className="scroll-mt-14">
           <MapWithDetailsSection
             coordinates={locationSection.coordinates}
             title={locationSection.title}
@@ -112,7 +112,7 @@ export default function Home() {
           />
         </section>
 
-        <section id="contact" className="scroll-mt-10">
+        <section id="contact" className="scroll-mt-14">
           <ContactForm
             title={contactSection.title}
             tagline={contactSection.tagline}

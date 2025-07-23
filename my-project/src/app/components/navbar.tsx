@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
-      history.replaceState(null, "", " "); // clear the hash
+      history.replaceState(null, "", " ");
     }
   };
   const [menuOpen, setMenuOpen] = useState(false);
