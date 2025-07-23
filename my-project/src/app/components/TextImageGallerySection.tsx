@@ -32,9 +32,11 @@ const TextImageGallerySection: React.FC<TextImageGallerySectionProps> = ({
       {/* Paragraph + Image section */}
       <div className="flex flex-col md:flex-row items-center gap-8">
         {/* Left: Paragraph */}
-        <div className="text-center md:text-left max-w-xl flex-1">
+        <div className=" md:text-left max-w-xl flex-1">
           {paragraphTitle && (
-            <h3 className="text-2xl font-semibold mb-4">{paragraphTitle}</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-center">
+              {paragraphTitle}
+            </h3>
           )}
           <p className="text-base text-gray-700">{paragraphText}</p>
         </div>

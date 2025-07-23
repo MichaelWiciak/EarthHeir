@@ -9,7 +9,7 @@ const TextSection: React.FC<TextSectionProps> = ({
 }) => {
   return (
     <div className="">
-      {title && title.trim() !== "" && <h3 className="">{title}</h3>}
+      {title && title.trim() !== "" && <h3 className="text-center">{title}</h3>}
 
       {paragraphs.map((text, index) => (
         <p key={index} className="">

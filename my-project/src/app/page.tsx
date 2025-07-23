@@ -68,7 +68,7 @@ export default function Home() {
           circles={aboutUsSection.circles}
         />
         <section id="impact" className="scroll-mt-14">
-          <div className="space-y-8 text-center">
+          <div className="space-y-8">
             <TextSection
               title={impactGoalsText.title}
               paragraphs={impactGoalsText.paragraphs}

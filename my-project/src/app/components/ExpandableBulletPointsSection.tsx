@@ -24,8 +24,8 @@ const ExpandableTextListSection: React.FC<ExpandableTextListSectionProps> = ({
   return (
     <div className="">
       {title && (
-        <div className="text-center md:text-left">
-          <h2 className="text-4xl font-bold">{title}</h2>
+        <div className="md:text-left">
+          <h2 className="text-4xl font-bold text-center">{title}</h2>
           <p className="text-gray-700 max-w-3xl mx-auto md:mx-0">
             {description}
           </p>
@@ -37,7 +37,13 @@ const ExpandableTextListSection: React.FC<ExpandableTextListSectionProps> = ({
           <li key={index}>
             <button
               onClick={() => handleToggle(index)}
-              className="text-centre w-full text-lg font-medium text-blue-700 hover:underline"
+              className="text-centre w-full text-lg font-medium text-blue-700 hover:underline cursor-pointer"
+              aria-expanded={expandedIndex === index}
+              aria-label={
+                expandedIndex === index
+                  ? `Collapse details for ${item.bulletTitle}`
+                  : `Expand details for ${item.bulletTitle}`
+              }
             >
               • {item.bulletTitle}
             </button>

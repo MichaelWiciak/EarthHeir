@@ -42,7 +42,7 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
       >
         <h3 className="mb-2 text-center">{sectionTitle}</h3>
         {paragraphs.map((para, idx) => (
-          <p key={idx} className="text-center">
+          <p key={idx} className="p-4">
             {para}
           </p>
         ))}

@@ -28,7 +28,8 @@ const Navbar: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <button
           onClick={() => scrollToSection("home")}
-          className="text-xl font-bold cursor-pointer, hover:text-blue-600 transition-colors"
+          className="text-xl font-bold hover:text-blue-600 transition-colors cursor-pointer"
+          aria-label="Scroll to home section"
         >
           Sustain;ed
         </button>
@@ -43,6 +44,7 @@ const Navbar: React.FC = () => {
                 setMenuOpen(false);
               }}
               className="text-gray-700 hover:text-blue-600 transition-colors hover:cursor-pointer"
+              aria-label={`Scroll to ${link.name} section`}
             >
               {link.name}
             </button>
@@ -52,6 +54,7 @@ const Navbar: React.FC = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-700"
+          aria-label="Toggle navigation menu"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -66,7 +69,11 @@ const Navbar: React.FC = () => {
               key={link.href}
               href={link.href}
               className="block text-gray-700 hover:text-blue-600"
-              onClick={() => setMenuOpen(false)} // Close menu on click
+              aria-label={`Scroll to ${link.name} section`}
+              onClick={() => {
+                scrollToSection(link.href.slice(1));
+                setMenuOpen(false);
+              }}
             >
               {link.name}
             </a>

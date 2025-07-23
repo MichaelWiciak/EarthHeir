@@ -4,6 +4,7 @@ export interface CircleItem {
   alt?: string;
   text?: string;
   url?: string;
+  circleDiameter?: number;
 }
 
 export interface TextSection {

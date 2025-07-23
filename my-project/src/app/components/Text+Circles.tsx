@@ -21,7 +21,7 @@ const InfoSection: React.FC<InfoSectionProps> = ({
   return (
     <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 mt-12 mb-12">
       {/* Left: Text */}
-      <div className="w-full md:flex-1 text-center">
+      <div className="w-full md:flex-1">
         <TextSection title={title} paragraphs={paragraphs} />
       </div>
 

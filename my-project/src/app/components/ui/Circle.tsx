@@ -4,7 +4,13 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { CircleItem } from "../../types/ui";
 
-const Circle: React.FC<CircleItem> = ({ imageSrc, alt = "", text, url }) => {
+const Circle: React.FC<CircleItem> = ({
+  imageSrc,
+  alt = "",
+  text,
+  url,
+  circleDiameter,
+}) => {
   const textRef = useRef<HTMLSpanElement>(null);
   const [diameter, setDiameter] = useState(96);
 
@@ -21,16 +27,18 @@ const Circle: React.FC<CircleItem> = ({ imageSrc, alt = "", text, url }) => {
     <div
       className="rounded-full border-4 border-gray-300 flex items-center justify-center overflow-hidden shadow-md relative text-center box-border bg-white transition-transform hover:scale-105"
       style={{
-        width: diameter,
-        height: diameter,
+        width: typeof circleDiameter === "number" ? circleDiameter : diameter,
+        height: typeof circleDiameter === "number" ? circleDiameter : diameter,
       }}
     >
       {imageSrc ? (
         <Image
           src={imageSrc}
           alt={alt}
-          width={diameter}
-          height={diameter}
+          width={typeof circleDiameter === "number" ? circleDiameter : diameter}
+          height={
+            typeof circleDiameter === "number" ? circleDiameter : diameter
+          }
           style={{ objectFit: "cover" }}
           sizes="(min-width: 768px) 8rem, 6rem"
         />

@@ -82,11 +82,13 @@ export const titlePageData = {
       imageSrc: "/seamonkeylogo.png",
       alt: "Logo 1",
       url: "https://seamonkeyprojects.com/",
+      circleDiameter: 200,
     },
     {
       imageSrc: "/earthheirlogo.png",
       alt: "Logo 2",
       url: "https://earthheir.com/",
+      circleDiameter: 200,
     },
   ],
 };
