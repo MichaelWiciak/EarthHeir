@@ -1,5 +1,7 @@
 import React from "react";
+import Image from "next/image";
 import { Creator } from "../types/ui";
+import titleLogo from "../../../public/Logo_PACK-01.png";
 
 interface TitleSectionProps {
   title: string;
@@ -13,10 +15,16 @@ const TitleSection: React.FC<TitleSectionProps> = ({
   motto,
 }) => {
   return (
-    <div className="text-center md:text-left pt-20">
-      <h1 className="mb-4">{title}</h1>
+    <div className="text-center md:text-left">
+      <Image
+        src={titleLogo}
+        alt={title}
+        className="mb-4 mx-auto md:mx-0"
+        priority={true}
+        placeholder="blur"
+      />
 
-      <p className="text-lg mb-2">
+      {/* <p className="text-lg mb-2 text-center">
         By{" "}
         {creators.map((creator, index) => (
           <span key={index}>
@@ -35,9 +43,11 @@ const TitleSection: React.FC<TitleSectionProps> = ({
             {index < creators.length - 1 && ", "}
           </span>
         ))}
-      </p>
+      </p> */}
 
-      <p className="text-md italic text-gray-600">{motto}</p>
+      <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 drop-shadow-lg, text-center">
+        {motto}
+      </h1>
     </div>
   );
 };
