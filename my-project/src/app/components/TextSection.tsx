@@ -17,7 +17,7 @@ const TextSection: React.FC<TextSectionProps> = ({
         </p>
       ))}
 
-      {tagline && <p className="">{tagline}</p>}
+      {tagline && <p className="mt-6 text-gray-500 italic">{tagline}</p>}
     </div>
   );
 };

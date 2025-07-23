@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="">
+      <div className="container-custom mx-auto">
         <Navbar />
         <section id="home" className="scroll-mt-10">
           <TitlePage
@@ -54,6 +54,7 @@ export default function Home() {
             logos={titlePageData.logos}
           />
         </section>
+
         <section id="whoweare" className="scroll-mt-10">
           <InfoSection
             title={whoweare.title}
@@ -67,7 +68,7 @@ export default function Home() {
           circles={aboutUsSection.circles}
         />
         <section id="impact" className="scroll-mt-10">
-          <div className="p-6 md:p-12 space-y-8 text-center">
+          <div className="space-y-8 text-center">
             <TextSection
               title={impactGoalsText.title}
               paragraphs={impactGoalsText.paragraphs}
@@ -98,7 +99,7 @@ export default function Home() {
         <InstagramFeed />
 
         <section id="stampRally" className="scroll-mt-10">
-          <div className="p-6 md:p-12 space-y-8">
+          <div className="space-y-8">
             <StampRally {...stampRallyData} />
           </div>
         </section>
@@ -119,9 +120,8 @@ export default function Home() {
           />
           <Toaster position="top-center" />
         </section>
-
-        <Footer logoSrc={footer.logoSrc} bullets={footer.bullets} />
       </div>
+      <Footer logoSrc={footer.logoSrc} bullets={footer.bullets} />
     </main>
   );
 }

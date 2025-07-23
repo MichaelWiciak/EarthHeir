@@ -15,7 +15,7 @@ const MapWithDetailsSection: React.FC<MapWithDetailsSectionProps> = ({
   zoom = 13,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row gap-6 p-6 md:p-12 items-stretch">
+    <div className="flex flex-col md:flex-row gap-6 mt-12 mb-12 items-stretch">
       {/* Map */}
       <div className="h-64 md:h-auto md:w-1/2 rounded-xl overflow-hidden">
         <OpenFreeMap

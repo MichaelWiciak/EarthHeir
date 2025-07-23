@@ -18,7 +18,7 @@ const TitlePage: React.FC<TitlePageProps> = ({
   logos,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 gap-6">
+    <div className="flex flex-col md:flex-row items-center justify-between mb-12 mt-12 gap-6">
       {/* Left logo (desktop only) */}
       <div className="hidden md:flex">
         <CircleGroup items={[logos[0]]} />

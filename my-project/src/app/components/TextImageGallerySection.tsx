@@ -23,7 +23,7 @@ const TextImageGallerySection: React.FC<TextImageGallerySectionProps> = ({
   images,
 }) => {
   return (
-    <section className="px-6 md:px-12 py-12 space-y-12">
+    <section className="py-12 space-y-12">
       {/* Overall title */}
       <h2 className="text-3xl font-bold text-center md:text-left">
         {overallTitle}

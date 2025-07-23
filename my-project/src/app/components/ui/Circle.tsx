@@ -29,7 +29,8 @@ const Circle: React.FC<CircleItem> = ({ imageSrc, alt = "", text, url }) => {
         <Image
           src={imageSrc}
           alt={alt}
-          fill
+          width={diameter}
+          height={diameter}
           style={{ objectFit: "cover" }}
           sizes="(min-width: 768px) 8rem, 6rem"
         />

@@ -1,5 +1,85 @@
 @import "tailwindcss";
 
+:root {
+  /* --- brand colours (already have) ---------------- */
+  --background: #ffffff;
+  --foreground: #111111;
+
+  /* --- base font family ---------------------------- */
+  --font-main: "Arial", "Helvetica", sans-serif;
+
+  /* --- Fluid type scale (rem clamp) ---------------
+     Each variable is: clamp(min, fluid, max)
+     fluid   = (vw * factor) + offset
+  --------------------------------------------------- */
+  /* Body */
+  --fs-body: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); /* ~18-20px */
+
+  /* Headings */
+  --fs-h3: clamp(1.5rem, 1.25rem + 1vw, 2rem); /* 24-32px */
+  --fs-h2: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem); /* 28-40px */
+  --fs-h1: clamp(2.5rem, 2rem + 3vw, 4rem); /* 40-64px */
+
+  /* Line-height */
+  --lh-body: 1.55;
+  --lh-heading: 1.2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-main);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+/* Headings – consistent sizing */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: var(--lh-heading);
+  margin: 0 0 0.5em 0;
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+
+.container-custom {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 639px) {
+  .container-custom {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-custom {
+    max-width: 1280px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,30 +96,3 @@ html {
 .animate-logo-scroll {
   animation: logoScroll 20s linear infinite;
 }
-
-/* make background yellow */
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */

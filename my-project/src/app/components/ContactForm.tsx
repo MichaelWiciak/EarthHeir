@@ -148,7 +148,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   };
 
   return (
-    <div className="p-6 md:p-12 space-y-6 max-w-4xl mx-auto">
+    <div className="space-y-6 max-w-4xl mx-auto">
       <h2 className="text-center">{title}</h2>
       {/* i want to add here a small tagline like text about that things with * are mandatory */}
       <p className="text-sm text-gray-500 text-center">

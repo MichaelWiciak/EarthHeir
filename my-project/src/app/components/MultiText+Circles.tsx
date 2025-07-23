@@ -20,7 +20,7 @@ const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
   const hasCircles = circles && circles.length > 0;
 
   return (
-    <div className="p-6 md:p-12 space-y-8">
+    <div className="space-y-8">
       {/* Overall title */}
       {sectionTitle && <h2 className="text-center">{sectionTitle}</h2>}
 

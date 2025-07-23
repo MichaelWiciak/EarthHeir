@@ -26,7 +26,7 @@ const ContentBlockGroupSection: React.FC<ContentBlockGroupSectionProps> = ({
   items,
 }) => {
   return (
-    <div className="p-12 text-center">
+    <div className="text-center mt-12 mb-12">
       {/* Render the header text section ONCE */}
       <TextSection
         title={textSection.title}

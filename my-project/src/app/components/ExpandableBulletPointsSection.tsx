@@ -22,7 +22,7 @@ const ExpandableTextListSection: React.FC<ExpandableTextListSectionProps> = ({
   };
 
   return (
-    <div className="p-6 md:p-12 space-y-8">
+    <div className="">
       {title && (
         <div className="text-center md:text-left">
           <h2 className="text-4xl font-bold">{title}</h2>
