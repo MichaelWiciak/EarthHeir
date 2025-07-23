@@ -1,12 +1,40 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "KleeOne";
+  src: url("/fonts/KleeOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KleeOne";
+  src: url("/fonts/KleeOne-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  src: url("/fonts/MyriadPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Handlee";
+  src: url("/fonts/Handlee-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   /* --- brand colours (already have) ---------------- */
   --background: #ffffff;
   --foreground: #111111;
 
   /* --- base font family ---------------------------- */
-  --font-main: "Arial", "Helvetica", sans-serif;
+  --font-main: "KleeOne", "Arial", "Helvetica", sans-serif;
 
   /* --- Fluid type scale (rem clamp) ---------------
      Each variable is: clamp(min, fluid, max)
@@ -45,7 +73,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: "MyriadPro", "Arial", sans-serif;
+  font-weight: 400;
   line-height: var(--lh-heading);
   margin: 0 0 0.5em 0;
 }
@@ -57,6 +86,16 @@ h2 {
 }
 h3 {
   font-size: var(--fs-h3);
+}
+
+.handlee-text {
+  font-family: "Handlee", "Arial", cursive;
+  font-weight: 400;
+}
+
+.klee-semibold {
+  font-family: "KleeOne", "Arial", sans-serif;
+  font-weight: 600;
 }
 
 .container-custom {
