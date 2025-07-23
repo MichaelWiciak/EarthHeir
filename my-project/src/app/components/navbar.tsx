@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import titleLogo from "../../../public/Logo_PACK-01.png";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -28,10 +30,18 @@ const Navbar: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <button
           onClick={() => scrollToSection("home")}
-          className="text-xl font-bold hover:text-blue-600 transition-colors cursor-pointer"
+          className="hover:opacity-80 transition-opacity cursor-pointer p-0 bg-transparent border-none "
           aria-label="Scroll to home section"
+          style={{ lineHeight: 0 }}
         >
-          Sustain;ed
+          <Image
+            src={titleLogo.src}
+            alt="Sustain;ed Logo"
+            className=""
+            width={120}
+            height={120}
+            style={{ display: "block" }}
+          />
         </button>
 
         {/* Desktop Links */}

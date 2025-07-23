@@ -24,6 +24,7 @@ export default function InstagramFeed() {
           overflow: "hidden",
           width: "100%",
         }}
+        aria-label="Instagram Feed"
         title="Posts from Instagram"
       ></iframe>
     </section>

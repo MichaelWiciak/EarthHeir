@@ -37,6 +37,7 @@ const MapWithDetailsSection: React.FC<MapWithDetailsSectionProps> = ({
                     className="text-blue-600 hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Watch our directions video"
                   >
                     Watch our directions video
                   </a>

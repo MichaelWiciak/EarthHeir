@@ -40,6 +40,7 @@ const OpenFreeMap: React.FC<OpenFreeMapProps> = ({
     <div
       ref={mapRef}
       className="h-64 md:h-[500px] w-full rounded-xl overflow-hidden shadow-md"
+      aria-label="Open Free Map"
     />
   );
 };

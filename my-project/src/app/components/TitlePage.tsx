@@ -3,6 +3,7 @@ import React from "react";
 import TitleSection from "./TitleSection";
 import CircleGroup from "./CircleGroup";
 import { Creator, Logo } from "../types/ui";
+import titleBackground from "../../../public/titleBackground.jpg";
 
 interface TitlePageProps {
   title: string;
@@ -18,23 +19,39 @@ const TitlePage: React.FC<TitlePageProps> = ({
   logos,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between mb-12 mt-12 gap-6">
-      {/* Left logo (desktop only) */}
-      <div className="hidden md:flex">
-        <CircleGroup items={[logos[0]]} />
-      </div>
+    <div className="relative flex flex-col md:flex-row items-center justify-between mb-12 mt-12 gap-6">
+      {/* Background image with reduced opacity */}
+      <div
+        className="absolute inset-0 w-full h-full z-0"
+        style={{
+          backgroundImage: `url(${titleBackground.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.3,
+          pointerEvents: "none",
+        }}
+        aria-hidden="true"
+      />
 
-      {/* Center title section */}
-      <TitleSection title={title} creators={creators} motto={motto} />
+      {/* Content above background */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-6">
+        {/* Left logo (desktop only) */}
+        <div className="hidden md:flex">
+          <CircleGroup items={[logos[0]]} />
+        </div>
 
-      {/* Right logo (desktop only) */}
-      <div className="hidden md:flex">
-        <CircleGroup items={[logos[1]]} />
-      </div>
+        {/* Center title section */}
+        <TitleSection title={title} creators={creators} motto={motto} />
 
-      {/* Mobile view: show both logos below */}
-      <div className="flex md:hidden mt-8 gap-4">
-        <CircleGroup items={logos} direction="row" />
+        {/* Right logo (desktop only) */}
+        <div className="hidden md:flex">
+          <CircleGroup items={[logos[1]]} />
+        </div>
+
+        {/* Mobile view: show both logos below */}
+        <div className="flex md:hidden mt-8 gap-4">
+          <CircleGroup items={logos} direction="row" />
+        </div>
       </div>
     </div>
   );
