@@ -26,12 +26,13 @@ const ContentBlockGroupSection: React.FC<ContentBlockGroupSectionProps> = ({
   items,
 }) => {
   return (
-    <div className="mt-12 mb-12">
+    <div className="">
       {/* Render the header text section ONCE */}
       <TextSection
         title={textSection.title}
         paragraphs={textSection.paragraphs}
         tagline={textSection.tagline}
+        size="h2"
       />
 
       {/* Loop through gallery + expandable item */}

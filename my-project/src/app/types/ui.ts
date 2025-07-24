@@ -11,6 +11,7 @@ export interface TextSection {
   title: string;
   paragraphs: string[];
   tagline?: string;
+  size?: "h2" | "h3" | "h4";
 }
 
 export interface Slide {

@@ -15,7 +15,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
   motto,
 }) => {
   return (
-    <div className="text-center md:text-left py-16">
+    <div className="text-center md:text-left">
       {/* <Image
         src={titleLogo}
         alt={title}

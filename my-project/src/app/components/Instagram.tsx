@@ -14,7 +14,7 @@ export default function InstagramFeed() {
   }, []);
 
   return (
-    <section className="w-full max-w-4xl mx-auto py-12">
+    <section className="w-full max-w-4xl mx-auto">
       <h2 className="mb-6 text-center">Sustain;ed Instagram Feed</h2>
       <iframe
         src="https://snapwidget.com/embed/1103273"

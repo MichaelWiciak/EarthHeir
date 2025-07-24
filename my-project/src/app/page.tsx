@@ -65,7 +65,7 @@ export default function Home() {
           }}
           aria-hidden="true"
         />
-        <header id="home" className="scroll-mt-14 container-custom mx-auto">
+        <header id="home" className="scroll-mt-8 container-custom mx-auto">
           <TitlePage
             title={titlePageData.title}
             creators={titlePageData.creators}
@@ -74,7 +74,7 @@ export default function Home() {
           />
         </header>
         <div className="container-custom mx-auto">
-          <section id="whoweare" className="scroll-mt-14">
+          <section id="whoweare" className="scroll-mt-8 py-15">
             <InfoSection
               title={whoweare.title}
               paragraphs={whoweare.paragraphs}
@@ -82,28 +82,31 @@ export default function Home() {
             />
           </section>
 
-          <MultiTextCircleSection
-            sectionTitle={aboutUsSection.sectionTitle}
-            sections={aboutUsSection.sections}
-            circles={aboutUsSection.circles}
-          />
+          <div className="py-15">
+            <MultiTextCircleSection
+              sectionTitle={aboutUsSection.sectionTitle}
+              sections={aboutUsSection.sections}
+              circles={aboutUsSection.circles}
+            />
+          </div>
 
-          <section id="impact" className="scroll-mt-14">
+          <section id="impact" className="scroll-mt-8 py-15">
             <TextSection
               title={impactGoalsText.title}
               paragraphs={impactGoalsText.paragraphs}
               tagline={impactGoalsText.tagline}
+              size="h2"
             />
           </section>
 
-          <section id="whatwedo" className="scroll-mt-14">
+          <section id="whatwedo" className="scroll-mt-8 py-15">
             <ContentBlockGroupSection
               textSection={whatWeDoSection.textSection}
               items={whatWeDoSection.items}
             />
           </section>
 
-          <section id="venues" className="scroll-mt-14">
+          <section id="venues" className="scroll-mt-8 py-15">
             <ImageParagraphGroup
               title={venueSectionData.title}
               sections={venueData}
@@ -111,15 +114,19 @@ export default function Home() {
             />
           </section>
 
-          <CompositeShowcase {...clientsAndPartnersShowcase} />
+          <div className="py-15">
+            <CompositeShowcase {...clientsAndPartnersShowcase} />
+          </div>
 
-          <InstagramFeed />
+          <div className="py-15">
+            <InstagramFeed />
+          </div>
 
-          <section id="stampRally" className="scroll-mt-14">
+          <section id="stampRally" className="scroll-mt-8 py-15">
             <StampRally {...stampRallyData} />
           </section>
 
-          <section id="location" className="scroll-mt-14">
+          <section id="location" className="scroll-mt-8 py-15">
             <MapWithDetailsSection
               coordinates={locationSection.coordinates}
               title={locationSection.title}
@@ -127,7 +134,7 @@ export default function Home() {
             />
           </section>
 
-          <section id="contact" className="scroll-mt-14">
+          <section id="contact" className="scroll-mt-8 py-15">
             <ContactForm
               title={contactSection.title}
               tagline={contactSection.tagline}

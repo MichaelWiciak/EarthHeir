@@ -19,7 +19,7 @@ const TitlePage: React.FC<TitlePageProps> = ({
   logos,
 }) => {
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-between mb-12 mt-12 gap-6">
+    <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 py-24">
       {/* Content above background */}
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-6">
         {/* Left logo (desktop only) */}

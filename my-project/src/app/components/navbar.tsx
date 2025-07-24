@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import titleLogo from "../../../public/Logo_PACK-01.png";
+import titleLogo from "../../../public/Sustain.ed Logo-01.svg";
 import Image from "next/image";
 
 const Navbar: React.FC = () => {
@@ -26,8 +26,8 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 ">
+      <div className="container-custom mx-auto px-4 py-3 flex justify-between items-center">
         <button
           onClick={() => scrollToSection("home")}
           className="hover:opacity-80 transition-opacity cursor-pointer p-0 bg-transparent border-none "

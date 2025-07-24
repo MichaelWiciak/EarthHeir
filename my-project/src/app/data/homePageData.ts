@@ -1,3 +1,5 @@
+import { s } from "framer-motion/client";
+
 export const footer = {
   logoSrc: "/sustainedLogo.png",
   bullets: [
@@ -8,7 +10,7 @@ export const footer = {
 };
 
 export const whoweare = {
-  title: "WHO ARE WE?",
+  title: "Who Are We?",
   paragraphs: [
     "The Sustain.ed Centre aims to Educate, Empower and Advocate for Sustainability and Social Impact in Malaysia for Systemic Change. ",
     "Stakeholders and partners will gain avenues and tools that facilitate community development, learning and inclusivity in doing good business, social entrepreneurship and promoting sustainability.",
@@ -16,7 +18,7 @@ export const whoweare = {
   ],
   circles: [
     { text: "Urgency to address pressing environmental challenges" },
-    { text: "Demand for sustainable & social impact practices education " },
+    { text: "Demand for sustainable & social impact practices education" },
   ],
 };
 
@@ -27,16 +29,16 @@ export const aboutUsSection = {
   sections: [
     {
       title:
-        "5 YEAR IMPACT:  140,000+ handmade upcycled products, 65,000+ hours employment and training to marginalised communities, 250+ upcycling machines sold globally.",
+        "5 Year Impact: 140,000+ handmade upcycled products, 65,000+ hours employment and training to marginalised communities, 250+ upcycling machines sold globally.",
       paragraphs: [
         "Plastic pollution is everywhere, and going nowhere fast - except into our waterways, soil, food, air, and bodies. The Sea Monkey Project creates ocean plastic solutions and education for businesses, educational institutions and marginalised communities. SMP is a social enterprise which designs and builds mobile 3-in-1 plastic recycling machines (catering to the specific needs of the end user), and organizes interactive educational workshops focused on sustainability and plastic pollution. SMP was registered in 2020, and aims to grow and empower community project sites, and create positive social and environmental impact by collaborating with a wide range of stakeholders to reduce plastic pollution on Earth.",
       ],
     },
     {
       title:
-        "IMPACT: MYR 2.3M in income, training, mentoring and aid for artisans from 2013 to 2023.",
+        "Impact: MYR 2.3M in income, training, mentoring and aid for artisans from 2013 to 2023.",
       paragraphs: [
-        "EH is founded and owned by Malaysian women, focused on creating and preserving our collective cultural heritage whilst improving livelihoods, whilst bridging the craft, art and fashion worlds. EH's decade long experience has impacted and grown the social impact ecosystem in Malaysia. As a sustainability champion in Malaysia addressing SDG goals 1,8 & 12, Earth Heir focuses on education & training of micro entrepreneurs, creating customised gifts, conducting sustainability & artisan workshops & raising awareness globally on social entrepreneurship. All of Earth Heir's products are made with natural or recyclable materials, practising circular economy in their operations.",
+        "Earth Heir is founded and owned by Malaysian women, focused on creating and preserving our collective cultural heritage whilst improving livelihoods, whilst bridging the craft, art and fashion worlds. EH's decade long experience has impacted and grown the social impact ecosystem in Malaysia. As a sustainability champion in Malaysia addressing SDG goals 1,8 & 12, Earth Heir focuses on education & training of micro entrepreneurs, creating customised gifts, conducting sustainability & artisan workshops & raising awareness globally on social entrepreneurship. All of Earth Heir's products are made with natural or recyclable materials, practising circular economy in their operations.",
       ],
     },
   ],
@@ -51,15 +53,15 @@ export const aboutUsSection = {
 };
 
 export const impactGoalsText = {
-  title: "OUR IMPACT GOALS",
+  title: "Our Impact Goals",
   paragraphs: [
     "Growth in local entrepreneurs/artisans that prioritise quality, social & environmental impact and provide a marketplace for their products ",
-    "SOCIAL PROCUREMENT - Larger employment creation through the ripple effect of engagement with other impact organisations, creating sustainable livelihoods for various communities supported ",
+    "Social Procurement - Larger employment creation through the ripple effect of engagement with other impact organisations, creating sustainable livelihoods for various communities supported ",
     "Awareness and Action creation among Corporates, Schools and Public communities on sustainability initiatives",
     "Making Kuala Lumpur a destination where people can get easy access to new and exciting activities that promote conscious living, sustainability, as well as Made in Malaysia products with positive impact ",
   ],
   tagline:
-    "SUSTAIN.ED GOAL: 30,000 employment and training hours & impact the livelihoods of 3000 individuals by 2026",
+    "Sustain;ed Goal: 30,000 employment and training hours & impact the livelihoods of 3000 individuals by 2026",
 };
 
 // data/homepageContent.ts
@@ -113,7 +115,7 @@ export const locationSection = {
 };
 
 export const contactSection = {
-  title: "Get in Touch",
+  title: "Get In Touch",
   tagline: "Alternatively, you can reach us at sustainedkl@gmail.com",
   enquiryOptions: [
     "Partnership",
@@ -177,29 +179,29 @@ export const whatWeDoSection = {
         slides: [
           {
             imageUrl: "/GalleriesPhotos/KTRN.jpg",
-            heading: "A. EDUCATION HUB",
+            heading: "A. Education Hub",
             paragraph: "Environmental & Sustainability Training",
           },
           {
             imageUrl: "/GalleriesPhotos/Leaders.jpg",
-            heading: "A. EDUCATION HUB",
+            heading: "A. Education Hub",
             paragraph: "Sustainable Entrepreneurship / Micro-Business Training",
           },
           {
             imageUrl: "/GalleriesPhotos/trainingProject.jpg",
-            heading: "A. EDUCATION HUB",
+            heading: "A. Education Hub",
             paragraph: "Sustainability & ESG Education + Workshop tasters",
           },
           {
             imageUrl: "/GalleriesPhotos/ArtisticTraining.jpg",
-            heading: "A. EDUCATION HUB",
+            heading: "A. Education Hub",
             paragraph: "Upcycling, Cultural Heritage & Artist Workshops",
           },
         ],
       },
       expandableItem: {
         bulletTitle:
-          "A. SUSTAIN.ED SUSTAINABILITY & SOCIAL IMPACT EDUCATION HUB",
+          "A. Sustain.ED Sustainability & Social Impact Education Hub",
         content: {
           sectionTitle: "",
           sections: [
@@ -209,7 +211,7 @@ export const whatWeDoSection = {
                 "Addressing an Urgent Global Challenge: climate change, resource depletion, and social inequality are among the most critical challenges of our time.",
                 "Growing Demand for Sustainability Education: The global shift towards sustainability has created a significant demand for education and awareness.",
               ],
-              tagline: "Growing the sustainability ECOSYSTEM in Malaysia",
+              tagline: "Growing the sustainability ecosystem in Malaysia",
             },
           ],
           circles: [
@@ -231,13 +233,13 @@ export const whatWeDoSection = {
         slides: [
           {
             imageUrl: "/GalleriesPhotos/earthheirshop.jpg",
-            heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
+            heading: "B. Earthheir.com Social Impact Marketplace",
             paragraph:
               "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
           },
           {
             imageUrl: "/GalleriesPhotos/earthheirshop.jpg",
-            heading: "B. EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
+            heading: "B. Earthheir.com Social Impact Marketplace",
             paragraph:
               "The earthheir.com sustainability & social impact marketplace for MADE IN MALAYSIA impact brands and products",
           },
@@ -245,28 +247,28 @@ export const whatWeDoSection = {
       },
       expandableItem: {
         bulletTitle:
-          "B. EARTHHEIR.COM - SOCIAL IMPACT MARKETPLACE & PROCUREMENT",
+          "B. Earthheir.com - Social Impact Marketplace & Procurement",
         content: {
           sectionTitle: "‘Developing a sustainability ecosystem’",
           sections: [
             {
               title: "",
               paragraphs: [
-                "EARTHHEIR.COM is a Social Impact Marketplace showcasing Social Entrepreneurship (SE), NGOs & Social IMPACT products MADE IN MALAYSIA.",
+                "Earthheir.com is a Social Impact Marketplace showcasing Social Entrepreneurship (SE), NGOs & Social Impact products MADE IN MALAYSIA.",
                 "EarthHeir.com will bring curated, high quality social impact products from across Malaysia under one roof - creating a powerful fusion of impact enterprises coming together and growing our collective impact in Malaysia.",
-                "A central hub for SOCIAL PROCUREMENT to grow the ESG goals and SDG achievements for companies and organisations.",
+                "A central hub for social procurement to grow the ESG goals and SDG achievements for companies and organisations.",
               ],
             },
           ],
           circles: [
             {
-              text: "SOCIAL IMPACT PRODUCTS",
+              text: "Social Impact Products",
             },
             {
-              text: "MADE IN MALAYSIA",
+              text: "Made In Malaysia",
             },
             {
-              text: "SOCIAL PROCUREMENT",
+              text: "Social Procurement",
             },
           ],
         },
@@ -277,18 +279,18 @@ export const whatWeDoSection = {
         slides: [
           {
             imageUrl: "/GalleriesPhotos/csection.jpg",
-            heading: "C. KNOWLEDGE TALK SERIES",
+            heading: "C. Knowledge Talk Series",
             paragraph: "Impact Leaders from Malaysia and around the world.",
           },
           {
             imageUrl: "/GalleriesPhotos/csection.jpg",
-            heading: "C. KNOWLEDGE TALK SERIES",
+            heading: "C. Knowledge Talk Series",
             paragraph: "Impact Leaders from Malaysia and around the world.",
           },
         ],
       },
       expandableItem: {
-        bulletTitle: "C. SUSTAIN.ED KNOWLEDGE TALK SERIES",
+        bulletTitle: "C. Sustain.ED Knowledge Talk Series",
         content: {
           sectionTitle: "",
           sections: [

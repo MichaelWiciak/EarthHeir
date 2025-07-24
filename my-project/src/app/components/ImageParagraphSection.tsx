@@ -40,7 +40,7 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
           isImageLeft ? "md:order-2" : "md:order-1"
         } text-center md:text-left`}
       >
-        <h3 className="mb-2 text-center">{sectionTitle}</h3>
+        <h3 className="text-center py-6">{sectionTitle}</h3>
         {paragraphs.map((para, idx) => (
           <p key={idx} className="p-4">
             {para}

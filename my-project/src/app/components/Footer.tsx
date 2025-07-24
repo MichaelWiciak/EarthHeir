@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({
   bullets,
 }) => {
   return (
-    <footer className="w-full bg-gray-100 py-8 px-6 border-t border-gray-300 mt-10">
+    <footer className="w-full bg-gray-100 py-8 px-6 border-t border-gray-300">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 w-full">
         {/* Logo */}
         <div className="flex-shrink-0">

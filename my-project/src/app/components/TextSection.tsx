@@ -6,10 +6,13 @@ const TextSection: React.FC<TextSectionProps> = ({
   title,
   paragraphs,
   tagline,
+  size = "h3",
 }) => {
   return (
     <div className="">
-      {title && title.trim() !== "" && <h3 className="text-center">{title}</h3>}
+      {title &&
+        title.trim() !== "" &&
+        React.createElement(size, { className: "text-center" }, title)}
 
       {paragraphs.map((text, index) => (
         <p key={index} className="">

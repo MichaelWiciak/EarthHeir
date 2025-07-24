@@ -9,6 +9,7 @@ interface ImageWithTitleProps {
   width?: number; // in pixels
   height?: number; // in pixels
   rotationDegrees?: number; // e.g. 15
+  size?: "h2" | "h3" | "h4";
 }
 
 const ImageWithTitle: React.FC<ImageWithTitleProps> = ({
@@ -18,10 +19,11 @@ const ImageWithTitle: React.FC<ImageWithTitleProps> = ({
   width = 400,
   height = 300,
   rotationDegrees = 0,
+  size = "h3",
 }) => {
   return (
     <div className="text-center space-y-4">
-      <h2 className="">{title}</h2>
+      {React.createElement(size, { className: "" }, title)}
       <div
         className="inline-block transition-transform"
         style={{

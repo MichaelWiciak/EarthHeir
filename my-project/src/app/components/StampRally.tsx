@@ -34,6 +34,7 @@ const StampRally: React.FC<StampRallyProps> = ({
             title={textSection.title}
             paragraphs={textSection.paragraphs}
             tagline={textSection.tagline}
+            size="h2"
           />
         </div>
 
