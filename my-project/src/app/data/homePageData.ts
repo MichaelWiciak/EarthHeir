@@ -1,4 +1,4 @@
-import { s } from "framer-motion/client";
+import { image, s } from "framer-motion/client";
 
 export const footer = {
   logoSrc: "/sustainedLogo.png",
@@ -48,6 +48,42 @@ export const aboutUsSection = {
     },
     {
       text: "1st B Corp social enterprise & only Fair Trade brand certified with WFTO, in Malaysia. Founded in 2013",
+    },
+  ],
+};
+
+export const aboutUsSectionProjectSeaMonkey = {
+  title:
+    "5 Year Impact: 140,000+ handmade upcycled products, 65,000+ hours employment and training to marginalised communities, 250+ upcycling machines sold globally.",
+  paragraphs: [
+    "Plastic pollution is everywhere, and going nowhere fast - except into our waterways, soil, food, air, and bodies. The Sea Monkey Project creates ocean plastic solutions and education for businesses, educational institutions and marginalised communities. SMP is a social enterprise which designs and builds mobile 3-in-1 plastic recycling machines (catering to the specific needs of the end user), and organizes interactive educational workshops focused on sustainability and plastic pollution. SMP was registered in 2020, and aims to grow and empower community project sites, and create positive social and environmental impact by collaborating with a wide range of stakeholders to reduce plastic pollution on Earth.",
+  ],
+  circles: [
+    {
+      text: "Reducing plastic waste & impacting communities with sustainability training",
+    },
+    {
+      imageSrc: "/seamonkeylogo.png",
+      alt: "Sea Monkey Project Logo",
+      url: "https://seamonkeyprojects.com/",
+    },
+  ],
+};
+
+export const aboutUsSectionProjectEarthHeir = {
+  title:
+    "Impact: MYR 2.3M in income, training, mentoring and aid for artisans from 2013 to 2023.",
+  paragraphs: [
+    "Earth Heir is founded and owned by Malaysian women, focused on creating and preserving our collective cultural heritage whilst improving livelihoods, whilst bridging the craft, art and fashion worlds. EH's decade long experience has impacted and grown the social impact ecosystem in Malaysia. As a sustainability champion in Malaysia addressing SDG goals 1,8 & 12, Earth Heir focuses on education & training of micro entrepreneurs, creating customised gifts, conducting sustainability & artisan workshops & raising awareness globally on social entrepreneurship. All of Earth Heir's products are made with natural or recyclable materials, practising circular economy in their operations.",
+  ],
+  circles: [
+    {
+      text: "1st B Corp social enterprise & only Fair Trade brand certified with WFTO, in Malaysia. Founded in 2013",
+    },
+    {
+      imageSrc: "/earthheirlogo.png",
+      alt: "Earth Heir Logo",
+      url: "https://earthheir.com/",
     },
   ],
 };

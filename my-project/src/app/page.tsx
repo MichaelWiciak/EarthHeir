@@ -32,6 +32,8 @@ import {
   clientsAndPartnersShowcase,
   stampRallyData,
   venueSectionData,
+  aboutUsSectionProjectSeaMonkey,
+  aboutUsSectionProjectEarthHeir,
 } from "@/app/data/homePageData";
 
 export default function Home() {
@@ -83,11 +85,27 @@ export default function Home() {
           </section>
 
           <div className="py-15">
-            <MultiTextCircleSection
+            {/* <MultiTextCircleSection
               sectionTitle={aboutUsSection.sectionTitle}
               sections={aboutUsSection.sections}
               circles={aboutUsSection.circles}
-            />
+              size="h2"
+            /> */}
+            <h2 className="text-center pb-4">About Us</h2>
+            <div className="pb-16">
+              <InfoSection
+                title={aboutUsSectionProjectSeaMonkey.title}
+                paragraphs={aboutUsSectionProjectSeaMonkey.paragraphs}
+                circles={aboutUsSectionProjectSeaMonkey.circles}
+              />
+            </div>
+            <div className="">
+              <InfoSection
+                title={aboutUsSectionProjectEarthHeir.title}
+                paragraphs={aboutUsSectionProjectEarthHeir.paragraphs}
+                circles={aboutUsSectionProjectEarthHeir.circles}
+              />
+            </div>
           </div>
 
           <section id="impact" className="scroll-mt-8 py-15">
@@ -146,7 +164,7 @@ export default function Home() {
       </main>
 
       <footer>
-        <div className="container-custom mx-auto">
+        <div>
           <Footer logoSrc={footer.logoSrc} bullets={footer.bullets} />
         </div>
       </footer>

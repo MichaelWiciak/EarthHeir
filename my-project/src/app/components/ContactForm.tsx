@@ -254,6 +254,99 @@ const ContactForm: React.FC<ContactFormProps> = ({
           </div>
         </div>
 
+        <AnimatePresence>
+          {selectedOptions.includes("Renting the Venue") && (
+            <motion.div
+              key="venue-details"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-4 border rounded-lg p-4 bg-gray-50"
+            >
+              <h3 className="font-semibold text-lg">Venue Rental Details</h3>
+
+              <div className="flex flex-col space-y-2">
+                <label className="text-sm font-medium text-gray-700">
+                  Number of People
+                </label>
+                <input
+                  type="number"
+                  placeholder="How many people will attend?"
+                  className="w-full border rounded-lg p-3"
+                  value={venuePeople}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/-/g, "");
+                    // Only allow positive numbers (including empty string) and max 5 digits
+                    if (
+                      value === "" ||
+                      (/^\d+$/.test(value) &&
+                        Number(value) > 0 &&
+                        value.length <= 5)
+                    ) {
+                      setVenuePeople(value);
+                    }
+                  }}
+                  min={1}
+                  max={99999}
+                  inputMode="numeric"
+                  pattern="[1-9][0-9]{0,4}"
+                  onKeyDown={(e) => {
+                    if (
+                      e.key === "-" ||
+                      (venuePeople.length >= 5 &&
+                        ![
+                          "Backspace",
+                          "Delete",
+                          "ArrowLeft",
+                          "ArrowRight",
+                          "Tab",
+                        ].includes(e.key))
+                    ) {
+                      e.preventDefault();
+                    }
+                  }}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700">
+                  Purpose of Venue Rental
+                </label>
+                <textarea
+                  placeholder="What do you want to do in the venue?"
+                  className="w-full border rounded-lg p-3 h-24 resize-none"
+                  value={venuePurpose}
+                  onChange={(e) => setVenuePurpose(e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700">
+                  Date of Venue Rental
+                </label>
+              </div>
+              <input
+                type="date"
+                className="w-full border rounded-lg p-3"
+                value={venueDate}
+                onChange={(e) => setVenueDate(e.target.value)}
+              />
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-gray-700">
+                  Time of Venue Rental
+                </label>
+              </div>
+              <input
+                type="time"
+                value={venueTime}
+                onChange={(e) => setVenueTime(e.target.value)}
+                className="w-full border rounded-lg p-3"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <div className="space-y-2">
           <label
             htmlFor="message"
@@ -267,99 +360,6 @@ const ContactForm: React.FC<ContactFormProps> = ({
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-
-          <AnimatePresence>
-            {selectedOptions.includes("Renting the Venue") && (
-              <motion.div
-                key="venue-details"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-4 border rounded-lg p-4 bg-gray-50"
-              >
-                <h3 className="font-semibold text-lg">Venue Rental Details</h3>
-
-                <div className="flex flex-col space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
-                    Number of People
-                  </label>
-                  <input
-                    type="number"
-                    placeholder="How many people will attend?"
-                    className="w-full border rounded-lg p-3"
-                    value={venuePeople}
-                    onChange={(e) => {
-                      const value = e.target.value.replace(/-/g, "");
-                      // Only allow positive numbers (including empty string) and max 5 digits
-                      if (
-                        value === "" ||
-                        (/^\d+$/.test(value) &&
-                          Number(value) > 0 &&
-                          value.length <= 5)
-                      ) {
-                        setVenuePeople(value);
-                      }
-                    }}
-                    min={1}
-                    max={99999}
-                    inputMode="numeric"
-                    pattern="[1-9][0-9]{0,4}"
-                    onKeyDown={(e) => {
-                      if (
-                        e.key === "-" ||
-                        (venuePeople.length >= 5 &&
-                          ![
-                            "Backspace",
-                            "Delete",
-                            "ArrowLeft",
-                            "ArrowRight",
-                            "Tab",
-                          ].includes(e.key))
-                      ) {
-                        e.preventDefault();
-                      }
-                    }}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
-                    Purpose of Venue Rental
-                  </label>
-                  <textarea
-                    placeholder="What do you want to do in the venue?"
-                    className="w-full border rounded-lg p-3 h-24 resize-none"
-                    value={venuePurpose}
-                    onChange={(e) => setVenuePurpose(e.target.value)}
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
-                    Date of Venue Rental
-                  </label>
-                </div>
-                <input
-                  type="date"
-                  className="w-full border rounded-lg p-3"
-                  value={venueDate}
-                  onChange={(e) => setVenueDate(e.target.value)}
-                />
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
-                    Time of Venue Rental
-                  </label>
-                </div>
-                <input
-                  type="time"
-                  value={venueTime}
-                  onChange={(e) => setVenueTime(e.target.value)}
-                  className="w-full border rounded-lg p-3"
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
         <div className="flex justify-center">
           <button

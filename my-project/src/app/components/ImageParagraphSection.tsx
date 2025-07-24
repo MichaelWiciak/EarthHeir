@@ -36,13 +36,13 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
       </div>
 
       <div
-        className={`w-full md:w-1/2 ${
+        className={`w-full p-4 md:w-1/2 ${
           isImageLeft ? "md:order-2" : "md:order-1"
         } text-center md:text-left`}
       >
-        <h3 className="text-center py-6">{sectionTitle}</h3>
+        <h3 className="text-center">{sectionTitle}</h3>
         {paragraphs.map((para, idx) => (
-          <p key={idx} className="p-4">
+          <p key={idx} className="">
             {para}
           </p>
         ))}

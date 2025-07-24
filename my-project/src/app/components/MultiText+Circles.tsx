@@ -9,6 +9,7 @@ interface MultiTextCircleSectionProps {
   sections: TextSectionData[];
   circles?: CircleItem[];
   circleDirection?: "row" | "col";
+  size?: "h2" | "h3" | "h4";
 }
 
 const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
@@ -16,13 +17,19 @@ const MultiTextCircleSection: React.FC<MultiTextCircleSectionProps> = ({
   sections,
   circles,
   circleDirection,
+  size = "h3",
 }) => {
   const hasCircles = circles && circles.length > 0;
 
   return (
     <div className="">
       {/* Overall title */}
-      {sectionTitle && <h3 className="text-center">{sectionTitle}</h3>}
+      {sectionTitle &&
+        React.createElement(
+          size,
+          { className: "text-center p-4" },
+          sectionTitle
+        )}
 
       {/* Layout: Text sections + Circles */}
       <div className="flex flex-col xl:flex-row justify-between gap-8">
