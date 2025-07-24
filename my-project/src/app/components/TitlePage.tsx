@@ -20,19 +20,6 @@ const TitlePage: React.FC<TitlePageProps> = ({
 }) => {
   return (
     <div className="relative flex flex-col md:flex-row items-center justify-between mb-12 mt-12 gap-6">
-      {/* Background image with reduced opacity */}
-      <div
-        className="absolute inset-0 w-full h-full z-0"
-        style={{
-          backgroundImage: `url(${titleBackground.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.3,
-          pointerEvents: "none",
-        }}
-        aria-hidden="true"
-      />
-
       {/* Content above background */}
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-6">
         {/* Left logo (desktop only) */}

@@ -378,11 +378,5 @@ export const stampRallyData = {
 
 export const venueSectionData = {
   title: "Our Venue & Facilities",
-  taglineItems: [
-    "Office Cleaning: RM100 per event",
-    "After Office Hours, Weekends & Public Holidays: RM50 per hour per staff",
-    "Full day covers 8 hours usage, Half day covers 4 hours usage",
-    "Space Rental Rate Card is available upon request",
-    "Term & Conditions apply",
-  ],
+  taglineItems: ["Space Rental Rate Card is available upon request"],
 };

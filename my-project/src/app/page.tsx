@@ -17,6 +17,7 @@ import StampRally from "@/app/components/StampRally";
 import CompositeShowcase from "./components/Clients";
 import ImageParagraphGroup from "./components/ImageParagraphGroup";
 import ContentBlockGroupSection from "./components/WhatWeDo";
+import titleBackground from "../../public/titleBackground.jpg";
 
 import {
   whoweare,
@@ -43,85 +44,105 @@ export default function Home() {
   );
 
   return (
-    <main>
-      <div className="container-custom mx-auto">
-        <Navbar />
-        <section id="home" className="scroll-mt-14">
+    <div>
+      <header>
+        <div>
+          <h1 className="sr-only">Sustain;ed</h1>
+
+          <Navbar />
+        </div>
+      </header>
+
+      <main>
+        <div
+          className="absolute inset-0 w-full h-full z-0"
+          style={{
+            backgroundImage: `url(${titleBackground.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.3,
+            pointerEvents: "none",
+          }}
+          aria-hidden="true"
+        />
+        <header id="home" className="scroll-mt-14 container-custom mx-auto">
           <TitlePage
             title={titlePageData.title}
             creators={titlePageData.creators}
             motto={titlePageData.motto}
             logos={titlePageData.logos}
           />
-        </section>
+        </header>
+        <div className="container-custom mx-auto">
+          <section id="whoweare" className="scroll-mt-14">
+            <InfoSection
+              title={whoweare.title}
+              paragraphs={whoweare.paragraphs}
+              circles={whoweare.circles}
+            />
+          </section>
 
-        <section id="whoweare" className="scroll-mt-14">
-          <InfoSection
-            title={whoweare.title}
-            paragraphs={whoweare.paragraphs}
-            circles={whoweare.circles}
+          <MultiTextCircleSection
+            sectionTitle={aboutUsSection.sectionTitle}
+            sections={aboutUsSection.sections}
+            circles={aboutUsSection.circles}
           />
-        </section>
-        <MultiTextCircleSection
-          sectionTitle={aboutUsSection.sectionTitle}
-          sections={aboutUsSection.sections}
-          circles={aboutUsSection.circles}
-        />
-        <section id="impact" className="scroll-mt-14">
-          <div className="space-y-8">
+
+          <section id="impact" className="scroll-mt-14">
             <TextSection
               title={impactGoalsText.title}
               paragraphs={impactGoalsText.paragraphs}
               tagline={impactGoalsText.tagline}
             />
-          </div>
-        </section>
-        <section id="whatwedo" className="scroll-mt-14">
-          <div className="">
+          </section>
+
+          <section id="whatwedo" className="scroll-mt-14">
             <ContentBlockGroupSection
               textSection={whatWeDoSection.textSection}
               items={whatWeDoSection.items}
             />
-          </div>
-        </section>
-        <section id="venues" className="scroll-mt-14">
-          <div className="">
+          </section>
+
+          <section id="venues" className="scroll-mt-14">
             <ImageParagraphGroup
               title={venueSectionData.title}
               sections={venueData}
               taglineItems={venueSectionData.taglineItems}
             />
-          </div>
-        </section>
+          </section>
 
-        <CompositeShowcase {...clientsAndPartnersShowcase} />
+          <CompositeShowcase {...clientsAndPartnersShowcase} />
 
-        <InstagramFeed />
+          <InstagramFeed />
 
-        <section id="stampRally" className="scroll-mt-14">
-          <div className="space-y-8">
+          <section id="stampRally" className="scroll-mt-14">
             <StampRally {...stampRallyData} />
-          </div>
-        </section>
+          </section>
 
-        <section id="location" className="scroll-mt-14">
-          <MapWithDetailsSection
-            coordinates={locationSection.coordinates}
-            title={locationSection.title}
-            bulletpoints={locationSection.bulletpoints}
-          />
-        </section>
+          <section id="location" className="scroll-mt-14">
+            <MapWithDetailsSection
+              coordinates={locationSection.coordinates}
+              title={locationSection.title}
+              bulletpoints={locationSection.bulletpoints}
+            />
+          </section>
 
-        <section id="contact" className="scroll-mt-14">
-          <ContactForm
-            title={contactSection.title}
-            tagline={contactSection.tagline}
-            enquiryOptions={contactSection.enquiryOptions}
-          />
-          <Toaster position="top-center" />
-        </section>
-      </div>
-      <Footer logoSrc={footer.logoSrc} bullets={footer.bullets} />
-    </main>
+          <section id="contact" className="scroll-mt-14">
+            <ContactForm
+              title={contactSection.title}
+              tagline={contactSection.tagline}
+              enquiryOptions={contactSection.enquiryOptions}
+            />
+            <Toaster position="top-center" />
+          </section>
+        </div>
+      </main>
+
+      <footer>
+        <div className="container-custom mx-auto">
+          <Footer logoSrc={footer.logoSrc} bullets={footer.bullets} />
+        </div>
+      </footer>
+    </div>
   );
 }

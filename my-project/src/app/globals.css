@@ -3,28 +3,28 @@
 @font-face {
   font-family: "KleeOne";
   src: url("/fonts/KleeOne-Regular.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "KleeOne";
   src: url("/fonts/KleeOne-SemiBold.ttf") format("truetype");
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "MyriadPro";
   src: url("/fonts/MyriadPro-Regular.otf") format("opentype");
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Handlee";
   src: url("/fonts/Handlee-Regular.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -74,7 +74,7 @@ h4,
 h5,
 h6 {
   font-family: "MyriadPro", "Arial", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   line-height: var(--lh-heading);
   margin: 0 0 0.5em 0;
 }
@@ -90,7 +90,7 @@ h3 {
 
 .handlee-text {
   font-family: "Handlee", "Arial", cursive;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .klee-semibold {
