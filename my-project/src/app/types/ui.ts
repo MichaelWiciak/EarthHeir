@@ -12,6 +12,7 @@ export interface TextSection {
   paragraphs: string[];
   tagline?: string;
   size?: "h2" | "h3" | "h4";
+  type?: "default" | "highlighted";
 }
 
 export interface Slide {

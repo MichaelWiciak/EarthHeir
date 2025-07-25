@@ -45,7 +45,7 @@ const Circle: React.FC<CircleItem> = ({
       ) : (
         <span
           ref={textRef}
-          className="z-10 font-medium text-[clamp(0.6rem,2.5vw,1rem)] leading-tight break-words p-2"
+          className="z-10 font-medium text-[clamp(1.0rem,3.0vw,1.5rem)] leading-tight break-words p-2"
         >
           {text}
         </span>

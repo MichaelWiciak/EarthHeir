@@ -114,6 +114,7 @@ export default function Home() {
               paragraphs={impactGoalsText.paragraphs}
               tagline={impactGoalsText.tagline}
               size="h2"
+              type="highlighted"
             />
           </section>
 
