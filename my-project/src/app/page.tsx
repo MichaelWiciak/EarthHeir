@@ -56,17 +56,6 @@ export default function Home() {
       </header>
 
       <main>
-        {/* <div
-          className="absolute inset-0 w-full h-full z-0"
-          style={{
-            backgroundImage: `url(${titleBackground.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.3,
-            pointerEvents: "none",
-          }}
-          aria-hidden="true"
-        /> */}
         <header
           id="home"
           className="scroll-mt-8 container-custom mx-auto relative"

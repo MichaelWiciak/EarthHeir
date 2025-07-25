@@ -29,7 +29,7 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #f0f0f0;
   --foreground: #111111;
 
   --font-main: "KleeOne", "Arial", "Helvetica", sans-serif;
@@ -128,4 +128,35 @@ html {
 
 .animate-logo-scroll {
   animation: logoScroll 20s linear infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    -45deg,
+    #000000,
+    #009eff,
+    #00e500,
+    #ff4282,
+    #0000ff,
+    #ff6300,
+    #896fff,
+    #ff43ff
+  );
+  background-size: 1600% 1600%;
+}
+
+.animate-gradient {
+  animation: gradientShift 30s ease infinite;
 }
