@@ -56,7 +56,7 @@ export default function Home() {
       </header>
 
       <main>
-        <div
+        {/* <div
           className="absolute inset-0 w-full h-full z-0"
           style={{
             backgroundImage: `url(${titleBackground.src})`,
@@ -66,14 +66,30 @@ export default function Home() {
             pointerEvents: "none",
           }}
           aria-hidden="true"
-        />
-        <header id="home" className="scroll-mt-8 container-custom mx-auto">
-          <TitlePage
-            title={titlePageData.title}
-            creators={titlePageData.creators}
-            motto={titlePageData.motto}
-            logos={titlePageData.logos}
+        /> */}
+        <header
+          id="home"
+          className="scroll-mt-8 container-custom mx-auto relative"
+        >
+          <div
+            className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2"
+            style={{
+              backgroundImage: `url(${titleBackground.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: 0.3,
+              pointerEvents: "none",
+            }}
+            aria-hidden="true"
           />
+          <div className="relative z-10">
+            <TitlePage
+              title={titlePageData.title}
+              creators={titlePageData.creators}
+              motto={titlePageData.motto}
+              logos={titlePageData.logos}
+            />
+          </div>
         </header>
         <div className="container-custom mx-auto">
           <section id="whoweare" className="scroll-mt-8 py-15">
@@ -85,12 +101,6 @@ export default function Home() {
           </section>
 
           <div className="py-15">
-            {/* <MultiTextCircleSection
-              sectionTitle={aboutUsSection.sectionTitle}
-              sections={aboutUsSection.sections}
-              circles={aboutUsSection.circles}
-              size="h2"
-            /> */}
             <h2 className="text-center pb-4">About Us</h2>
             <div className="pb-16">
               <InfoSection
