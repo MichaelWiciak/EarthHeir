@@ -2,7 +2,6 @@
 
 import TitlePage from "@/app/components/TitlePage";
 import InfoSection from "@/app/components/Text+Circles";
-import MultiTextCircleSection from "@/app/components/MultiText+Circles";
 import TextSection from "@/app/components/TextSection";
 import Navbar from "@/app/components/navbar";
 import { Toaster } from "react-hot-toast";
@@ -23,7 +22,6 @@ import {
   whoweare,
   impactGoalsText,
   titlePageData,
-  aboutUsSection,
   locationSection,
   contactSection,
   footer,
@@ -82,28 +80,34 @@ export default function Home() {
         </header>
         <div className="container-custom mx-auto">
           <section id="whoweare" className="scroll-mt-8 py-15">
-            <InfoSection
-              title={whoweare.title}
-              paragraphs={whoweare.paragraphs}
-              circles={whoweare.circles}
-            />
+            <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+              <InfoSection
+                title={whoweare.title}
+                paragraphs={whoweare.paragraphs}
+                circles={whoweare.circles}
+              />
+            </div>
           </section>
 
           <div className="py-15">
-            <h2 className="text-center pb-4">About Us</h2>
-            <div className="pb-16">
-              <InfoSection
-                title={aboutUsSectionProjectSeaMonkey.title}
-                paragraphs={aboutUsSectionProjectSeaMonkey.paragraphs}
-                circles={aboutUsSectionProjectSeaMonkey.circles}
-              />
-            </div>
-            <div className="">
-              <InfoSection
-                title={aboutUsSectionProjectEarthHeir.title}
-                paragraphs={aboutUsSectionProjectEarthHeir.paragraphs}
-                circles={aboutUsSectionProjectEarthHeir.circles}
-              />
+            <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+              <h2 className="text-center pb-4">About Us</h2>
+              <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
+                <div className="pb-16">
+                  <InfoSection
+                    title={aboutUsSectionProjectSeaMonkey.title}
+                    paragraphs={aboutUsSectionProjectSeaMonkey.paragraphs}
+                    circles={aboutUsSectionProjectSeaMonkey.circles}
+                  />
+                </div>
+              </div>
+              <div className="rounded-2xl shadow-md bg-[#ff63001a] p-6 md:p-10 backdrop-blur-sm">
+                <InfoSection
+                  title={aboutUsSectionProjectEarthHeir.title}
+                  paragraphs={aboutUsSectionProjectEarthHeir.paragraphs}
+                  circles={aboutUsSectionProjectEarthHeir.circles}
+                />
+              </div>
             </div>
           </div>
 
@@ -125,11 +129,13 @@ export default function Home() {
           </section>
 
           <section id="venues" className="scroll-mt-8 py-15">
-            <ImageParagraphGroup
-              title={venueSectionData.title}
-              sections={venueData}
-              taglineItems={venueSectionData.taglineItems}
-            />
+            <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+              <ImageParagraphGroup
+                title={venueSectionData.title}
+                sections={venueData}
+                taglineItems={venueSectionData.taglineItems}
+              />
+            </div>
           </section>
 
           <div className="py-15">
@@ -137,19 +143,25 @@ export default function Home() {
           </div>
 
           <div className="py-15">
-            <InstagramFeed />
+            <div className="rounded-2xl shadow-md bg-[#00e5001a] p-6 md:p-10 backdrop-blur-sm">
+              <InstagramFeed />
+            </div>
           </div>
 
           <section id="stampRally" className="scroll-mt-8 py-15">
-            <StampRally {...stampRallyData} />
+            <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
+              <StampRally {...stampRallyData} />
+            </div>
           </section>
 
           <section id="location" className="scroll-mt-8 py-15">
-            <MapWithDetailsSection
-              coordinates={locationSection.coordinates}
-              title={locationSection.title}
-              bulletpoints={locationSection.bulletpoints}
-            />
+            <div className="rounded-2xl shadow-md bg-[#ff42821a] p-6 md:p-10 backdrop-blur-sm">
+              <MapWithDetailsSection
+                coordinates={locationSection.coordinates}
+                title={locationSection.title}
+                bulletpoints={locationSection.bulletpoints}
+              />
+            </div>
           </section>
 
           <section id="contact" className="scroll-mt-8 py-15">
