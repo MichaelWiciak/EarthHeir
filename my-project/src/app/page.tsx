@@ -158,6 +158,7 @@ export default function Home() {
               title={contactSection.title}
               tagline={contactSection.tagline}
               enquiryOptions={contactSection.enquiryOptions}
+              contactEmail={contactSection.contactEmail}
             />
             <Toaster position="top-center" />
           </section>
@@ -166,7 +167,15 @@ export default function Home() {
 
       <footer>
         <div>
-          <Footer logoSrc={footer.logoSrc} bullets={footer.bullets} />
+          <Footer
+            logoSrc={footer.logoSrc}
+            copyright={footer.copyright}
+            deployedOn={footer.deployedOn}
+            deployedOnLink={footer.deployedOnLink}
+            createdBy={footer.createdBy}
+            createdByLink1={footer.createdByLink1}
+            createdByLink2={footer.createdByLink2}
+          />
         </div>
       </footer>
     </div>

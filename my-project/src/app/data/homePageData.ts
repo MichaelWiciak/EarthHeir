@@ -1,12 +1,11 @@
-import { image, s } from "framer-motion/client";
-
 export const footer = {
   logoSrc: "/sustainedLogo.png",
-  bullets: [
-    "Copyright © 2025 Sustain.ed",
-    "Deployed on Vercel",
-    "© 2025 Michael Wiciak & TimetableX in partnership with Sustain;ed",
-  ],
+  copyright: "© 2025 Sustain.ed",
+  deployedOn: "Deployed on",
+  deployedOnLink: { Vercel: "https://vercel.com/" },
+  createdBy: "© 2025",
+  createdByLink1: { "Michael Wiciak": "https://michaelwiciak.com/" },
+  createdByLink2: { TimetableX: "https://timetablex.com/" },
 };
 
 export const whoweare = {
@@ -152,10 +151,11 @@ export const locationSection = {
 
 export const contactSection = {
   title: "Get In Touch",
-  tagline: "Alternatively, you can reach us at sustainedkl@gmail.com",
+  tagline: "Alternatively, you can reach us at",
+  contactEmail: "sustainedkl@gmail.com",
   enquiryOptions: [
     "Partnership",
-    "Renting the Venue",
+    "Renting the venue",
     "Individual Enquiry",
     "Other",
   ],

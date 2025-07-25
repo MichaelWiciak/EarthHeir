@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 interface ContactFormProps {
   title: string;
   tagline?: string;
+  contactEmail?: string;
   enquiryOptions: string[];
 }
 
@@ -14,6 +15,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   title,
   tagline,
   enquiryOptions,
+  contactEmail = "xxx",
 }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -52,7 +54,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     }
 
     if (
-      selectedOptions.includes("Renting the Venue") &&
+      selectedOptions.includes("Renting the venue") &&
       (!venuePeople || !venuePurpose || !venueDate || !venueTime)
     ) {
       toast.error("Please complete all venue rental details.");
@@ -67,7 +69,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     }
 
     // Venue-specific validations
-    if (selectedOptions.includes("Renting the Venue")) {
+    if (selectedOptions.includes("Renting the venue")) {
       if (!venuePeople || !venuePurpose || !venueDate || !venueTime) {
         toast.error("Please complete all venue rental details.");
         return;
@@ -109,16 +111,16 @@ const ContactForm: React.FC<ContactFormProps> = ({
       enquiry_type: selectedOptions.join(", "),
       company,
       phone: `${phoneCode} ${phoneNumber}`,
-      venue_people: selectedOptions.includes("Renting the Venue")
+      venue_people: selectedOptions.includes("Renting the venue")
         ? venuePeople
         : "N/A",
-      venue_purpose: selectedOptions.includes("Renting the Venue")
+      venue_purpose: selectedOptions.includes("Renting the venue")
         ? venuePurpose
         : "N/A",
-      venue_date: selectedOptions.includes("Renting the Venue")
+      venue_date: selectedOptions.includes("Renting the venue")
         ? venueDate
         : "N/A",
-      venue_time: selectedOptions.includes("Renting the Venue")
+      venue_time: selectedOptions.includes("Renting the venue")
         ? venueTime
         : "N/A",
     };
@@ -161,7 +163,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             htmlFor="name"
             className="block text-sm font-medium text-gray-700"
           >
-            Your Name
+            Your name
           </label>
           <input
             id="name"
@@ -178,7 +180,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             htmlFor="email"
             className="block text-sm font-medium text-gray-700"
           >
-            Your Email
+            Your email
           </label>
           <input
             id="email"
@@ -200,7 +202,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
           <input
             id="company"
             type="text"
-            placeholder="Company Name"
+            placeholder="Company name"
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
@@ -212,7 +214,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             htmlFor="phone"
             className="block text-sm font-medium text-gray-700"
           >
-            Phone Number
+            Phone number
           </label>
           <div className="flex space-x-2">
             <select
@@ -229,7 +231,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
             <input
               type="tel"
-              placeholder="Phone Number"
+              placeholder="Phone number"
               className="w-full border rounded-lg p-3"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
@@ -255,7 +257,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </div>
 
         <AnimatePresence>
-          {selectedOptions.includes("Renting the Venue") && (
+          {selectedOptions.includes("Renting the venue") && (
             <motion.div
               key="venue-details"
               initial={{ opacity: 0, y: -10 }}
@@ -268,7 +270,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
               <div className="flex flex-col space-y-2">
                 <label className="text-sm font-medium text-gray-700">
-                  Number of People
+                  Number of people
                 </label>
                 <input
                   type="number"
@@ -311,7 +313,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
-                  Purpose of Venue Rental
+                  Purpose of venue rental
                 </label>
                 <textarea
                   placeholder="What do you want to do in the venue?"
@@ -323,7 +325,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
-                  Date of Venue Rental
+                  Date of venue rental
                 </label>
               </div>
               <input
@@ -334,7 +336,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
               />
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">
-                  Time of Venue Rental
+                  Time of venue rental
                 </label>
               </div>
               <input
@@ -352,10 +354,10 @@ const ContactForm: React.FC<ContactFormProps> = ({
             htmlFor="message"
             className="block text-sm font-medium text-gray-700"
           >
-            Your Message
+            Your message
           </label>
           <textarea
-            placeholder="Your message"
+            placeholder="Your message and any additional details"
             className="w-full border rounded-lg p-3 h-32 resize-none"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -374,8 +376,16 @@ const ContactForm: React.FC<ContactFormProps> = ({
         </div>
       </form>
 
-      {tagline && (
-        <p className="text-center text-sm text-gray-600">{tagline}</p>
+      {(tagline || contactEmail) && (
+        <p className="text-center text-sm text-gray-600">
+          {tagline}
+          {tagline && contactEmail && " "}
+          {contactEmail && (
+            <a href={`mailto:${contactEmail}`} className="underline">
+              {contactEmail}
+            </a>
+          )}
+        </p>
       )}
     </div>
   );

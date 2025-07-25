@@ -1,11 +1,30 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import titleLogo from "../../../public/Sustain.ed Logo-01.svg";
 import Image from "next/image";
 
 const Navbar: React.FC = () => {
+  const [randomLogo, setRandomLogo] = useState<string>("");
+
+  const logos = [
+    "/LogosToAlternate/Logo_PACK-01.png",
+    "/LogosToAlternate/Logo_PACK-02.png",
+    "/LogosToAlternate/Logo_PACK-03.png",
+    "/LogosToAlternate/Logo_PACK-04.png",
+    "/LogosToAlternate/Logo_PACK-05.png",
+    "/LogosToAlternate/Logo_PACK-06.png",
+    "/LogosToAlternate/Logo_PACK-07.png",
+    "/LogosToAlternate/Logo_PACK-08.png",
+    "/LogosToAlternate/Logo_PACK-09.png",
+  ];
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * logos.length);
+    setRandomLogo(logos[randomIndex]);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -34,14 +53,15 @@ const Navbar: React.FC = () => {
           aria-label="Scroll to home section"
           style={{ lineHeight: 0 }}
         >
-          <Image
-            src={titleLogo.src}
-            alt="Sustain;ed Logo"
-            className=""
-            width={120}
-            height={120}
-            style={{ display: "block" }}
-          />
+          {randomLogo && (
+            <Image
+              src={randomLogo}
+              alt="Sustain;ed Logo"
+              width={120}
+              height={120}
+              style={{ display: "block" }}
+            />
+          )}
         </button>
 
         {/* Desktop Links */}
