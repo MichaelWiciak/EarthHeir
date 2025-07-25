@@ -6,11 +6,13 @@ import { CircleItem } from "../types/ui";
 interface CircleGroupProps {
   items: CircleItem[];
   direction?: "row" | "col";
+  circleDiameter?: number;
 }
 
 const CircleGroup: React.FC<CircleGroupProps> = ({
   items,
   direction = "col",
+  circleDiameter,
 }) => {
   const layoutClass =
     direction === "row"
@@ -20,7 +22,7 @@ const CircleGroup: React.FC<CircleGroupProps> = ({
   return (
     <div className={`${layoutClass} gap-4 items-center justify-center`}>
       {items.map((item, index) => (
-        <Circle key={index} {...item} />
+        <Circle key={index} {...item} circleDiameter={circleDiameter} />
       ))}
     </div>
   );

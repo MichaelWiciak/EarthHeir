@@ -138,7 +138,7 @@ export const locationSection = {
     "Find us at 30, First Floor, Jalan Hang Kasturi, Kuala Lumpur City Centre, 50050 Kuala Lumpur, Malaysia.",
     "Look for the brightly lit entrance next to Nala Kasturi / Mixue. We're one floor above Nala Kasturi, reachable via lift or stairs.",
     "Watch our directions video",
-    "Open Monday to Saturday, 10am to 6pm.",
+    "Open Monday to Sunday, 10am to 6pm.",
     "Easily accessible via public transport – Pasar Seni LRT/MRT/Bus stops are right across Kasturi Walk. KL KTM station is also nearby (8 min walk).",
     "If driving, parking at Central Market is available (note: it may be closed before 10am).",
     "Best alternative parking: POS Malaysia / Dayabumi Complex (before Central Market – exit left early).",

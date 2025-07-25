@@ -24,7 +24,7 @@ const TitlePage: React.FC<TitlePageProps> = ({
       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-6">
         {/* Left logo (desktop only) */}
         <div className="hidden md:flex">
-          <CircleGroup items={[logos[0]]} />
+          <CircleGroup items={[logos[0]]} circleDiameter={200} />
         </div>
 
         {/* Center title section */}
@@ -32,12 +32,12 @@ const TitlePage: React.FC<TitlePageProps> = ({
 
         {/* Right logo (desktop only) */}
         <div className="hidden md:flex">
-          <CircleGroup items={[logos[1]]} />
+          <CircleGroup items={[logos[1]]} circleDiameter={200} />
         </div>
 
         {/* Mobile view: show both logos below */}
         <div className="flex md:hidden mt-8 gap-4">
-          <CircleGroup items={logos} direction="row" />
+          <CircleGroup items={logos} direction="row" circleDiameter={120} />
         </div>
       </div>
     </div>
