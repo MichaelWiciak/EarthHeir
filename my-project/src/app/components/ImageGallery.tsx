@@ -45,6 +45,12 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ title, slides }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <style jsx global>{`
+        .swiper-button-next,
+        .swiper-button-prev {
+          color: #009eff !important;
+        }
+      `}</style>
     </div>
   );
 };

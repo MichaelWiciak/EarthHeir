@@ -25,10 +25,12 @@ const Circle: React.FC<CircleItem> = ({
 
   const content = (
     <div
-      className="rounded-full border-4 border-gray-300 flex items-center justify-center overflow-hidden shadow-md relative text-center box-border bg-white transition-transform hover:scale-105"
+      className="rounded-full border-4 flex items-center justify-center overflow-hidden shadow-md relative text-center box-border bg-white transition-transform hover:scale-105"
       style={{
         width: typeof circleDiameter === "number" ? circleDiameter : diameter,
         height: typeof circleDiameter === "number" ? circleDiameter : diameter,
+        borderColor: "#ff63005a",
+        borderStyle: "solid",
       }}
     >
       {imageSrc ? (

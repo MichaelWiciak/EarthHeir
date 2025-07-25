@@ -10,7 +10,6 @@ interface LogoTickerProps {
 }
 
 const LogoTicker: React.FC<LogoTickerProps> = ({ logos }) => {
-  // Repeat the logo set multiple times for smooth animation
   const repeatedLogos = [...logos, ...logos, ...logos];
 
   return (
@@ -37,8 +36,8 @@ const LogoTicker: React.FC<LogoTickerProps> = ({ logos }) => {
               key={idx}
               src={logo.imageSrc}
               alt={logo.alt || `Logo ${idx + 1}`}
-              width={60}
-              height={30}
+              width={90}
+              height={60}
               className="h-auto w-auto max-h-10 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
             />
           ))}
