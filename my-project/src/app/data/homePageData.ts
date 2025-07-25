@@ -146,7 +146,7 @@ export const locationSection = {
     "Other nearby parking: Jalan HS Lee (6 min walk), Jalan Sultan opposite Mee Tarik (10 min walk), KTM Kuala Lumpur (10 min walk).",
     "Kitchen facilities available for events.",
     "Toilet facilities available.",
-    "Call us: +603 2022 3502 / +6013 211 7994",
+    "Call us: +60 3 2022 3502 / +60 13 211 7994",
   ],
 };
 

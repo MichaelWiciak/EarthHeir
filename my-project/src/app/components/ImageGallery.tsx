@@ -30,7 +30,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ title, slides }) => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg">
+            <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden rounded-lg shadow-xl">
               <Image
                 src={slide.imageUrl}
                 alt={slide.alt || `Slide ${index + 1}`}

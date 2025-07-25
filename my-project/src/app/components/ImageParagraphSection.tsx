@@ -22,7 +22,7 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
   return (
     <div className="flex flex-col md:flex-row items-center">
       <div
-        className={`w-full md:w-1/2 ${
+        className={`w-full  md:w-1/2 ${
           isImageLeft ? "md:order-1" : "md:order-2"
         }`}
       >
@@ -31,7 +31,7 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
           alt={imageAlt}
           width={1920}
           height={1080}
-          className="w-full h-auto rounded-lg object-cover"
+          className="w-full h-auto rounded-lg object-cover shadow-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
         />
       </div>
 

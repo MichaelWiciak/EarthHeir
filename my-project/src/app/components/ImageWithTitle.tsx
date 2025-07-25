@@ -35,7 +35,7 @@ const ImageWithTitle: React.FC<ImageWithTitleProps> = ({
           alt={alt}
           width={width}
           height={height}
-          className="rounded-md shadow-md"
+          className="rounded-md shadow-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
         />
       </div>
     </div>

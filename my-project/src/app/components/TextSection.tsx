@@ -25,7 +25,7 @@ const TextSection: React.FC<TextSectionProps> = ({
         (type === "highlighted" ? (
           <p
             className="mt-6 text-2xl font-extrabold text-center px-4 py-3 rounded-lg shadow-lg animate-pulse"
-            style={{ color: "#0000ff", backgroundColor: "##ff43ff" }}
+            style={{ color: "#0000ff", backgroundColor: "#ff43ff" }}
           >
             {tagline}
           </p>
