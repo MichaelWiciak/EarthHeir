@@ -207,7 +207,6 @@ export const whatWeDoSection = {
       "Our mission is to grow a thriving sustainability ecosystem in Malaysia. We work at the intersection of education, enterprise, and impact to build a better future.",
       "Explore our work through the hubs below — each designed to deliver long-term value through education, economic empowerment, and knowledge sharing.",
     ],
-    tagline: "Click on a principle to learn more.",
   },
   items: [
     {

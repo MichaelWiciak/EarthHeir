@@ -33,40 +33,50 @@ const ExpandableTextListSection: React.FC<ExpandableTextListSectionProps> = ({
       )}
 
       <ul className="space-y-4">
-        {items.map((item, index) => (
-          <li key={index}>
-            <button
-              onClick={() => handleToggle(index)}
-              className="text-centre w-full text-lg font-medium text-blue-700 hover:underline cursor-pointer"
-              aria-expanded={expandedIndex === index}
-              aria-label={
-                expandedIndex === index
-                  ? `Collapse details for ${item.bulletTitle}`
-                  : `Expand details for ${item.bulletTitle}`
-              }
-            >
-              • {item.bulletTitle}
-            </button>
+        {items.map((item, index) => {
+          const isExpanded = expandedIndex === index;
+          return (
+            <li key={index}>
+              <button
+                onClick={() => handleToggle(index)}
+                className="flex justify-center items-center w-full text-lg font-medium text-blue-700 hover:underline cursor-pointer"
+                aria-expanded={isExpanded}
+                aria-label={
+                  isExpanded
+                    ? `Collapse details for ${item.bulletTitle}`
+                    : `Expand details for ${item.bulletTitle}`
+                }
+              >
+                <span className="mr-2">
+                  {isExpanded ? (
+                    <span aria-hidden="true">−</span>
+                  ) : (
+                    <span aria-hidden="true">+</span>
+                  )}
+                </span>
+                {item.bulletTitle}
+              </button>
 
-            <AnimatePresence initial={false}>
-              {expandedIndex === index && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                >
-                  <div className="mt-4 border-l-2 border-blue-300 pl-4">
-                    <MultiTextCircleSection
-                      {...item.content}
-                      circleDirection="row"
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </li>
-        ))}
+              <AnimatePresence initial={false}>
+                {isExpanded && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  >
+                    <div className="mt-4 border-l-2 border-blue-300 pl-4">
+                      <MultiTextCircleSection
+                        {...item.content}
+                        circleDirection="row"
+                      />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
