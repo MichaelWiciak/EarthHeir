@@ -17,6 +17,7 @@ import CompositeShowcase from "./components/Clients";
 import ImageParagraphGroup from "./components/ImageParagraphGroup";
 import ContentBlockGroupSection from "./components/WhatWeDo";
 import titleBackground from "../../public/titleBackground.jpg";
+import ErrorBoundary from "./components/ErrorBoundry";
 
 import {
   whoweare,
@@ -44,151 +45,153 @@ export default function Home() {
   );
 
   return (
-    <div>
-      <header>
-        <div>
-          <h1 className="sr-only">Sustain;ed</h1>
+    <ErrorBoundary>
+      <div>
+        <header>
+          <div>
+            <h1 className="sr-only">Sustain;ed</h1>
 
-          <Navbar />
-        </div>
-      </header>
-
-      <main>
-        <header
-          id="home"
-          className="scroll-mt-8 container-custom mx-auto relative"
-        >
-          <div
-            className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2"
-            style={{
-              backgroundImage: `url(${titleBackground.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              opacity: 0.3,
-              pointerEvents: "none",
-            }}
-            aria-hidden="true"
-          />
-          <div className="relative z-10">
-            <TitlePage
-              title={titlePageData.title}
-              creators={titlePageData.creators}
-              motto={titlePageData.motto}
-              logos={titlePageData.logos}
-            />
+            <Navbar />
           </div>
         </header>
-        <div className="container-custom mx-auto">
-          <section id="whoweare" className="scroll-mt-8 py-15">
-            <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
-              <InfoSection
-                title={whoweare.title}
-                paragraphs={whoweare.paragraphs}
-                circles={whoweare.circles}
+
+        <main>
+          <header
+            id="home"
+            className="scroll-mt-8 container-custom mx-auto relative"
+          >
+            <div
+              className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2"
+              style={{
+                backgroundImage: `url(${titleBackground.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: 0.3,
+                pointerEvents: "none",
+              }}
+              aria-hidden="true"
+            />
+            <div className="relative z-10">
+              <TitlePage
+                title={titlePageData.title}
+                creators={titlePageData.creators}
+                motto={titlePageData.motto}
+                logos={titlePageData.logos}
               />
             </div>
-          </section>
+          </header>
+          <div className="container-custom mx-auto">
+            <section id="whoweare" className="scroll-mt-8 py-15">
+              <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+                <InfoSection
+                  title={whoweare.title}
+                  paragraphs={whoweare.paragraphs}
+                  circles={whoweare.circles}
+                />
+              </div>
+            </section>
 
-          <div className="py-15">
-            <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
-              <h2 className="text-center pb-4">About Us</h2>
-              <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
-                <div className="pb-16">
+            <div className="py-15">
+              <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+                <h2 className="text-center pb-4">About Us</h2>
+                <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
+                  <div className="pb-16">
+                    <InfoSection
+                      title={aboutUsSectionProjectSeaMonkey.title}
+                      paragraphs={aboutUsSectionProjectSeaMonkey.paragraphs}
+                      circles={aboutUsSectionProjectSeaMonkey.circles}
+                    />
+                  </div>
+                </div>
+                <div className="rounded-2xl shadow-md bg-[#ff63001a] p-6 md:p-10 backdrop-blur-sm">
                   <InfoSection
-                    title={aboutUsSectionProjectSeaMonkey.title}
-                    paragraphs={aboutUsSectionProjectSeaMonkey.paragraphs}
-                    circles={aboutUsSectionProjectSeaMonkey.circles}
+                    title={aboutUsSectionProjectEarthHeir.title}
+                    paragraphs={aboutUsSectionProjectEarthHeir.paragraphs}
+                    circles={aboutUsSectionProjectEarthHeir.circles}
                   />
                 </div>
               </div>
-              <div className="rounded-2xl shadow-md bg-[#ff63001a] p-6 md:p-10 backdrop-blur-sm">
-                <InfoSection
-                  title={aboutUsSectionProjectEarthHeir.title}
-                  paragraphs={aboutUsSectionProjectEarthHeir.paragraphs}
-                  circles={aboutUsSectionProjectEarthHeir.circles}
+            </div>
+
+            <section id="impact" className="scroll-mt-8 py-15">
+              <TextSection
+                title={impactGoalsText.title}
+                paragraphs={impactGoalsText.paragraphs}
+                tagline={impactGoalsText.tagline}
+                size="h2"
+                type="highlighted"
+              />
+            </section>
+
+            <section id="whatwedo" className="scroll-mt-8 py-15">
+              <ContentBlockGroupSection
+                textSection={whatWeDoSection.textSection}
+                items={whatWeDoSection.items}
+              />
+            </section>
+
+            <section id="venues" className="scroll-mt-8 py-15">
+              <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+                <ImageParagraphGroup
+                  title={venueSectionData.title}
+                  sections={venueData}
+                  taglineItems={venueSectionData.taglineItems}
                 />
               </div>
+            </section>
+
+            <div className="py-15">
+              <CompositeShowcase {...clientsAndPartnersShowcase} />
             </div>
-          </div>
 
-          <section id="impact" className="scroll-mt-8 py-15">
-            <TextSection
-              title={impactGoalsText.title}
-              paragraphs={impactGoalsText.paragraphs}
-              tagline={impactGoalsText.tagline}
-              size="h2"
-              type="highlighted"
-            />
-          </section>
+            <div className="py-15">
+              <div className="rounded-2xl shadow-md bg-[#00e5001a] p-6 md:p-10 backdrop-blur-sm">
+                <InstagramFeed />
+              </div>
+            </div>
 
-          <section id="whatwedo" className="scroll-mt-8 py-15">
-            <ContentBlockGroupSection
-              textSection={whatWeDoSection.textSection}
-              items={whatWeDoSection.items}
-            />
-          </section>
+            <section id="stampRally" className="scroll-mt-8 py-15">
+              <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
+                <StampRally {...stampRallyData} />
+              </div>
+            </section>
 
-          <section id="venues" className="scroll-mt-8 py-15">
-            <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
-              <ImageParagraphGroup
-                title={venueSectionData.title}
-                sections={venueData}
-                taglineItems={venueSectionData.taglineItems}
+            <section id="location" className="scroll-mt-8 py-15">
+              <div className="rounded-2xl shadow-md bg-[#ff42821a] p-6 md:p-10 backdrop-blur-sm">
+                <MapWithDetailsSection
+                  coordinates={locationSection.coordinates}
+                  title={locationSection.title}
+                  bulletpoints={locationSection.bulletpoints}
+                />
+              </div>
+            </section>
+
+            <section id="contact" className="scroll-mt-8 py-15">
+              <ContactForm
+                title={contactSection.title}
+                tagline={contactSection.tagline}
+                enquiryOptions={contactSection.enquiryOptions}
+                contactEmail={contactSection.contactEmail}
               />
-            </div>
-          </section>
-
-          <div className="py-15">
-            <CompositeShowcase {...clientsAndPartnersShowcase} />
+              <Toaster position="top-center" />
+            </section>
           </div>
+        </main>
 
-          <div className="py-15">
-            <div className="rounded-2xl shadow-md bg-[#00e5001a] p-6 md:p-10 backdrop-blur-sm">
-              <InstagramFeed />
-            </div>
-          </div>
-
-          <section id="stampRally" className="scroll-mt-8 py-15">
-            <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
-              <StampRally {...stampRallyData} />
-            </div>
-          </section>
-
-          <section id="location" className="scroll-mt-8 py-15">
-            <div className="rounded-2xl shadow-md bg-[#ff42821a] p-6 md:p-10 backdrop-blur-sm">
-              <MapWithDetailsSection
-                coordinates={locationSection.coordinates}
-                title={locationSection.title}
-                bulletpoints={locationSection.bulletpoints}
-              />
-            </div>
-          </section>
-
-          <section id="contact" className="scroll-mt-8 py-15">
-            <ContactForm
-              title={contactSection.title}
-              tagline={contactSection.tagline}
-              enquiryOptions={contactSection.enquiryOptions}
-              contactEmail={contactSection.contactEmail}
+        <footer>
+          <div>
+            <Footer
+              logoSrc={footer.logoSrc}
+              copyright={footer.copyright}
+              deployedOn={footer.deployedOn}
+              deployedOnLink={footer.deployedOnLink}
+              createdBy={footer.createdBy}
+              createdByLink1={footer.createdByLink1}
+              createdByLink2={footer.createdByLink2}
             />
-            <Toaster position="top-center" />
-          </section>
-        </div>
-      </main>
-
-      <footer>
-        <div>
-          <Footer
-            logoSrc={footer.logoSrc}
-            copyright={footer.copyright}
-            deployedOn={footer.deployedOn}
-            deployedOnLink={footer.deployedOnLink}
-            createdBy={footer.createdBy}
-            createdByLink1={footer.createdByLink1}
-            createdByLink2={footer.createdByLink2}
-          />
-        </div>
-      </footer>
-    </div>
+          </div>
+        </footer>
+      </div>
+    </ErrorBoundary>
   );
 }
