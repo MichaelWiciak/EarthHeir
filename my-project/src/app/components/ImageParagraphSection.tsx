@@ -32,7 +32,7 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
             alt={imageAlt}
             width={1920}
             height={1080}
-            className="opacity-80 hover:opacity-100 transition-opacity duration-300 border rounded-lg shadow-lg"
+            className="opacity-80 hover:opacity-100 transition-opacity duration-300 border rounded-4xl"
           />
         </div>
       </div>

@@ -96,7 +96,7 @@ export default function Home() {
               }}
               aria-hidden="true"
             />
-            <div className="relative z-10">
+            <div className="relative z-10, py-16">
               <TitlePage
                 title={titlePageData.title}
                 creators={titlePageData.creators}

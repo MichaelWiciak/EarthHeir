@@ -29,7 +29,7 @@
 }
 
 :root {
-  --background: #f0f0f0;
+  --background: #fff;
   --foreground: #111111;
 
   --font-main: "KleeOne", "Arial", "Helvetica", sans-serif;
@@ -63,7 +63,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "MyriadPro", "Arial", sans-serif;
+  font-family: "KleeOne", "Arial", sans-serif;
   font-weight: 700;
   line-height: var(--lh-heading);
   margin: 0 0 0.5em 0;
