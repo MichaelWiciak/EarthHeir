@@ -23,7 +23,7 @@ const LogoTicker: React.FC<LogoTickerProps> = ({ logos }) => {
             alt={logo.alt || `Logo ${idx + 1}`}
             width={200}
             height={100}
-            className="h-auto w-auto max-h-10 object-contain shadow-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
+            className="h-auto w-auto max-h-10 object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
           />
         ))}
       </div>

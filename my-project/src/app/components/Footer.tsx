@@ -41,9 +41,6 @@ const Footer: React.FC<FooterProps> = ({
 
         {/* Information sections as bullet points */}
         <ul className="text-center md:text-left space-y-2 text-sm text-gray-600 list-disc list-inside">
-          {/* Copyright */}
-          <li>{copyright}</li>
-
           {/* Deployed on */}
           <li>
             {deployedOn}{" "}

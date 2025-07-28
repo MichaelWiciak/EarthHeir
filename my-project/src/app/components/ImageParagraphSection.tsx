@@ -26,13 +26,15 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
           isImageLeft ? "md:order-1" : "md:order-2"
         }`}
       >
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          width={1920}
-          height={1080}
-          className="w-full h-auto rounded-lg object-cover shadow-lg opacity-80 hover:opacity-100 transition-opacity duration-300"
-        />
+        <div className="p-8">
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            width={1920}
+            height={1080}
+            className="opacity-80 hover:opacity-100 transition-opacity duration-300 border rounded-lg shadow-lg"
+          />
+        </div>
       </div>
 
       <div
@@ -42,9 +44,9 @@ const ImageParagraphSection: React.FC<ImageParagraphSectionProps> = ({
       >
         <h3 className="text-center">{sectionTitle}</h3>
         {paragraphs.map((para, idx) => (
-          <p key={idx} className="">
+          <div key={idx} className="mb-2">
             {para}
-          </p>
+          </div>
         ))}
       </div>
     </div>
