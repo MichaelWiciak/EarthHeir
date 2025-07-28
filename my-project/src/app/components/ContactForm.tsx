@@ -128,24 +128,40 @@ const ContactForm: React.FC<ContactFormProps> = ({
     // before sending, log all templateParams to console
     console.log("Sending email with params:", templateParams);
 
-    try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJSSERVICE as string,
-        process.env.NEXT_PUBLIC_EMAILJSTEMPLATE as string,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJSPUBLICKEY as string
-      );
+    // try {
+    //   await emailjs.send(
+    //     process.env.NEXT_PUBLIC_EMAILJSSERVICE as string,
+    //     process.env.NEXT_PUBLIC_EMAILJSTEMPLATE as string,
+    //     templateParams,
+    //     process.env.NEXT_PUBLIC_EMAILJSPUBLICKEY as string
+    //   );
 
-      toast.success("Message sent successfully!");
-      setName("");
-      setEmail("");
-      setMessage("");
-      setSelectedOptions([]);
+    //   toast.success("Message sent successfully!");
+    //   setName("");
+    //   setEmail("");
+    //   setMessage("");
+    //   setSelectedOptions([]);
+    // } catch (error) {
+    //   console.error("EmailJS error:", error);
+    //   toast.error("Failed to send message. Please try again later.");
+    // } finally {
+    //   setLoading(false);
+    // }
+
+    // Add Google Sheets submission
+    try {
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzBbLRih9LY_Qs2ZbqPJRhsszwBavejsE8aYg7e7gD1Lg64iBNv0877RsX2lYCtdfcQ8w/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(templateParams),
+        }
+      );
     } catch (error) {
-      console.error("EmailJS error:", error);
-      toast.error("Failed to send message. Please try again later.");
-    } finally {
-      setLoading(false);
+      console.error("Google Sheets error:", error);
     }
   };
 
