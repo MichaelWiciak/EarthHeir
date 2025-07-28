@@ -1,5 +1,5 @@
 "use client";
-
+import { useState, useEffect } from "react";
 import TitlePage from "@/app/components/TitlePage";
 import InfoSection from "@/app/components/Text+Circles";
 import TextSection from "@/app/components/TextSection";
@@ -44,6 +44,29 @@ export default function Home() {
     }
   );
 
+  const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
+
+  useEffect(() => {
+    const logos = [
+      // "/LogosToAlternate/Logo_PACK-01.png",
+      // "/LogosToAlternate/Logo_PACK-02.png", // idk whats special aboutthese logos but they mess up the logo selection
+      "/LogosToAlternate/Logo_PACK-03.png",
+      "/LogosToAlternate/Logo_PACK-04.png",
+      "/LogosToAlternate/Logo_PACK-05.png",
+      "/LogosToAlternate/Logo_PACK-06.png",
+      "/LogosToAlternate/Logo_PACK-07.png",
+      "/LogosToAlternate/Logo_PACK-08.png",
+      "/LogosToAlternate/Logo_PACK-09.png",
+    ];
+    const randomIndex = Math.floor(Math.random() * logos.length);
+    const logoSrc = logos[randomIndex];
+    setSelectedLogo(logoSrc);
+  }, []);
+
+  if (!selectedLogo) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <ErrorBoundary>
       <div>
@@ -51,7 +74,7 @@ export default function Home() {
           <div>
             <h1 className="sr-only">Sustain;ed</h1>
 
-            <Navbar />
+            <Navbar logoSrc={selectedLogo} />
           </div>
         </header>
 
@@ -181,7 +204,7 @@ export default function Home() {
         <footer>
           <div>
             <Footer
-              logoSrc={footer.logoSrc}
+              logoSrc={selectedLogo}
               copyright={footer.copyright}
               deployedOn={footer.deployedOn}
               deployedOnLink={footer.deployedOnLink}

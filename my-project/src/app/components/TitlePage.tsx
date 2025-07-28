@@ -3,7 +3,6 @@ import React from "react";
 import TitleSection from "./TitleSection";
 import CircleGroup from "./CircleGroup";
 import { Creator, Logo } from "../types/ui";
-import titleBackground from "../../../public/titleBackground.jpg";
 
 interface TitlePageProps {
   title: string;

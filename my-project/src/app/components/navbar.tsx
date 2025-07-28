@@ -1,33 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import FocusLock from "react-focus-lock";
 
-const Navbar: React.FC = () => {
-  const [randomLogo, setRandomLogo] = useState<string>("");
-
-  const logos = React.useMemo(
-    () => [
-      "/LogosToAlternate/Logo_PACK-01.png",
-      "/LogosToAlternate/Logo_PACK-02.png",
-      "/LogosToAlternate/Logo_PACK-03.png",
-      "/LogosToAlternate/Logo_PACK-04.png",
-      "/LogosToAlternate/Logo_PACK-05.png",
-      "/LogosToAlternate/Logo_PACK-06.png",
-      "/LogosToAlternate/Logo_PACK-07.png",
-      "/LogosToAlternate/Logo_PACK-08.png",
-      "/LogosToAlternate/Logo_PACK-09.png",
-    ],
-    []
-  );
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * logos.length);
-    setRandomLogo(logos[randomIndex]);
-  }, [logos]);
-
+const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -56,15 +34,13 @@ const Navbar: React.FC = () => {
           aria-label="Scroll to home section"
           style={{ lineHeight: 0 }}
         >
-          {randomLogo && (
-            <Image
-              src={randomLogo}
-              alt="Sustain;ed Logo"
-              width={120}
-              height={120}
-              style={{ display: "block" }}
-            />
-          )}
+          <Image
+            src={logoSrc}
+            alt="Sustain;ed Logo"
+            width={120}
+            height={120}
+            style={{ display: "block" }}
+          />
         </button>
 
         {/* Desktop Links */}

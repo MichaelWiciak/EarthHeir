@@ -1,5 +1,4 @@
 export const footer = {
-  logoSrc: "/sustainedLogo.png",
   copyright: "© 2025 Sustain.ed",
   deployedOn: "Deployed on",
   deployedOnLink: { Vercel: "https://vercel.com/" },
