@@ -1,26 +1,28 @@
 "use client";
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import "leaflet/dist/leaflet.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+
 import TitlePage from "@/app/components/TitlePage";
 import InfoSection from "@/app/components/Text+Circles";
 import TextSection from "@/app/components/TextSection";
 import Navbar from "@/app/components/navbar";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "@/app/components/ContactForm";
-import "leaflet/dist/leaflet.css";
-import "swiper/css";
-import "swiper/css/navigation";
 import Footer from "@/app/components/Footer";
 import InstagramFeed from "@/app/components/Instagram";
 import StampRally from "@/app/components/StampRally";
 import CompositeShowcase from "./components/Clients";
 import ImageParagraphGroup from "./components/ImageParagraphGroup";
 import ContentBlockGroupSection from "./components/WhatWeDo";
-import titleBackground from "../../public/titleBackground.jpg";
 import ErrorBoundary from "./components/ErrorBoundry";
 import LoadingSpinner from "./components/LoadingSpinners";
-import SplashLoader from "./components/SplashLoader"; // New!
-import dynamic from "next/dynamic";
+import SplashLoader from "./components/SplashLoader";
 
+import titleBackground from "../../public/titleBackground.jpg";
 import {
   whoweare,
   impactGoalsText,
@@ -97,12 +99,24 @@ export default function Home() {
               aria-hidden="true"
             />
             <div className="relative z-10, py-16">
-              <TitlePage
-                title={titlePageData.title}
-                creators={titlePageData.creators}
-                motto={titlePageData.motto}
-                logos={titlePageData.logos}
-              />
+              <AnimatePresence>
+                {selectedLogo && (
+                  <motion.div
+                    key="title-page"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 3, ease: "easeInOut" }}
+                  >
+                    <TitlePage
+                      title={titlePageData.title}
+                      creators={titlePageData.creators}
+                      motto={titlePageData.motto}
+                      logos={titlePageData.logos}
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </header>
           <div className="container-custom mx-auto">
