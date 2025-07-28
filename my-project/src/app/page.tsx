@@ -18,6 +18,7 @@ import ImageParagraphGroup from "./components/ImageParagraphGroup";
 import ContentBlockGroupSection from "./components/WhatWeDo";
 import titleBackground from "../../public/titleBackground.jpg";
 import ErrorBoundary from "./components/ErrorBoundry";
+import TestError from "./components/TestError";
 
 import {
   whoweare,
@@ -69,6 +70,7 @@ export default function Home() {
 
   return (
     <ErrorBoundary>
+      <TestError />
       <div>
         <header>
           <div>
