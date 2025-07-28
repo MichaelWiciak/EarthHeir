@@ -18,7 +18,6 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({
   logoSrc,
   logoAlt = "Logo",
-  copyright,
   deployedOn,
   deployedOnLink,
   createdBy,

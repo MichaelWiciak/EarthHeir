@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import "leaflet/dist/leaflet.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import { AnimatePresence, motion } from "framer-motion";

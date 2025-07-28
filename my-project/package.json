@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@posthog/wizard": "^1.8.7",
     "framer-motion": "^12.23.6",
     "lucide-react": "^0.525.0",
     "maplibre-gl": "^5.6.1",
     "next": "15.4.1",
+    "posthog-js": "^1.258.2",
+    "posthog-node": "^5.6.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-focus-lock": "^2.13.6",
