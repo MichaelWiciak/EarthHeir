@@ -230,6 +230,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             </select>
 
             <input
+              id="phone"
               type="tel"
               placeholder="Phone number"
               className="w-full border rounded-lg p-3"
@@ -243,8 +244,13 @@ const ContactForm: React.FC<ContactFormProps> = ({
           <p className="font-semibold mb-2">What is your enquiry about?</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {enquiryOptions.map((option) => (
-              <label key={option} className="flex items-center space-x-2">
+              <label
+                htmlFor={option}
+                key={option}
+                className="flex items-center space-x-2"
+              >
                 <input
+                  id={option}
                   type="checkbox"
                   checked={selectedOptions.includes(option)}
                   onChange={() => handleCheckboxChange(option)}
@@ -269,10 +275,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
               <h3 className="font-semibold text-lg">Venue Rental Details</h3>
 
               <div className="flex flex-col space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="venue-people"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Number of people
                 </label>
                 <input
+                  id="venue-people"
                   type="number"
                   placeholder="How many people will attend?"
                   className="w-full border rounded-lg p-3"
@@ -312,10 +322,14 @@ const ContactForm: React.FC<ContactFormProps> = ({
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="venue-purpose"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Purpose of venue rental
                 </label>
                 <textarea
+                  id="venue-purpose"
                   placeholder="What do you want to do in the venue?"
                   className="w-full border rounded-lg p-3 h-24 resize-none"
                   value={venuePurpose}
@@ -324,22 +338,30 @@ const ContactForm: React.FC<ContactFormProps> = ({
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="venue-date"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Date of venue rental
                 </label>
               </div>
               <input
+                id="venue-date"
                 type="date"
                 className="w-full border rounded-lg p-3"
                 value={venueDate}
                 onChange={(e) => setVenueDate(e.target.value)}
               />
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="venue-time"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Time of venue rental
                 </label>
               </div>
               <input
+                id="venue-time"
                 type="time"
                 value={venueTime}
                 onChange={(e) => setVenueTime(e.target.value)}
@@ -357,6 +379,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             Your message
           </label>
           <textarea
+            id="message"
             placeholder="Your message and any additional details"
             className="w-full border rounded-lg p-3 h-32 resize-none"
             value={message}
