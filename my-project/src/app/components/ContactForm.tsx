@@ -39,6 +39,46 @@ const ContactForm: React.FC<ContactFormProps> = ({
     );
   };
 
+  interface ContactFormData {
+    from_name: string;
+    from_email: string;
+    message: string;
+    enquiry_type: string;
+    company: string;
+    phone: string;
+    venue_people: string;
+    venue_purpose: string;
+    venue_date: string;
+    venue_time: string;
+    timestamp?: string;
+  }
+
+  const saveToGoogleSheets = async (formData: ContactFormData) => {
+    const SHEET_URL = process.env
+      .NEXT_PUBLIC_GOOGLE_SHEETS_SCRIPT_URL as string;
+
+    console.log("Sending to Sheets:", formData); // Check data
+
+    // for the form, change the phone into something excel will treat as a string, single quote before the phone number
+    formData.phone = `'${formData.phone}`; // Add single quote to treat as string in Sheets
+    // add to the form timestamp of submission
+    formData.timestamp = new Date().toISOString();
+
+    try {
+      const response = await fetch(SHEET_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+        mode: "no-cors",
+      });
+      const responseText = await response.text();
+      console.log("Sheets response:", responseText); // Should log "Success"
+    } catch (error) {
+      console.error("Google Sheets error:", error);
+      toast.error("Failed to save to records. Admin notified.");
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -68,14 +108,12 @@ const ContactForm: React.FC<ContactFormProps> = ({
       return;
     }
 
-    // Venue-specific validations
     if (selectedOptions.includes("Renting the venue")) {
       if (!venuePeople || !venuePurpose || !venueDate || !venueTime) {
         toast.error("Please complete all venue rental details.");
         return;
       }
 
-      // Check that venuePeople is a valid number > 0
       const peopleNum = parseInt(venuePeople);
       if (isNaN(peopleNum) || peopleNum <= 0) {
         toast.error("Please enter a valid number of people.");
@@ -125,50 +163,36 @@ const ContactForm: React.FC<ContactFormProps> = ({
         : "N/A",
     };
 
-    // before sending, log all templateParams to console
     console.log("Sending email with params:", templateParams);
 
-    // try {
-    //   await emailjs.send(
-    //     process.env.NEXT_PUBLIC_EMAILJSSERVICE as string,
-    //     process.env.NEXT_PUBLIC_EMAILJSTEMPLATE as string,
-    //     templateParams,
-    //     process.env.NEXT_PUBLIC_EMAILJSPUBLICKEY as string
-    //   );
+    saveToGoogleSheets(templateParams);
 
-    //   toast.success("Message sent successfully!");
-    //   setName("");
-    //   setEmail("");
-    //   setMessage("");
-    //   setSelectedOptions([]);
-    // } catch (error) {
-    //   console.error("EmailJS error:", error);
-    //   toast.error("Failed to send message. Please try again later.");
-    // } finally {
-    //   setLoading(false);
-    // }
+    setLoading(false);
 
-    // Add Google Sheets submission
-    try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbzBbLRih9LY_Qs2ZbqPJRhsszwBavejsE8aYg7e7gD1Lg64iBNv0877RsX2lYCtdfcQ8w/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(templateParams),
-        }
-      );
-    } catch (error) {
-      console.error("Google Sheets error:", error);
-    }
+    //   try {
+    //     await emailjs.send(
+    //       process.env.NEXT_PUBLIC_EMAILJSSERVICE as string,
+    //       process.env.NEXT_PUBLIC_EMAILJSTEMPLATE as string,
+    //       templateParams,
+    //       process.env.NEXT_PUBLIC_EMAILJSPUBLICKEY as string
+    //     );
+
+    //     toast.success("Message sent successfully!");
+    //     setName("");
+    //     setEmail("");
+    //     setMessage("");
+    //     setSelectedOptions([]);
+    //   } catch (error) {
+    //     console.error("EmailJS error:", error);
+    //     toast.error("Failed to send message. Please try again later.");
+    //   } finally {
+    //     setLoading(false);
+    //   }
   };
 
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       <h2 className="text-center">{title}</h2>
-      {/* i want to add here a small tagline like text about that things with * are mandatory */}
       <p className="text-sm text-gray-500 text-center">
         All fields on the form are mandatory.
       </p>
