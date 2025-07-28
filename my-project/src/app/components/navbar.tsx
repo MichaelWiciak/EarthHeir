@@ -40,6 +40,7 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
             width={120}
             height={120}
             style={{ display: "block" }}
+            priority
           />
         </button>
 
