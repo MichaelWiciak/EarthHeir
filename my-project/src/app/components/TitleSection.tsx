@@ -47,7 +47,7 @@ const TitleSection: React.FC<TitleSectionProps> = ({
       ))}
       </p> */}
 
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-gray-900 drop-shadow-lg, text-center">
+      <h1 className="text-6xl md:text-7xl font-black mb-8 text-gray-800 drop-shadow-2xl text-center tracking-tight leading-tight">
         {motto}
       </h1>
     </div>

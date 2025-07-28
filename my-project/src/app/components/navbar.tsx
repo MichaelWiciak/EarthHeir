@@ -60,43 +60,88 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-gray-700 cursor-pointer hover:text-blue-600 transition-colors"
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-
-        {/* Mobile Links with Focus Lock */}
-        {menuOpen && (
-          <FocusLock returnFocus>
-            <nav
-              id="mobile-menu"
-              className="md:hidden bg-white px-4 pb-4 space-y-3"
-              role="navigation"
-              aria-label="Mobile menu"
+        <div className="md:hidden">
+          {/* Mobile Menu Button (visible when closed) */}
+          {!menuOpen && (
+            <button
+              className="fixed top-4 right-4 text-gray-700 hover:text-blue-600 transition-colors"
+              aria-label="Open menu"
+              onClick={() => setMenuOpen(true)}
             >
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="block text-gray-700 hover:text-blue-600 cursor-pointer"
-                  aria-label={`Scroll to ${link.name} section`}
-                  onClick={() => {
-                    scrollToSection(link.href.slice(1));
-                    setMenuOpen(false);
-                  }}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </nav>
-          </FocusLock>
-        )}
+              <Menu size={28} />
+            </button>
+          )}
+
+          {menuOpen && (
+            <FocusLock returnFocus>
+              {/* Backdrop */}
+              <div
+                className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${
+                  menuOpen
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none"
+                }`}
+                onClick={() => setMenuOpen(false)}
+                aria-hidden="true"
+              />
+
+              {/* Slide-in menu */}
+              <div
+                className={`fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white shadow-lg transform transition-transform duration-300 ${
+                  menuOpen ? "translate-x-0" : "translate-x-full"
+                }`}
+              >
+                {/* Top bar with logo and close */}
+                <div className="flex justify-between items-center px-4 py-3 border-b">
+                  <button
+                    className="text-gray-700 hover:text-blue-600 transition-colors"
+                    onClick={() => setMenuOpen(false)}
+                    aria-label="Close menu"
+                  >
+                    <Image
+                      src={logoSrc}
+                      alt="Sustain;ed Logo"
+                      width={120}
+                      height={120}
+                      style={{ display: "block" }}
+                    />
+                  </button>
+
+                  <button
+                    className="text-gray-700 hover:text-blue-600 transition-colors"
+                    onClick={() => setMenuOpen(false)}
+                    aria-label="Close menu"
+                  >
+                    <X size={28} />
+                  </button>
+                </div>
+
+                {/* Menu Items */}
+                <nav className="px-6 py-6 space-y-4">
+                  {links.map((link, index) => (
+                    <div key={link.href}>
+                      <a
+                        href={link.href}
+                        onClick={() => {
+                          scrollToSection(link.href.slice(1));
+                          setMenuOpen(false);
+                        }}
+                        className="block text-lg font-medium text-gray-800 hover:bg-gray-100 rounded-md px-3 py-3 transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                      {index !== links.length - 1 && (
+                        <hr className="border-dotted border-t border-gray-300 opacity-50" />
+                      )}
+                    </div>
+                  ))}
+                </nav>
+
+                <div className="h-20" />
+              </div>
+            </FocusLock>
+          )}
+        </div>
       </div>
     </nav>
   );
