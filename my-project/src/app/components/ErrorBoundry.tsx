@@ -46,9 +46,6 @@ class ErrorBoundary extends React.Component<Props, State> {
               className="mb-6"
               animate={{ rotate: [0, 10, -10, 0] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              // Responsive: make image bigger on mobile
-              // Use a media query to override width on small screens
-              // Inline style for demonstration, but prefer CSS for production
               {...{
                 style: {
                   width: "20vw",

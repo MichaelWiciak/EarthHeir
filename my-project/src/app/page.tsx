@@ -7,7 +7,6 @@ import Navbar from "@/app/components/navbar";
 import { Toaster } from "react-hot-toast";
 import ContactForm from "@/app/components/ContactForm";
 import "leaflet/dist/leaflet.css";
-import dynamic from "next/dynamic";
 import "swiper/css";
 import "swiper/css/navigation";
 import Footer from "@/app/components/Footer";
@@ -18,7 +17,9 @@ import ImageParagraphGroup from "./components/ImageParagraphGroup";
 import ContentBlockGroupSection from "./components/WhatWeDo";
 import titleBackground from "../../public/titleBackground.jpg";
 import ErrorBoundary from "./components/ErrorBoundry";
-import TestError from "./components/TestError";
+import LoadingSpinner from "./components/LoadingSpinners";
+import SplashLoader from "./components/SplashLoader"; // New!
+import dynamic from "next/dynamic";
 
 import {
   whoweare,
@@ -41,7 +42,7 @@ export default function Home() {
     () => import("./components/MapWithData"),
     {
       ssr: false,
-      loading: () => <p>Loading map...</p>,
+      loading: () => <LoadingSpinner />,
     }
   );
 
@@ -65,12 +66,11 @@ export default function Home() {
   }, []);
 
   if (!selectedLogo) {
-    return <p>Loading...</p>;
+    return <SplashLoader />;
   }
 
   return (
     <ErrorBoundary>
-      <TestError />
       <div>
         <header>
           <div>
