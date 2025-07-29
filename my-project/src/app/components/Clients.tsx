@@ -44,7 +44,7 @@ const CompositeShowcase: React.FC<CompositeShowcaseProps> = ({
       <LogoTicker logos={logos} />
 
       {/* ImageGallery */}
-      <ImageGallery title={gallery.title} slides={gallery.slides} />
+      <ImageGallery slides={gallery.slides} />
     </div>
   );
 };
