@@ -248,17 +248,6 @@ export const whatWeDoSection = {
               tagline: "Growing the sustainability ecosystem in Malaysia",
             },
           ],
-          circles: [
-            {
-              text: "Sustainable Living & Plastic Waste Management Training",
-            },
-            {
-              text: "Sustainability & Business Training Programmes for Micro-business Entrepreneurs",
-            },
-            {
-              text: "Sustainability & ESG Education - Corporates & Educational Institutions",
-            },
-          ],
         },
       },
     },
@@ -292,17 +281,6 @@ export const whatWeDoSection = {
                 "EarthHeir.com will bring curated, high quality social impact products from across Malaysia under one roof - creating a powerful fusion of impact enterprises coming together and growing our collective impact in Malaysia.",
                 "A central hub for social procurement to grow the ESG goals and SDG achievements for companies and organisations.",
               ],
-            },
-          ],
-          circles: [
-            {
-              text: "Social Impact Products",
-            },
-            {
-              text: "Made In Malaysia",
-            },
-            {
-              text: "Social Procurement",
             },
           ],
         },
