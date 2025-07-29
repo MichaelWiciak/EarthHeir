@@ -28,20 +28,25 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 ">
       <div className="container-custom mx-auto px-4 py-3 flex justify-between items-center">
+        {/* I want to put the image in some kind of container so that even if hte width/height of the image is high, it always occupies the smae amount of the navbar */}
+
         <button
           onClick={() => scrollToSection("home")}
           className="hover:opacity-80 transition-opacity cursor-pointer p-0 bg-transparent border-none "
           aria-label="Scroll to home section"
           style={{ lineHeight: 0 }}
         >
-          <Image
-            src={logoSrc}
-            alt="Sustain;ed Logo"
-            width={120}
-            height={120}
-            style={{ display: "block" }}
-            priority
-          />
+          <div className="relative w-24 h-10">
+            {" "}
+            {/* Adjust size as needed */}
+            <Image
+              src={logoSrc}
+              alt="Sustain;ed Logo"
+              fill
+              style={{ objectFit: "contain" }}
+              priority
+            />
+          </div>
         </button>
 
         {/* Desktop Links */}
@@ -93,23 +98,27 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
                 }`}
               >
                 {/* Top bar with logo and close */}
-                <div className="flex justify-between items-center px-4 py-3 border-b">
+                <div className="flex justify-between items-center px-1 py-3 border-b">
                   <button
                     className="text-gray-700 hover:text-blue-600 transition-colors"
                     onClick={() => setMenuOpen(false)}
                     aria-label="Close menu"
                   >
-                    <Image
-                      src={logoSrc}
-                      alt="Sustain;ed Logo"
-                      width={120}
-                      height={120}
-                      style={{ display: "block" }}
-                    />
+                    <div className="relative w-24 h-10">
+                      {" "}
+                      {/* Adjust size as needed */}
+                      <Image
+                        src={logoSrc}
+                        alt="Sustain;ed Logo"
+                        fill
+                        style={{ objectFit: "contain" }}
+                        priority
+                      />
+                    </div>
                   </button>
 
                   <button
-                    className="text-gray-700 hover:text-blue-600 transition-colors"
+                    className="text-gray-700 hover:text-blue-600 transition-colors px-2"
                     onClick={() => setMenuOpen(false)}
                     aria-label="Close menu"
                   >

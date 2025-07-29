@@ -62,7 +62,7 @@ class ErrorBoundary extends React.Component<Props, State> {
               }}
             />
 
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">
+            <h1 className="text-2xl font-bold text-gray-800 mb-2 text-center">
               Oops! Something went wrong.
             </h1>
             <p className="text-gray-600 mb-4 text-center max-w-sm">
