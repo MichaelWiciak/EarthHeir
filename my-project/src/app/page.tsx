@@ -158,6 +158,7 @@ export default function Home() {
                 tagline={impactGoalsText.tagline}
                 size="h2"
                 type="highlighted"
+                imgSrc={"/longImage.jpg"}
               />
             </section>
 

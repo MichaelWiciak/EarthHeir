@@ -33,6 +33,9 @@ export default function InstagramFeed() {
   return (
     <section className="w-full max-w-4xl mx-auto">
       <h2 className="mb-6 text-center">Sustain;ed Instagram Feed</h2>
+      <p className="text-center mb-4">
+        Follow us on Instagram for the latest updates and community stories.
+      </p>
       <iframe
         src={iframeSrc}
         className="snapwidget-widget"

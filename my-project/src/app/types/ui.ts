@@ -13,6 +13,7 @@ export interface TextSection {
   tagline?: string;
   size?: "h2" | "h3" | "h4";
   type?: "default" | "highlighted";
+  imgSrc?: string;
 }
 
 export interface Slide {

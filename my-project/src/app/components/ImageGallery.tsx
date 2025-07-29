@@ -11,16 +11,12 @@ import ImageCaptionOverlay from "./ImageCaption";
 import { Slide } from "../types/ui";
 
 interface ImageGalleryProps {
-  title: string;
   slides: Slide[];
 }
 
-const ImageGallery: React.FC<ImageGalleryProps> = ({ title, slides }) => {
+const ImageGallery: React.FC<ImageGalleryProps> = ({ slides }) => {
   return (
-    <div className="w-full mt-12 mb-12">
-      {/* if title is "", then dont print it */}
-      {title && <h2 className="font-bold text-center">{title}</h2>}
-
+    <div className="w-full my-12">
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation
