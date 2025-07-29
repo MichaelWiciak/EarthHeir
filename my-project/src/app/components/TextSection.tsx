@@ -44,14 +44,13 @@ const TextSection: React.FC<TextSectionProps> = ({
 
       {/* Image (Hidden on mobile, centered vertically in container) */}
       {imgSrc && (
-        <div className="hidden md:flex md:w-1/3 lg:w-1/4 items-center justify-center">
+        <div className="hidden md:flex md:w-1/3 lg:w-1/4 items-center justify-center rounded-lg overflow-hidden p-4">
           <Image
             src={imgSrc}
             alt="SomeImage"
-            className="w-full h-auto object-cover rounded-xl shadow"
-            // make it fit to the container
             width={400}
             height={300}
+            style={{ objectFit: "contain" }}
           />
         </div>
       )}
