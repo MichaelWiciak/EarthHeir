@@ -36,6 +36,7 @@ import {
   venueSectionData,
   aboutUsSectionProjectSeaMonkey,
   aboutUsSectionProjectEarthHeir,
+  locationAccordionItems,
 } from "@/app/data/homePageData";
 
 export default function Home() {
@@ -200,7 +201,7 @@ export default function Home() {
                 <MapWithDetailsSection
                   coordinates={locationSection.coordinates}
                   title={locationSection.title}
-                  bulletpoints={locationSection.bulletpoints}
+                  bulletpoints={locationSection.bulletpoints} // flat array
                 />
               </div>
             </section>

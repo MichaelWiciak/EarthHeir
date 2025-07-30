@@ -148,6 +148,44 @@ export const locationSection = {
   ],
 };
 
+export const locationAccordionItems = [
+  {
+    bulletTitle: "Where to Find Us",
+    bulletpoints: [
+      "We're located in a prime spot along Kasturi Walk (look out for the big WAU), on the First Floor of Central Market (Pasar Seni), Kuala Lumpur.",
+      "Find us at 30, First Floor, Jalan Hang Kasturi, Kuala Lumpur City Centre, 50050 Kuala Lumpur, Malaysia.",
+      "Look for the brightly lit entrance next to Nala Kasturi / Mixue. We're one floor above Nala Kasturi, reachable via lift or stairs.",
+      "Watch our directions video",
+    ],
+  },
+  {
+    bulletTitle: "Opening Hours",
+    bulletpoints: ["Open Monday to Sunday, 10am to 6pm."],
+  },
+  {
+    bulletTitle: "Public Transport & Access",
+    bulletpoints: [
+      "Easily accessible via public transport – Pasar Seni LRT/MRT/Bus stops are right across Kasturi Walk. KL KTM station is also nearby (8 min walk).",
+    ],
+  },
+  {
+    bulletTitle: "Parking Options",
+    bulletpoints: [
+      "If driving, parking at Central Market is available (note: it may be closed before 10am).",
+      "Best alternative parking: POS Malaysia / Dayabumi Complex (before Central Market – exit left early).",
+      "Other nearby parking: Jalan HS Lee (6 min walk), Jalan Sultan opposite Mee Tarik (10 min walk), KTM Kuala Lumpur (10 min walk).",
+    ],
+  },
+  {
+    bulletTitle: "Facilities & Contact",
+    bulletpoints: [
+      "Kitchen facilities available for events.",
+      "Toilet facilities available.",
+      "Call us: +60 3 2022 3502 / +60 13 211 7994",
+    ],
+  },
+];
+
 export const contactSection = {
   title: "Get In Touch",
   tagline: "Alternatively, you can reach us at",
