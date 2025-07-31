@@ -101,7 +101,7 @@ export const impactGoalsText = {
 // data/homepageContent.ts
 
 export const titlePageData = {
-  title: "sustain;ed",
+  title: "Championing Sustainability & Social Impact for Systematic Change",
   creators: [
     {
       name: "The Sea Monkey Project",
@@ -112,7 +112,8 @@ export const titlePageData = {
       url: "https://earthheir.com/",
     },
   ],
-  motto: "Championing Sustainability & Social Impact for Systematic Change",
+  motto:
+    "Sustain;ed KL is a dedicated space for sustainability and social impact. Through education, mentorship, and conscious living, we equip communities and changemakers with the tools to create a more inclusive and sustainable future.",
   logos: [
     {
       imageSrc: "/seamonkeylogo.png",

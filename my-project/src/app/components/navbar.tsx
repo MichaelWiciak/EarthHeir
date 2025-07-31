@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import FocusLock from "react-focus-lock";
+import Link from "next/link";
 
 const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
   const scrollToSection = (id: string) => {

@@ -20,24 +20,25 @@ const TitlePage: React.FC<TitlePageProps> = ({
   return (
     <div className="relative flex flex-col md:flex-row items-center justify-between gap-6 py-24">
       {/* Content above background */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-6">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-6 px-20 text-center md:text-left ">
         {/* Left logo (desktop only) */}
-        <div className="hidden md:flex">
+        {/* <div className="hidden md:flex">
           <CircleGroup items={[logos[0]]} circleDiameter={200} />
-        </div>
+        </div> */}
 
         {/* Center title section */}
+
         <TitleSection title={title} creators={creators} motto={motto} />
 
         {/* Right logo (desktop only) */}
-        <div className="hidden md:flex">
+        {/* <div className="hidden md:flex">
           <CircleGroup items={[logos[1]]} circleDiameter={200} />
         </div>
 
         {/* Mobile view: show both logos below */}
-        <div className="flex md:hidden mt-8 gap-4">
+        {/* <div className="flex md:hidden mt-8 gap-4">
           <CircleGroup items={logos} direction="row" circleDiameter={120} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

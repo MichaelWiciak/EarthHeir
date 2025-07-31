@@ -21,7 +21,9 @@ import ErrorBoundary from "./components/ErrorBoundry";
 import LoadingSpinner from "./components/LoadingSpinners";
 import SplashLoader from "./components/SplashLoader";
 
-import titleBackground from "../../public/titleBackground.jpg";
+import Image from "next/image";
+
+import titleBackground from "../../public/backgroundImage.png";
 import {
   whoweare,
   impactGoalsText,
@@ -87,18 +89,37 @@ export default function Home() {
             id="home"
             className="scroll-mt-8 container-custom mx-auto relative"
           >
-            <div
+            {/* <div
               className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2"
               style={{
                 backgroundImage: `url(${titleBackground.src})`,
-                backgroundSize: "cover",
+                backgroundSize: "contain",
                 backgroundPosition: "center",
-                opacity: 0.3,
+                opacity: 0.8,
                 pointerEvents: "none",
               }}
               aria-hidden="true"
-            />
-            <div className="relative z-10, py-16">
+            /> */}
+            <div className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2">
+              <Image
+                src={titleBackground.src}
+                alt="Background"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  zIndex: -1,
+                  pointerEvents: "none",
+                  // opacity: 0.8,
+                }}
+                width={1920}
+                height={1080}
+              />
+            </div>
+            <div className="relative z-10, py-50">
               <AnimatePresence>
                 {selectedLogo && (
                   <motion.div
@@ -201,7 +222,7 @@ export default function Home() {
                 <MapWithDetailsSection
                   coordinates={locationSection.coordinates}
                   title={locationSection.title}
-                  bulletpoints={locationSection.bulletpoints} // flat array
+                  bulletpoints={locationSection.bulletpoints}
                 />
               </div>
             </section>
