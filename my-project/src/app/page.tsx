@@ -89,17 +89,6 @@ export default function Home() {
             id="home"
             className="scroll-mt-8 container-custom mx-auto relative"
           >
-            {/* <div
-              className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2"
-              style={{
-                backgroundImage: `url(${titleBackground.src})`,
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                opacity: 0.8,
-                pointerEvents: "none",
-              }}
-              aria-hidden="true"
-            /> */}
             <div className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2">
               <Image
                 src={titleBackground.src}
@@ -113,7 +102,6 @@ export default function Home() {
                   left: 0,
                   zIndex: -1,
                   pointerEvents: "none",
-                  // opacity: 0.8,
                 }}
                 width={1920}
                 height={1080}

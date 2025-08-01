@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import FocusLock from "react-focus-lock";
@@ -16,6 +16,18 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
   };
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 825); // adjust this threshold to match your hero section height
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const links = [
     { name: "Identity", href: "#whoweare" },
     { name: "Our Impact", href: "#impact" },
@@ -23,11 +35,16 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
     { name: "Venues", href: "#venues" },
     { name: "Stamp Rally", href: "#stampRally" },
     { name: "Location", href: "#location" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 ">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+    >
+      {" "}
       <div className="container-custom mx-auto px-4 py-3 flex justify-between items-center">
         {/* I want to put the image in some kind of container so that even if hte width/height of the image is high, it always occupies the smae amount of the navbar */}
 
@@ -43,8 +60,11 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
             <Image
               src={logoSrc}
               alt="Sustain;ed Logo"
+              unoptimized
               fill
               style={{ objectFit: "contain" }}
+              className="object-contain"
+              sizes="(max-width: 768px) 100px, (min-width: 769px) 200px"
               priority
             />
           </div>
@@ -59,7 +79,14 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
                 scrollToSection(link.href.slice(1));
                 setMenuOpen(false);
               }}
-              className="text-gray-700 hover:text-blue-600 transition-colors hover:cursor-pointer"
+              className={`text-gray-700 hover:text-blue-600 transition-colors hover:cursor-pointer px-3 py-1 rounded-md ${
+                link.name === "Contact Us" ? "border" : ""
+              }`}
+              style={
+                link.name === "Contact Us"
+                  ? { borderColor: "oklch(0.6088 0.2007 351.16)" }
+                  : {}
+              }
               aria-label={`Scroll to ${link.name} section`}
             >
               {link.name}
@@ -137,7 +164,14 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
                           scrollToSection(link.href.slice(1));
                           setMenuOpen(false);
                         }}
-                        className="block text-lg font-medium text-gray-800 hover:bg-gray-100 rounded-md px-3 py-3 transition-colors"
+                        className={`block text-lg font-medium text-gray-800 hover:bg-gray-100 rounded-md px-3 py-3 transition-colors ${
+                          link.name === "Contact Us" ? "border" : ""
+                        }`}
+                        style={
+                          link.name === "Contact Us"
+                            ? { borderColor: "oklch(0.6088 0.2007 351.16)" }
+                            : {}
+                        }
                       >
                         {link.name}
                       </a>
