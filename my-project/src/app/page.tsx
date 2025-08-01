@@ -20,10 +20,11 @@ import ContentBlockGroupSection from "./components/WhatWeDo";
 import ErrorBoundary from "./components/ErrorBoundry";
 import LoadingSpinner from "./components/LoadingSpinners";
 import SplashLoader from "./components/SplashLoader";
+import HeroBottomDivider from "./components/hero-bottom-divider";
 
 import Image from "next/image";
 
-import titleBackground from "../../public/backgroundImage.png";
+import titleBackground from "../../public/realBackGround.png";
 import {
   whoweare,
   impactGoalsText,
@@ -85,29 +86,18 @@ export default function Home() {
         </header>
 
         <main>
-          <header
-            id="home"
-            className="scroll-mt-8 container-custom mx-auto relative"
-          >
-            <div className="absolute inset-0 w-screen h-full z-0 left-1/2 -translate-x-1/2">
+          <header id="home" className="relative">
+            <div className="absolute -z-10 inset-0">
               <Image
+                className="h-full w-full object-cover brightness-50"
                 src={titleBackground.src}
                 alt="Background"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "contain",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  zIndex: -1,
-                  pointerEvents: "none",
-                }}
-                width={1920}
-                height={1080}
+                width={1170}
+                height={781}
+                unoptimized
               />
             </div>
-            <div className="relative z-10, py-50">
+            <div className="container-custom z-10">
               <AnimatePresence>
                 {selectedLogo && (
                   <motion.div
@@ -128,6 +118,9 @@ export default function Home() {
               </AnimatePresence>
             </div>
           </header>
+          <div className="w-full h-32 -translate-y-1/2">
+            <HeroBottomDivider className="w-full" preserveAspectRatio="none" />
+          </div>
           <div className="container-custom mx-auto">
             <section id="whoweare" className="scroll-mt-8 py-15">
               <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">

@@ -20,11 +20,18 @@ const Navbar: React.FC<{ logoSrc: string }> = ({ logoSrc }) => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const isMobile = window.innerWidth < 768; // Tailwind's 'md' breakpoint
       const offset = window.scrollY;
-      setScrolled(offset > 825); // adjust this threshold to match your hero section height
+
+      const threshold = isMobile ? 1000 : 500; // set different thresholds
+      setScrolled(offset > threshold);
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    // Also trigger on mount to catch when user reloads mid-scroll
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
