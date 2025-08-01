@@ -21,10 +21,8 @@ const TitleSection: React.FC<TitleSectionProps> = ({ title, motto }) => {
       <h1 className="text-[clamp(5rem,20vw,20rem)] font-extrabold md:font-black text-white mb-10 leading-[1.1] tracking-[-0.02em] drop-shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
         Championing Sustainability &amp; <br />
         <span
-          style={{
-            color: "#E82A93",
-            fontFamily: "'Covered By Your Grace', cursive",
-          }}
+          style={{ color: "oklch(0.6088 0.2007 351.16)" }}
+          className="font-playful"
         >
           Social Impact
         </span>

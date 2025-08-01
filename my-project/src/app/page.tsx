@@ -21,6 +21,8 @@ import ErrorBoundary from "./components/ErrorBoundry";
 import LoadingSpinner from "./components/LoadingSpinners";
 import SplashLoader from "./components/SplashLoader";
 import HeroBottomDivider from "./components/hero-bottom-divider";
+import EarthHeirLogo from "../../public/Earth Heir Logo 1.svg";
+import ProjectSeaMonkeyLogo from "../../public/SMP Logo Vector Color 1.svg";
 
 import Image from "next/image";
 
@@ -122,14 +124,112 @@ export default function Home() {
             <HeroBottomDivider className="w-full" preserveAspectRatio="none" />
           </div>
           <div className="container-custom mx-auto">
+            <h2 className="text-3xl font-bold uppercase mb-5 text-center">
+              About Us
+            </h2>
+            <p className="my-3">
+              Sustain;ed KL is a{" "}
+              <span
+                className="text-primary font-playful"
+                style={{ color: "oklch(0.6088 0.2007 351.16)" }}
+              >
+                creative community space
+              </span>{" "}
+              reimagining Kuala Lumpur’s heritage through the lens of
+              sustainability. Rooted in the rich cultural tapestry of the city,
+              we blend traditional values with modern circular practices to
+              inspire conscious living, inclusive collaboration, and meaningful
+              dialogue.
+            </p>
+            <p className="my-3">
+              We host workshops, exhibitions, and events that{" "}
+              <span
+                className="text-primary font-playful"
+                style={{ color: "oklch(0.6088 0.2007 351.16)" }}
+              >
+                empower
+              </span>{" "}
+              individuals and communities to explore sustainable alternatives—
+              through design, storytelling, and action. Whether you’re a curious
+              learner, a creative changemaker, or an organization seeking
+              impact, Sustain;ed KL is a space to learn, create, and connect.
+            </p>
             <section id="whoweare" className="scroll-mt-8 py-15">
-              <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+              <h2 className="text-3xl font-bold uppercase mb-5 text-center">
+                Who are we?
+              </h2>
+              <p className="my-3">
+                Sustain;ed KL is a collaboration between{" "}
+                <span className="text-primary font-playful">
+                  The Sea Monkey Project
+                </span>{" "}
+                and{" "}
+                <span className="text-primary font-playful">Earth Heir</span> ,
+                two purpose-driven organisations with a shared goal: to bridge
+                environmental sustainability with social impact. Together, we’ve
+                created a space where community, education, and enterprise
+                converge — offering hands-on learning and conscious commerce
+                under one roof.
+              </p>
+              <div className="grid lg:grid-cols-2 gap-16 mt-8">
+                <div className="border-[#9B4994] border-8 rounded-[4rem] pb-8 shadow-[4px_8px_0px_0px_#D9DF50,-4px_8px_0px_0px_#D9DF50] flex flex-col items-center">
+                  <div className="px-16 py-8 flex justify-center">
+                    <Image
+                      src={ProjectSeaMonkeyLogo}
+                      unoptimized
+                      alt=""
+                      className=""
+                    />
+                  </div>
+                  <div className="p-4">
+                    The Sea Monkey Project tackles the global plastic pollution
+                    crisis by combining education, engineering, and community
+                    empowerment. The Sea Monkey Project designs and builds
+                    mobile 3-in-1 plastic recycling machines tailored to local
+                    needs, while running interactive sustainability workshops
+                    for schools, businesses, and marginalised communities. Since
+                    its founding in 2020, The Sea Monkey Project has enabled the
+                    creation of over 140,000 handmade upcycled products,
+                    provided 65,000+ hours of employment and training, and
+                    distributed more than 250 recycling machines worldwide — all
+                    aimed at reducing plastic waste and building community
+                    resilience.
+                  </div>
+                </div>
+                <div
+                  className="border-[#9B4994] border-8 rounded-[4rem] pb-8 shadow-[4px_8px_0px_0px_#D9DF50,-4px_8px_0px_0px_#D9DF50]
+"
+                >
+                  <div className="px-16 py-8">
+                    <Image
+                      src={EarthHeirLogo}
+                      unoptimized
+                      alt=""
+                      className=""
+                    />
+                  </div>
+                  <div className="p-4">
+                    Earth Heir is a women-led social enterprise dedicated to
+                    empowering artisan communities and preserving traditional
+                    craftsmanship through sustainable design. With a decade of
+                    experience, Earth Heir bridges the craft, art, and fashion
+                    worlds while focusing on education, training, and
+                    sustainable production. A certified B Corp and Fair Trade
+                    brand (WFTO), Earth Heir has delivered MYR 2.8 million in
+                    income, mentorship, and aid to artisans across Malaysia
+                    since 2013 — all while championing circular economy
+                    practices and the UN Sustainable Development Goals (SDGs 1,
+                    8 & 12).
+                  </div>
+                </div>
+              </div>
+              {/* <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
                 <InfoSection
                   title={whoweare.title}
                   paragraphs={whoweare.paragraphs}
                   circles={whoweare.circles}
                 />
-              </div>
+              </div> */}
             </section>
 
             <div className="py-15">
