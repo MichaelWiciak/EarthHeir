@@ -53,6 +53,40 @@ export default function Home() {
     }
   );
 
+  const ImpactDataThings = [
+    {
+      title: "Showcasing Local Entrepreneurs & Artisans",
+      logo: (
+        // <Image
+        //   src={ProjectSeaMonkeyLogo}
+        //   alt="The Sea Monkey Project Logo"
+        // ></Image>
+        <div className="">{`🌼`}</div>
+      ),
+      text: "Grow a vibrant ecosystem of heritage & sustainability artisans who prioritise quality, and social impact — while providing a marketplace for their products.",
+    },
+    {
+      title: "Drive Social Procurement",
+      logo: <div className="">{`🌼`}</div>,
+      text: "Enable sustainable livelihoods through collaborative efforts with impact-driven organisations, creating employment opportunities that ripple across communities.",
+    },
+    {
+      title: "Build Awareness & Inspire Action",
+      logo: <div className="">{`🌼`}</div>,
+      text: "Engage corporates, schools, and the public through accessible ESG and sustainability focused experiences that turn awareness into action.",
+    },
+    {
+      title: "Sustainability Hub for Tourists in KL",
+      logo: <div className="">{`🌼`}</div>,
+      text: "Position Kuala Lumpur as a destination for tourists to explore exciting, conscious activities and proudly Made in Malaysia products that make a difference.",
+    },
+    {
+      title: "Creating Systematic Change",
+      logo: <div className="">{`🌼`}</div>,
+      text: "Measurable Impact; by 2026, Sustain;ed KL aims to create 30,000 employment and training hours, positively impacting the livelihoods of 3,000 individuals.",
+    },
+  ];
+
   const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
 
   useEffect(() => {
@@ -232,7 +266,7 @@ export default function Home() {
               </div> */}
             </section>
 
-            <div className="py-15">
+            {/* <div className="py-15">
               <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
                 <h2 className="text-center pb-4">About Us</h2>
                 <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
@@ -252,17 +286,36 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <section id="impact" className="scroll-mt-8 py-15">
-              <TextSection
-                title={impactGoalsText.title}
-                paragraphs={impactGoalsText.paragraphs}
-                tagline={impactGoalsText.tagline}
-                size="h2"
-                type="highlighted"
-                imgSrc={"/longImage.jpg"}
-              />
+              <h2 className="text-3xl font-bold uppercase mb-5 text-center">
+                Impact Goals
+              </h2>
+              <p className="my-3">
+                At Sustain;ed KL, we aim to create deep,{" "}
+                <span className="text-primary font-playful">
+                  long-lasting impact{" "}
+                </span>
+                through meaningful collaboration, conscious business practices,
+                and inclusive community building.
+              </p>
+              <div className="flex flex-wrap justify-center gap-8 mt-8">
+                {ImpactDataThings.map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-full sm:w-[28rem] max-w-full border-[#D63F91] border-6 shadow-[0px_4px_0px_0px_#70C1CA] rounded-3xl p-6 flex-1"
+                    // ↑ w-full for mobile, sm:w-[28rem] for wider boxes on larger screens
+                  >
+                    <div className="flex gap-2 items-center">
+                      <div style={{ fontSize: "3rem" }}>{item.logo}</div>
+                      <h3 className="font-light">{item.title}</h3>
+                    </div>
+                    <hr className="border-1 border-gray-300 my-2 font-light" />
+                    <p>{item.text}</p>
+                  </div>
+                ))}
+              </div>
             </section>
 
             <section id="whatwedo" className="scroll-mt-8 py-15">
