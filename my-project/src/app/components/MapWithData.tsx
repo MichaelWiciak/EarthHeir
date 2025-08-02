@@ -50,15 +50,17 @@ const MapWithDetailsSection: React.FC<MapWithDetailsSectionProps> = ({
   );
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 items-stretch">
+    <div className="mt-16 grid grid-cols-1 xl:grid-cols-2 gap-16">
       {/* Map */}
-      <div className="h-64 md:h-auto md:w-1/2 rounded-xl overflow-hidden">
+      <div className="h-full w-full grid place-items-center min-h-64">
         {memoizedMap}
       </div>
 
       {/* Accordion Text Content */}
-      <div className="md:w-1/2 space-y-4">
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
+      <div className="border-[#322D81] border-8 rounded-[4rem] pb-8 shadow-[4px_8px_0px_0px_#B467A2,-4px_8px_0px_0px_#B467A2] py-6 px-8">
+        <h2 className="text-3xl font-bold uppercase mb-5 text-center">
+          {title}
+        </h2>
         <div className="space-y-4">
           {locationAccordionItems.map((item, index) => (
             <SimpleAccordionItem

@@ -26,6 +26,14 @@ import ProjectSeaMonkeyLogo from "../../public/SMP Logo Vector Color 1.svg";
 import { Button } from "./components/button";
 import { FacilitySection } from "./components/facilitySection";
 
+import LogoIcon from "../app/logos/logoipsum-287.svg";
+import Logo2Icon from "../app/logos/logoipsum-288.svg";
+import Logo3Icon from "../app/logos/logoipsum-321.svg";
+import Logo4Icon from "../app/logos/logoipsum-352.svg";
+import Logo5Icon from "../app/logos/logoipsum-358.svg";
+import Logo6Icon from "../app/logos/logoipsum-378.svg";
+import Logo7Icon from "../app/logos/logoipsum-385.svg";
+
 import {
   Accordion,
   AccordionContent,
@@ -481,7 +489,42 @@ export default function Home() {
             </section>
 
             <div className="py-15">
-              <CompositeShowcase {...clientsAndPartnersShowcase} />
+              {/* <CompositeShowcase {...clientsAndPartnersShowcase} /> */}
+              <h2 className="text-3xl font-bold uppercase mb-5 text-center">
+                Our clients & partners
+              </h2>
+              <p className="my-3">
+                We’re proud to collaborate with a diverse network of
+                organisations, brands, and institutions that share our{" "}
+                <span className="text-primary font-playful">commitment</span> to
+                sustainability, social impact, and community empowerment.
+              </p>
+              <div className="grid grid-cols-2 gap-16 place-items-center my-16">
+                <Image
+                  src={Logo4Icon}
+                  unoptimized
+                  alt="Next.js"
+                  className="h-16"
+                />
+                <Image
+                  src={Logo5Icon}
+                  unoptimized
+                  alt="Next.js"
+                  className="h-16"
+                />
+                <Image
+                  src={Logo6Icon}
+                  unoptimized
+                  alt="Next.js"
+                  className="h-16"
+                />
+                <Image
+                  src={Logo7Icon}
+                  unoptimized
+                  alt="Next.js"
+                  className="h-16"
+                />
+              </div>
             </div>
 
             <div className="py-15">
@@ -497,7 +540,7 @@ export default function Home() {
             </section>
 
             <section id="location" className="scroll-mt-8 py-15">
-              <div className="rounded-2xl shadow-md bg-[#ff42821a] p-6 md:p-10 backdrop-blur-sm">
+              <div className="">
                 <MapWithDetailsSection
                   coordinates={locationSection.coordinates}
                   title={locationSection.title}

@@ -192,18 +192,27 @@ const ContactForm: React.FC<ContactFormProps> = ({
 
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
-      <h2 className="text-center">{title}</h2>
-      <p className="text-sm text-gray-500 text-center">
-        All fields on the form are mandatory.
+      <h2 className="text-3xl font-bold uppercase mb-5 text-center">
+        Contact us
+      </h2>
+      <p>
+        Have a question, idea, or collaboration in mind? We’d
+        <span className="text-primary font-playful"> love to hear </span>
+        from you. Whether you&apos;re planning an event, looking to rent a
+        space, or exploring ways to work with us, just drop us a message below
+        and we’ll get back to you as soon as we can.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-6 bg-[#D9E050] shadow-[0px_4px_0px_0px_#70C1CA] py-8 px-8 md:px-12 rounded-3xl flex flex-col gap-6"
+      >
         <div className="space-y-2">
           <label
             htmlFor="name"
             className="block text-sm font-medium text-gray-700"
           >
-            Your name
+            Name
           </label>
           <input
             id="name"
@@ -220,7 +229,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             htmlFor="email"
             className="block text-sm font-medium text-gray-700"
           >
-            Your email
+            Email
           </label>
           <input
             id="email"
@@ -237,7 +246,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             htmlFor="company"
             className="block text-sm font-medium text-gray-700"
           >
-            Company name
+            Company Name
           </label>
           <input
             id="company"
@@ -254,7 +263,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
             htmlFor="phone"
             className="block text-sm font-medium text-gray-700"
           >
-            Phone number
+            Phone Number
           </label>
           <div className="flex space-x-2">
             <select
