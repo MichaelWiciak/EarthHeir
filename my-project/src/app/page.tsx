@@ -24,6 +24,13 @@ import HeroBottomDivider from "./components/hero-bottom-divider";
 import EarthHeirLogo from "../../public/Earth Heir Logo 1.svg";
 import ProjectSeaMonkeyLogo from "../../public/SMP Logo Vector Color 1.svg";
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./components/accordion-card";
+
 import Image from "next/image";
 
 import titleBackground from "../../public/realBackGround.png";
@@ -43,6 +50,45 @@ import {
   aboutUsSectionProjectEarthHeir,
   locationAccordionItems,
 } from "@/app/data/homePageData";
+
+type AccordionSection = {
+  id: string;
+  title: string;
+  subtitle: string;
+  content: string;
+  images: string[];
+};
+
+const accordionData: AccordionSection[] = [
+  {
+    id: "01",
+    title: "01",
+    subtitle: "KNOWLEDGE HUB",
+    content: `We are addressing some of the most urgent global challenges of our time — including climate change, resource depletion, and social inequality — by creating local solutions with real impact. As the world shifts towards more sustainable ways of living and working, the demand for sustainability education and awareness continues to grow. Sustain;ed KL responds to this need by actively growing Malaysia’s sustainability ecosystem through collaboration, innovation, and community engagement.`,
+    images: ["realBackGround.png", "realBackGround.png", "realBackGround.png"],
+  },
+  {
+    id: "02",
+    title: "02",
+    subtitle: "EARTHHEIR.COM SOCIAL IMPACT MARKETPLACE",
+    content: `A curated sustainability and social impact marketplace for Made in Malaysia brands and products. At earthheir.com, we champion local artisans, ethical producers, and impact-driven businesses creating positive change for people and the planet. Every purchase supports fair trade, responsible production, and a more conscious way of living.`,
+    images: ["realBackGround.png", "realBackGround.png", "realBackGround.png"],
+  },
+  {
+    id: "03",
+    title: "03",
+    subtitle: "MENTORING NEXT GENERATION LEADERS",
+    content: `A socio-entrepreneurship and sustainability mentorship programme designed to equip students with the mindset, skills, and guidance to become future changemakers. Through hands-on learning and real-world exposure, we empower young leaders to drive positive impact in their communities and beyond. `,
+    images: ["realBackGround.png", "realBackGround.png", "realBackGround.png"],
+  },
+  {
+    id: "04",
+    title: "04",
+    subtitle: "KNOWLEDGE  TALK SERIES",
+    content: `A dynamic platform featuring impact leaders, students, and changemakers from Malaysia and around the world. These sessions spark dialogue, share real-world insights, and inspire action across sustainability, social enterprise, and innovation.`,
+    images: ["realBackGround.png", "realBackGround.png", "realBackGround.png"],
+  },
+];
 
 export default function Home() {
   const MapWithDetailsSection = dynamic(
@@ -257,36 +303,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              {/* <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
-                <InfoSection
-                  title={whoweare.title}
-                  paragraphs={whoweare.paragraphs}
-                  circles={whoweare.circles}
-                />
-              </div> */}
             </section>
-
-            {/* <div className="py-15">
-              <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
-                <h2 className="text-center pb-4">About Us</h2>
-                <div className="rounded-2xl shadow-md bg-[#0000ff1a] p-6 md:p-10 backdrop-blur-sm">
-                  <div className="pb-16">
-                    <InfoSection
-                      title={aboutUsSectionProjectSeaMonkey.title}
-                      paragraphs={aboutUsSectionProjectSeaMonkey.paragraphs}
-                      circles={aboutUsSectionProjectSeaMonkey.circles}
-                    />
-                  </div>
-                </div>
-                <div className="rounded-2xl shadow-md bg-[#ff63001a] p-6 md:p-10 backdrop-blur-sm">
-                  <InfoSection
-                    title={aboutUsSectionProjectEarthHeir.title}
-                    paragraphs={aboutUsSectionProjectEarthHeir.paragraphs}
-                    circles={aboutUsSectionProjectEarthHeir.circles}
-                  />
-                </div>
-              </div>
-            </div> */}
 
             <section id="impact" className="scroll-mt-8 py-15">
               <h2 className="text-3xl font-bold uppercase mb-5 text-center">
@@ -305,7 +322,6 @@ export default function Home() {
                   <div
                     key={index}
                     className="w-full sm:w-[28rem] max-w-full border-[#D63F91] border-6 shadow-[0px_4px_0px_0px_#70C1CA] rounded-3xl p-6 flex-1"
-                    // ↑ w-full for mobile, sm:w-[28rem] for wider boxes on larger screens
                   >
                     <div className="flex gap-2 items-center">
                       <div style={{ fontSize: "3rem" }}>{item.logo}</div>
@@ -319,20 +335,69 @@ export default function Home() {
             </section>
 
             <section id="whatwedo" className="scroll-mt-8 py-15">
-              <ContentBlockGroupSection
-                textSection={whatWeDoSection.textSection}
-                items={whatWeDoSection.items}
-              />
+              <div className="container">
+                <h2 className="text-3xl font-bold uppercase mb-5 text-center">
+                  What we do
+                </h2>
+                <p className="my-3">
+                  Our mission is to grow a{" "}
+                  <span className="text-primary font-playful">
+                    thriving sustainability & social impact ecosystem
+                  </span>{" "}
+                  in Malaysia. We work at the intersection of education,
+                  enterprise, and impact to build a better future.{" "}
+                </p>
+                <div className="mt-8">
+                  <Accordion type="single" collapsible defaultValue="01">
+                    {accordionData.map(
+                      ({ id, title, subtitle, content, images }) => (
+                        <AccordionItem key={id} value={id}>
+                          <AccordionTrigger>
+                            <div className="flex items-center gap-4">
+                              <div className="font-medium text-4xl">
+                                {title}
+                              </div>
+                              <div className="text-2xl font-normal uppercase">
+                                {subtitle}
+                              </div>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <p>{content}</p>
+                            <div className="grid grid-cols-3 gap-16 px-1 mt-6">
+                              {images.map((url, index) => (
+                                <div
+                                  key={index}
+                                  className="aspect-[4/5] rounded-full overflow-hidden ring-3 ring-[#D64290]"
+                                >
+                                  <Image
+                                    className="h-full w-full object-cover object-center"
+                                    unoptimized
+                                    src={url}
+                                    alt={`Image ${index + 1}`}
+                                    height={720}
+                                    width={1280}
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      )
+                    )}
+                  </Accordion>
+                </div>
+              </div>
             </section>
 
             <section id="venues" className="scroll-mt-8 py-15">
-              <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
+              {/* <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
                 <ImageParagraphGroup
                   title={venueSectionData.title}
                   sections={venueData}
                   taglineItems={venueSectionData.taglineItems}
                 />
-              </div>
+              </div> */}
             </section>
 
             <div className="py-15">
