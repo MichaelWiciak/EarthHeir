@@ -23,6 +23,8 @@ import SplashLoader from "./components/SplashLoader";
 import HeroBottomDivider from "./components/hero-bottom-divider";
 import EarthHeirLogo from "../../public/Earth Heir Logo 1.svg";
 import ProjectSeaMonkeyLogo from "../../public/SMP Logo Vector Color 1.svg";
+import { Button } from "./components/button";
+import { FacilitySection } from "./components/facilitySection";
 
 import {
   Accordion,
@@ -50,6 +52,14 @@ import {
   aboutUsSectionProjectEarthHeir,
   locationAccordionItems,
 } from "@/app/data/homePageData";
+
+type Venue = {
+  title: string;
+  description: string;
+  highlights?: string[];
+  imageUrl: string;
+  ctaLabel?: string;
+};
 
 type AccordionSection = {
   id: string;
@@ -89,6 +99,16 @@ const accordionData: AccordionSection[] = [
     images: ["realBackGround.png", "realBackGround.png", "realBackGround.png"],
   },
 ];
+
+type Facility = {
+  title: string;
+  description: string;
+  imageUrl: string;
+  details: {
+    label: string; // e.g. "Capacity:"
+    content: string; // e.g. "Up to 100 pax (theatre-style)"
+  }[];
+};
 
 export default function Home() {
   const MapWithDetailsSection = dynamic(
@@ -131,6 +151,72 @@ export default function Home() {
       logo: <div className="">{`🌼`}</div>,
       text: "Measurable Impact; by 2026, Sustain;ed KL aims to create 30,000 employment and training hours, positively impacting the livelihoods of 3,000 individuals.",
     },
+  ];
+
+  const facilities = [
+    {
+      title: "EDUCATION HUB",
+      description:
+        "A bright, open-concept space designed for interactive learning, exhibitions, and community mixers. With flexible seating and ample natural light, it's perfect for hosting larger group sessions or public events.",
+      imageUrl: "/Venues/bigroom.jpg",
+      details: [
+        {
+          label: "Capacity:",
+          content: "Up to 100 pax (theatre-style)",
+        },
+        {
+          label: "Includes:",
+          content: "3 tables, 40 chairs",
+        },
+        {
+          label: "Tech-ready:",
+          content:
+            "Visual projection, wireless mics, clip mic, and speakers available",
+        },
+      ],
+    },
+    {
+      title: "SCREENING ROOM",
+      description:
+        "A private, comfortable space ideal for training sessions, film screenings, talks, or small-scale gatherings. Great acoustics and AV setup ensure a smooth experience for your audience.",
+      imageUrl: "/Venues/cinemaroom.jpg",
+      details: [
+        {
+          label: "Capacity:",
+          content: "Up to 50 pax (theatre-style)",
+        },
+        {
+          label: "Includes:",
+          content: "2 tables, 30 chairs",
+        },
+        {
+          label: "Tech-ready:",
+          content:
+            "Visual projection, wireless mics, clip mic, and speakers available",
+        },
+      ],
+    },
+    {
+      title: "MEETING ROOM",
+      description:
+        "An inspiring space for creative brainstorming, team huddles, or strategic meetings. Designed to help ideas flow in a more relaxed, out-of-the-box environment.",
+      imageUrl: "/Venues/conference.jpg",
+      details: [
+        {
+          label: "Capacity:",
+          content: "10–15 pax",
+        },
+        {
+          label: "Includes:",
+          content: "1 table, 10–15 chairs",
+        },
+        {
+          label: "Tech-ready:",
+          content: "SHARP 40” TV for visual projection",
+        },
+      ],
+    },
+    // Add more entries as needed...
   ];
 
   const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
@@ -391,13 +477,7 @@ export default function Home() {
             </section>
 
             <section id="venues" className="scroll-mt-8 py-15">
-              {/* <div className="rounded-2xl shadow-md bg-[#896fff1a] p-6 md:p-10 backdrop-blur-sm">
-                <ImageParagraphGroup
-                  title={venueSectionData.title}
-                  sections={venueData}
-                  taglineItems={venueSectionData.taglineItems}
-                />
-              </div> */}
+              <FacilitySection facilities={facilities} />
             </section>
 
             <div className="py-15">
